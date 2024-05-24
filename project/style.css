@@ -7,7 +7,7 @@ body{
 .buttonNav{
     display: flex;
     justify-content: flex-end;
-    margin-left: 53%;
+    margin-left: 65%;
     
 
 }
@@ -48,15 +48,43 @@ body{
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
 }
 
-.container-film{
+.container-film {
+    position: relative;
     display: grid;
+    flex-direction: column-reverse;
     justify-content: center;
     margin-left: 5%;
-    align-items: top; /* Untuk konten di dalam container */
+    align-items: top;
     margin-top: 50%;
-    background-color: gray; 
-    filter: opacity(50%);
     width: 90%;
     height: 400vh;
     border-radius: 30px;
+    overflow: hidden; /* Penting untuk menjaga elemen pseudo di dalam kontainer */
 }
+
+.container-film::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray; /* Warna latar belakang */
+    filter: blur(10px);
+    z-index: 1; /* Menempatkan elemen pseudo di belakang konten */
+    border-radius: 30px;
+}
+
+.container-film > * {
+    position: relative;
+    z-index: 2; /* Menempatkan konten di depan elemen pseudo */
+}
+
+.row {
+    justify-content: center; /* Ubah properti justify-content menjadi center */
+}
+
+.card {
+    margin: 20px; /* Tambahkan margin kiri, kanan, atas, dan bawah sebesar 10px */
+}
+

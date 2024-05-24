@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    height: 200vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.img-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    z-index: -1;
+}
+
+.bg-image {
+    flex: 1;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%) blur(4px);
+}
+
+.navbar {
+    margin-left: 7%;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 40px;
+}
+
+.rating {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.rating i {
+    
+    color: #ffdd00;
+    cursor: pointer;
+}
+
+.rating i:hover,
+.rating i:hover ~ i {
+    color: #ccc;    
+}
+.rating i.half::before {
+    content: '\f089'; /* Unicode untuk ikon bintang setengah */
+    position: absolute;
+    margin-top: -4%;
+    margin-left: 1.2%;
+    width: 50%;
+    overflow: hidden;
+}
+
+
+
