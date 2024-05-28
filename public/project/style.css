@@ -245,3 +245,8 @@ body{
         font-size: 18px;
         font-weight: 300;
     }
+
+    .dropdown-menu.multi-column {
+        columns: 3;
+    }
+
