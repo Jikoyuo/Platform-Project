@@ -76,8 +76,8 @@
                     <input type="text" placeholder="Full Name">
                     <input type="text" placeholder="User Name">
                     <input type="text" placeholder="Address">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Phone Number">
+                    <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                     <input type="password" placeholder="Password">
                     <!-- eror -->
                     <button id="login">Sign Up</button>

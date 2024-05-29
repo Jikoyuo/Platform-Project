@@ -35,7 +35,7 @@ body{
 
 /* button sign in dan sign up */
 .container button{
-    background-color: #E50914;
+    background-color: #8B0000;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -150,9 +150,9 @@ body{
 }
 
 .toggle{
-    background-color: #E50914;
+    background-color: #8B0000;
     height: 100%;
-    background-color: #E50914;
+    background-color: #8B0000;
     color: #fff;
     position: relative;
     left: -100%;
