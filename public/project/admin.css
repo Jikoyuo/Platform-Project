@@ -1,6 +1,6 @@
 body{
     background-color: black;
-        height: 550vh; /* Atur ketinggian halaman agar melebihi tinggi layar */
+        height: 100vh; /* Atur ketinggian halaman agar melebihi tinggi layar */
 
 }
 
@@ -41,7 +41,8 @@ body{
 }
 
 .navbar{
-    margin-left: 7%;
+    margin-top: 0;
+    margin-left: 0;
 }
 
 .navbar-nav .nav-link {
@@ -110,6 +111,10 @@ body{
         font-family: 'Open Sans', sans-serif;
     }
 
+
+    .navt{
+        margin-left: 4%;
+    }
 
     /*product list*/
 
@@ -255,4 +260,9 @@ footer{
     margin-top: 5%;
     background-color: whitesmoke;
     filter: brightness(50%) ;
+}
+
+.input-group{
+    margin-left: 1%;
+    width: 100px;
 }
