@@ -8,10 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
+    <script type="module" defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- navbar setelah login -->
 
     <nav class="navbar navbar-expand-lg bg-transparent mt-5">
         <div class="container-fluid">
@@ -50,10 +58,10 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+                            <img src="profile.jpeg" width="40" height="40" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="admin.html">Dashboard</a></li>
                             <li><a class="dropdown-item" href="#">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="#">Log Out</a></li>
                         </ul>
@@ -63,30 +71,112 @@
         </div>
     </nav>
 
+    <!-- end navbar login -->
+
+    <!-- jumbotron kalimat landing page dan search -->
     <div class="jumbotron jumbotron-fluid text-white">
         <div class="container">
             <h1 class="display-8">Film, acara TV tak terbatas, dan banyak lagi. Tonton di mana pun. Batalkan kapan pun. Siap belanja? Daftar dan mulai berbelanja film favoritmu!</h1>
         </div>
-        <div class="input-group mb-3 mt-5">
-            <input type="text" class="form-control" placeholder="Cari judul film" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group mb-3 mt-5 search-container">
+            <input type="text" class="form-control search-input" placeholder="Cari judul film" aria-label="Cari judul film" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Cari</button>
+                <button class="btn btn-outline-secondary search-button text-bg-danger" type="button">Cari</button>
             </div>
         </div>
     </div>
 
+
+    <!-- end jumbotron kalimat landing page dan search -->
+
+    <!-- gambar background -->
     <div class="img-container">
         <div class="bg-image" style="background-image: url('Dune.jpeg');"></div>
         <div class="bg-image" style="background-image: url('Dunkirk.jpeg');"></div>
         <div class="bg-image" style="background-image: url('PeakyBlinders.jpeg');"></div>
         <div class="bg-image" style="background-image: url('endgame.jpeg');"></div>
     </div>
+    <!-- end gambar backgroudn -->
 
-    <div class="container-film shadow-lg p-3 mb-5 rounded">
+    <!-- start sliders gambar -->
+    <audio id="background-music" loop>
+        <source
+          src="https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/stranger-things-luxide-remix-no-copyright-music.mp3"
+          type="audio/mpeg" />
+      </audio>
+      <button id="play-pause-button">
+        <ion-icon class="audio-icon" id="play-music" name="play"></ion-icon>
+        <ion-icon
+          class="audio-icon hidden"
+          id="pause-music"
+          name="pause"></ion-icon>
+      </button>
+
+      <div id="particles-js" class="particles"></div>
+
+      <div class="container">
+        <div class="swiper">
+            <h1 class="text-center text-white mb-lg-5" style="font-size: 3rem; font-weight: bold;">HOTS !</h1>
+
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="1.jpeg" />
+              <p>Tobrut1</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="2.jpeg" />
+              <p>Tobrut2</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="3.jpeg" />
+              <p>Tobrut3</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="4.jpeg" />
+              <p>Tobrut4</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="5.jpeg" />
+              <p>Tobrut5</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="6.jpeg" />
+              <p>Tobrut6</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="7.jpeg" />
+              <p>Tobrut7</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="8.jpeg" />
+              <p>Tobrut8</p>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="9.jpeg" />
+              <p>Tobrut9</p>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- end sliders gambar -->
+
+      <!-- katalog penjualan -->
+    <div class="container-film shadow-lg  mb-5 rounded">
         <h1 class="text-center text-white">Movie On Sale!</h1>
         <div class="container">
-            <div class="row row-cols-4 justify-content-center">
-                <!-- Movie cards here (repeat for each movie) -->
+            <div class="row mt-5 row-cols-4 justify-content-center justify-content-between" style="margin-left: -5%; margin-right: -5%;">
+                <!-- Movie cards here  -->
                 <div class="card col mb-4" style="width: 18rem; height: 40rem;">
                     <img src="Dune.jpeg" class="card-img-top" alt="Dune Movie" style="max-height: 24rem;">
                     <div class="card-body">
@@ -96,29 +186,167 @@
                     </div>
                 </div>
                 <!-- Add other movie cards similarly -->
+                <div class="card col mb-4" style="width: 18rem; height: 40rem;">
+                    <img src="Dunkirk.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem; height: 40rem;">
+                    <img src="Dunkirk.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem; height: 40rem;">
+                    <img src="Dunkirk.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="PeakyBlinders.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="endgame.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="endgame.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="Dune.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="Dunkirk.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="PeakyBlinders.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col mb-4 " style="width: 18rem; height: 40rem;">
+                    <img src="Dune.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem; height: 40rem;">
+                    <img src="Dunkirk.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="PeakyBlinders.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="endgame.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem; height: 40rem;">
+                    <img src="endgame.jpeg" class="card-img-top"
+                        alt="Dune Movie" style="max-height: 24rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to
+                            build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="position-absolute bottom-0 start-50 translate-middle-x">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
     </div>
+
+    <!-- end katalog penjualan -->
+
 
     <!-- Footer -->
     <footer class="text-center text-lg-start text-muted">
