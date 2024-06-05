@@ -52,7 +52,7 @@
                                 aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="horror.html">Horror</a>
+                            <a class="nav-link text-white" href="/horror">Horror</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Sci-Fi</a>
@@ -79,8 +79,10 @@
                         </li>
                     </ul>
                     <div class="buttonNav">
-                        <button type="button" class="btn me-3 text-white"
-                            id="btnLog" href="login.html" style="background-color: #8B0000;">Login</button>
+                        <a href="/login">
+                            <button type="button" class="btn me-3 text-white"
+                                id="btnLog" style="background-color: #8B0000;">Login</button>
+                        </a>
                     </div>
                 </div>
             </div>
