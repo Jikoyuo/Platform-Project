@@ -25,6 +25,46 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('db_products', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('product_name');
+            $table->text('description');
+            $table->float('price');
+            $table->integer('stock');
+            $table->string('genre');
+        });
+
+        Schema::create('db_carts', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->dateTimeTz('order_date');
+            $table->float('total_price');
+            $table->integer('quantity');
+            $table->string('status');
+            $table->integer('product_id');
+            $table->integer('user_id');
+        });
+
+        Schema::create('db_transactions', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->dateTimeTz('order_date');
+            $table->float('total_price');
+            $table->integer('quantity');
+            $table->integer('product_id');
+            $table->integer('user_id');
+        });
+
+        Schema::create('db_reviews', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->integer('star');
+            $table->text('review');
+            $table->integer('product_id');
+            $table->integer('user_id');
+        });
     }
 
     /**
