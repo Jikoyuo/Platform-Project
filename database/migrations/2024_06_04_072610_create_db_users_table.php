@@ -11,21 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('db_users', function (Blueprint $table) {
-            $table->id();
-            $table->string('username');
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->string('auth_id');
-            $table->string('full_name');
-            $table->text('address');
-            $table->string('phone_number');
-            $table->string('role');
-            $table->string('last_login');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
         Schema::create('db_products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
@@ -73,5 +58,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('db_users');
+        Schema::dropIfExists('db_carts');
+        Schema::dropIfExists('db_transactions');
+        Schema::dropIfExists('db_reviews');
     }
 };
