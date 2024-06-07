@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('db_cart', function (Blueprint $table) {
             $table->id();
-            $table->dateTimeTz('order_date');
-            $table->float('total_price');
+            $table->float('price');
             $table->integer('quantity');
             $table->string('status');
             $table->foreignId('product_id');

@@ -24,16 +24,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('db_cart', function (Blueprint $table) {
-            $table->id();
-            $table->dateTimeTz('order_date');
-            $table->float('total_price');
-            $table->integer('quantity');
-            $table->string('status');
-            $table->foreignId('product_id');
-            $table->foreignId('user_id');
-        });
-
     }
 
     /**
@@ -42,6 +32,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('db_user');
-        Schema::dropIfExists('db_cart');
     }
 };

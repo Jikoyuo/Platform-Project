@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->dateTimeTz('order_date');
             $table->float('total_price');
+            $table->float('price');
             $table->integer('quantity');
             $table->foreignId('product_id');
             $table->foreignId('user_id');
