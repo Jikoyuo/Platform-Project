@@ -19,6 +19,7 @@ return new class extends Migration
             $table->float('price');
             $table->integer('stock');
             $table->string('genre');
+            $table->string('img_url');
         });
     }
 
