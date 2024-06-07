@@ -2,6 +2,7 @@
 
 @section('content')
 <!-- jumbotron kalimat landing page dan search -->
+@include('partials.navbar')
 <div class="jumbotron jumbotron-fluid text-white">
     <div class="container">
         <h1 class="display-8">Film, acara TV tak terbatas, dan banyak
