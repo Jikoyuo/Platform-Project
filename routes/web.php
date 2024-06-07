@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
 
-Route::get('/redirect', [RedirectController::class, 'redirectToHome']);
+Route::get('/', [RedirectController::class, 'redirectToHome']);
 
 Route::get('/home', function () {
     return view('index');
