@@ -35,24 +35,29 @@
                 </li>
             </ul>
             <div class="d-flex">
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="btn rounded-md px-3 py-2 text-light ring-1 ring-transparent transition hover:text-light/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                            Dashboard
-                        </a>
-                    @else
-                        <a href="{{ route('login') }}" class="btn rounded-md px-3 py-2 text-light ring-1 ring-transparent transition hover:text-light/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                            Log in
-                        </a>
+    @if (true)
+        @auth
+            <a href="{{ url('/dashboard') }}" class="btn rounded-md px-3 py-2 text-light ring-1 ring-transparent transition hover:text-light/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                Dashboard
+            </a>
+        @else
+            <a href="{{ route('login') }}" class="btn rounded-md px-3 py-2 text-light ring-1 ring-transparent transition hover:text-light/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                Log in
+            </a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn rounded-md px-3 py-2 text-light ring-1 ring-transparent transition hover:text-light/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                @endif
-            </div>
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="btn rounded-md px-3 py-2 text-light ring-1 ring-transparent transition hover:text-light/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                    Register
+                </a>
+            @else
+                <p>Register route is not available</p>
+            @endif
+        @endauth
+    @else
+        <p>Login route is not available</p>
+    @endif
+</div>
+
         </div>
     </div>
 </nav>
