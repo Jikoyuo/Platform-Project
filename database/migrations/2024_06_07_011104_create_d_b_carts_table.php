@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('db_cart', function (Blueprint $table) {
+        Schema::create('d_b_cart', function (Blueprint $table) {
             $table->id();
             $table->float('price');
             $table->integer('quantity');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('db_cart');
+        Schema::dropIfExists('d_b_cart');
     }
 };

@@ -1,13 +1,12 @@
 <?php
 
+use App\Http\Controllers\DBProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
 
 Route::get('/', [RedirectController::class, 'redirectToHome']);
 
-Route::get('/home', function () {
-    return view('index');
-});
+Route::get('/home', [DBProductController::class, 'index']);
 
 Route::get('/desc', function () {
     return view('desc');

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('db_transactions', function (Blueprint $table) {
+        Schema::create('d_b_transactions', function (Blueprint $table) {
             $table->id();
             $table->dateTimeTz('order_date');
             $table->float('total_price');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('db_transactions');
+        Schema::dropIfExists('d_b_transactions');
     }
 };
