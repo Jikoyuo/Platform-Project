@@ -13,7 +13,11 @@ class DBProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = DBProduct::all();
+        return view('index', [
+            'title' => 'Home Page',
+            'products' => $products
+        ]);
     }
 
     /**

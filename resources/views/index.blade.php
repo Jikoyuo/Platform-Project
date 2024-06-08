@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+<title>Kasetflix || {{$title}} </title>
 <!-- jumbotron kalimat landing page dan search -->
 @include('partials.navbar')
 <div class="jumbotron jumbotron-fluid text-white">
