@@ -21,11 +21,12 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-// Route::get('/login', [LoginController::class, 'index']);
-
+// Tambahkan nama rute login
 Route::get('/login', function () {
     return view('login');
-});
-// Auth::routes();
+})->name('login');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Tambahkan nama rute register
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
