@@ -143,7 +143,7 @@
             <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewAccountsModal">
                 View Accounts
             </button>
-            
+
             <!-- Edit Product Modal -->
             <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -172,7 +172,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- View Accounts Modal -->
             <div class="modal fade" id="viewAccountsModal" tabindex="-1" aria-labelledby="viewAccountsModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
