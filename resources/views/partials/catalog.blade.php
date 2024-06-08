@@ -3,7 +3,7 @@
     <div class="col-md-3">
         @foreach($products as $product)
             <div class="card">
-                <img src="no_image.webp" class="card-img-top" alt="{{$product->name}}" style="max-height:360px; min-height:360px">
+                <img src="{{$product->img_url}}" class="card-img-top" alt="{{$product->name}}" style="max-height:360px; min-height:360px">
                 <!-- <img src="no_image.webp" class="card-img-top" alt="Title" style="max-height:360px; min-height:360px"> -->
                 <div class="card-body">
                     <h5 class="card-title">{{$product->name}}</h5>
