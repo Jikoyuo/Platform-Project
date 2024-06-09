@@ -1,80 +1,92 @@
-body{
+body {
     background-color: black;
-        height: 50vh; /* Atur ketinggian halaman agar melebihi tinggi layar */
-}
+    height: auto; /* Atur ketinggian halaman agar melebihi tinggi layar */
+  }
 
-*{
+  * {
     font-family: 'Montserrat', sans-serif;
-}
+  }
 
-.buttonNav{
+  .buttonNav {
     display: flex;
     justify-content: flex-end;
     margin-left: 65%;
+  }
 
+  .hr-blurry {
+    border: none; /* Menghilangkan border default */
+    height: 2px; /* Menentukan tinggi dari hr */
+    background: white; /* Mengatur warna latar belakang menjadi putih */
+    filter: blur(2px); /* Menambahkan efek blur */
+    margin: 20px 0; /* Menambahkan margin untuk jarak vertikal */
+  }
 
-}
+  .full-height {
+    height: 100vh;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+  }
 
-.img-container {
+  .img-container {
 
     display: flex; /* Mengubah kontainer menjadi flexbox */
     justify-content: space-between; /* Meletakkan elemen secara merata di sepanjang sumbu horizontal */
     align-items: top; /* Pusatkan elemen secara vertikal */
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
     z-index: -1;
-}
+  }
 
-.bg-image {
+  .bg-image {
     flex: 1; /* Menggunakan sebanyak mungkin ruang yang tersedia */
-    height: 80vh;
+    height: 80vh; /* Sesuaikan tinggi gambar dengan tinggi container */
     background-size: cover;
     background-position: center;
     filter: brightness(50%) blur(4px);
-}
+  }
 
-
-.jumbotron {
+  .jumbotron {
+    z-index: 5;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 2rem 1rem;
     margin-bottom: 0;
-}
+  }
 
-.jumbotron .container {
+  .jumbotron .container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
+  }
 
-.jumbotron h1 {
+  .jumbotron h1 {
     font-size: 1.5rem;
     font-weight: bold;
-}
+  }
 
-/* Styling untuk form pencarian */
-.search-container {
+  /* Styling untuk form pencarian */
+  .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-}
+  }
 
-.search-input {
+  .search-input {
     border: none;
     border-radius: 0;
     padding: 0.75rem 1rem;
     font-size: 1rem;
     outline: none;
     flex-grow: 1;
-}
+  }
 
-.search-button {
+  .search-button {
     border: none;
     padding: 0.75rem 1rem;
     font-size: 1rem;
@@ -82,51 +94,48 @@ body{
     color: #fff;
     cursor: pointer;
     outline: none;
-}
+  }
 
-.search-button:hover {
+  .search-button:hover {
     background-color: #e55d50;
-}
+  }
 
-.search-input:focus {
+  .search-input:focus {
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     border: 1px solid rgba(81, 203, 238, 1);
-}
+  }
 
-@media (max-width: 576px) {
+  @media (max-width: 576px) {
     .search-container {
-        flex-direction: column;
+      flex-direction: column;
     }
 
     .search-input,
     .search-button {
-        width: 100%;
-        margin-bottom: 0.5rem;
+      width: 100%;
+      margin-bottom: 0.5rem;
     }
-}
+  }
 
-.navbar{
+  .navbar {
     margin-left: 7%;
-}
+  }
 
-.navbar-nav .nav-link {
+  .navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
-}
+  }
 
-.container-film {
+  .container-film {
     position: relative;
     justify-content: center;
     align-items: center;
-    margin-left: 16%;
-    align-items: top;
-    margin-top: 10%;
     width: 67%;
     height: auto;
     border-radius: 30px;
     overflow: hidden; /* Penting untuk menjaga elemen pseudo di dalam kontainer */
-}
+  }
 
-.container-film::before {
+  .container-film::before {
     content: '';
     position: absolute;
     top: 0;
@@ -136,226 +145,231 @@ body{
     filter: blur(1000);
     z-index: 1; /* Menempatkan elemen pseudo di belakang konten */
     border-radius: 30px;
-}
+  }
 
-.container-film > * {
+  .container-film > * {
     position: relative;
     z-index: 2; /* Menempatkan konten di depan elemen pseudo */
-}
+  }
 
-.row {
+  .row {
     justify-content: center; /* Ubah properti justify-content menjadi center */
-}
+  }
 
-.card {
+  .card {
     margin: 20px; /* Tambahkan margin kiri, kanan, atas, dan bawah sebesar 10px */
-}
+  }
 
+  /*panel*/
+  .panel {
+    border: none;
+    box-shadow: none;
+  }
 
-    /*panel*/
-    .panel {
-        border: none;
-        box-shadow: none;
-    }
+  .panel-heading {
+    border-color: #eff2f7;
+    font-size: 16px;
+    font-weight: 300;
+  }
 
-    .panel-heading {
-        border-color:#eff2f7 ;
-        font-size: 16px;
-        font-weight: 300;
-    }
+  .panel-title {
+    color: #2A3542;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
 
-    .panel-title {
-        color: #2A3542;
-        font-size: 14px;
-        font-weight: 400;
-        margin-bottom: 0;
-        margin-top: 0;
-        font-family: 'Open Sans', sans-serif;
-    }
+  /*product list*/
+  .prod-cat li a {
+    border-bottom: 1px dashed #d9d9d9;
+  }
 
+  .prod-cat li a {
+    color: #3b3b3b;
+  }
 
-    /*product list*/
+  .prod-cat li ul {
+    margin-left: 30px;
+  }
 
-    .prod-cat li a{
-        border-bottom: 1px dashed #d9d9d9;
-    }
+  .prod-cat li ul li a {
+    border-bottom: none;
+  }
 
-    .prod-cat li a {
-        color: #3b3b3b;
-    }
+  .prod-cat li ul li a:hover,
+  .prod-cat li ul li a:focus,
+  .prod-cat li ul li.active a,
+  .prod-cat li a:hover,
+  .prod-cat li a:focus,
+  .prod-cat li a.active {
+    background: none;
+    color: #ff7261;
+  }
 
-    .prod-cat li ul {
-        margin-left: 30px;
-    }
+  .pro-lab {
+    margin-right: 20px;
+    font-weight: normal;
+  }
 
-    .prod-cat li ul li a{
-        border-bottom:none;
-    }
-    .prod-cat li ul li a:hover,.prod-cat li ul li a:focus, .prod-cat li ul li.active a , .prod-cat li a:hover,.prod-cat li a:focus, .prod-cat li a.active{
-        background: none;
-        color: #ff7261;
-    }
+  .pro-sort {
+    padding-right: 20px;
+    float: left;
+  }
 
-    .pro-lab{
-        margin-right: 20px;
-        font-weight: normal;
-    }
+  .pro-page-list {
+    margin: 5px 0 0 0;
+  }
 
-    .pro-sort {
-        padding-right: 20px;
-        float: left;
-    }
+  .product-list img {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+  }
 
-    .pro-page-list {
-        margin: 5px 0 0 0;
-    }
+  .product-list .pro-img-box {
+    position: relative;
+  }
 
-    .product-list img{
-        width: 100%;
-        border-radius: 4px 4px 0 0;
-        -webkit-border-radius: 4px 4px 0 0;
-    }
+  .adtocart {
+    background: #fc5959;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    border: 3px solid #fff;
+    left: 45%;
+    bottom: -25px;
+    position: absolute;
+  }
 
-    .product-list .pro-img-box {
-        position: relative;
-    }
-    .adtocart {
-        background: #fc5959;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        color: #fff;
-        display: inline-block;
-        text-align: center;
-        border: 3px solid #fff;
-        left: 45%;
-        bottom: -25px;
-        position: absolute;
-    }
+  .adtocart i {
+    color: #fff;
+    font-size: 25px;
+    line-height: 42px;
+  }
 
-    .adtocart i{
-        color: #fff;
-        font-size: 25px;
-        line-height: 42px;
-    }
+  .pro-title {
+    color: #5A5A5A;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+  }
 
-    .pro-title {
-        color: #5A5A5A;
-        display: inline-block;
-        margin-top: 20px;
-        font-size: 16px;
-    }
+  .product-list .price {
+    color: #fc5959;
+    font-size: 15px;
+  }
 
-    .product-list .price {
-        color:#fc5959 ;
-        font-size: 15px;
-    }
+  .pro-img-details {
+    margin-left: -15px;
+  }
 
-    .pro-img-details {
-        margin-left: -15px;
-    }
+  .pro-img-details img {
+    width: 100%;
+  }
 
-    .pro-img-details img {
-        width: 100%;
-    }
+  .pro-d-title {
+    font-size: 16px;
+    margin-top: 0;
+  }
 
-    .pro-d-title {
-        font-size: 16px;
-        margin-top: 0;
-    }
+  .product_meta {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 15px 0;
+  }
 
-    .product_meta {
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        padding: 10px 0;
-        margin: 15px 0;
-    }
+  .product_meta span {
+    display: block;
+    margin-bottom: 10px;
+  }
 
-    .product_meta span {
-        display: block;
-        margin-bottom: 10px;
-    }
-    .product_meta a, .pro-price{
-        color:#fc5959 ;
-    }
+  .product_meta a,
+  .pro-price {
+    color: #fc5959;
+  }
 
-    .pro-price, .amount-old {
-        font-size: 18px;
-        padding: 0 10px;
-    }
+  .pro-price,
+  .amount-old {
+    font-size: 18px;
+    padding: 0 10px;
+  }
 
-    .amount-old {
-        text-decoration: line-through;
-    }
+  .amount-old {
+    text-decoration: line-through;
+  }
 
-    .quantity {
-        width: 120px;
-    }
+  .quantity {
+    width: 120px;
+  }
 
-    .pro-img-list {
-        margin: 10px 0 0 -15px;
-        width: 100%;
-        display: inline-block;
-    }
+  .pro-img-list {
+    margin: 10px 0 0 -15px;
+    width: 100%;
+    display: inline-block;
+  }
 
-    .pro-img-list a {
-        float: left;
-        margin-right: 10px;
-        margin-bottom: 10px;
-    }
+  .pro-img-list a {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 
-    .pro-d-head {
-        font-size: 18px;
-        font-weight: 300;
-    }
+  .pro-d-head {
+    font-size: 18px;
+    font-weight: 300;
+  }
 
-    .dropdown-menu.multi-column {
-        columns: 3;
-    }
+  .dropdown-menu.multi-column {
+    columns: 3;
+  }
 
-footer{
+  footer {
     position: absolute;
     width: 100%;
-    margin-top: 284vh;
+    bottom: 0; /* Ubah dari margin-top menjadi bottom: 0; */
     background-color: whitesmoke;
-    filter: brightness(50%) ;
+    filter: brightness(50%);
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-.particles {
+  .particles {
     position: absolute;
     inset: 0;
     width: 100%;
-
-    height: 550vh;
+    height: 300vh;
     z-index: -1;
   }
 
   .container {
     width: 80%;
-
   }
 
   .swiper {
+    background-color: #6f1223;
     width: 100%;
-    /* background-color: blue; */
     padding: 50px 0;
-    margin-top: 80%;
-
-  }
+    margin-top: 20%; /* Ubah dari 80% menjadi 20% */
+    top: -200px;
+}
 
   .swiper-slide {
     position: relative;
     width: 200px;
-    height: 500px;
+    height: 575px;
     border-radius: 12px;
     overflow: hidden;
     transition: 1s;
@@ -368,11 +382,7 @@ footer{
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      120deg,
-      rgba(130, 13, 13, 0.8),
-      rgba(39, 8, 92, 0.8)
-    );
+    background: linear-gradient(120deg, rgba(130, 13, 13, 0.8), rgba(39, 8, 92, 0.8));
     mix-blend-mode: multiply;
     z-index: 1;
   }
@@ -446,15 +456,8 @@ footer{
     left: 3%;
     bottom: 5%;
     background-color: transparent;
-    background-image: radial-gradient(
-      50% 115% at 50% -5%,
-      rgba(255, 255, 255, 0.11) 0%,
-      transparent 100%
-    );
-    box-shadow: inset 0 0px 10px 0px rgba(255, 255, 255, 0.14),
-      inset 0px 5px 10px 0px rgba(255, 255, 255, 0.11),
-      inset 0px 2px 5px 0px rgba(255, 255, 255, 0.4),
-      inset 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+    background-image: radial-gradient(50% 115% at 50% -5%, rgba(255, 255, 255, 0.11) 0%, transparent 100%);
+    box-shadow: inset 0 0px 10px 0px rgba(255, 255, 255, 0.14), inset 0px 5px 10px 0px rgba(255, 255, 255, 0.11), inset 0px 2px 5px 0px rgba(255, 255, 255, 0.4), inset 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
     z-index: 10;
     border: 0;
     border-radius: 50%;
