@@ -14,7 +14,7 @@
                     <a class="nav-link text-light" href="/horror">Horror</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Sci-Fi</a>
+                    <a class="nav-link text-light" href="/genres">Genres</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,6 +30,7 @@
                         <li><a class="dropdown-item" href="#">Anime</a></li>
                         <li><a class="dropdown-item" href="#">Drama</a></li>
                         <li><a class="dropdown-item" href="#">Fiction</a></li>
+                        <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
                     </ul>
                 </li>
             </ul>

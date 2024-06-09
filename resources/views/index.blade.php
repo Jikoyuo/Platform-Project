@@ -45,6 +45,6 @@
     <h1 class="text-center text-white">Movie List</h1>
     @include('partials.catalog')
 </div>
-    <!-- end katalog penjualan -->
+<!-- end katalog penjualan -->
 
 @endsection
