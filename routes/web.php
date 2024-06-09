@@ -23,9 +23,11 @@ Route::get('/admin', function () {
 // Tambahkan nama rute login
 Route::get('/login', function () {
     return view('login');
-})->name('login');
+});
 
 // Tambahkan nama rute register
 Route::get('/register', function () {
     return view('register');
-})->name('register');
+});
+
+Route::get('/search', [DBProductController::class, 'index']);

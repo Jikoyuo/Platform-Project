@@ -1,25 +1,26 @@
 @extends('layouts.main')
 
+@include('partials.navbar')
+
 @section('content')
 <title>Kasetflix || {{$title}} </title>
 <!-- jumbotron kalimat landing page dan search -->
-@include('partials.navbar')
 <div class="jumbotron jumbotron-fluid text-white">
     <div class="container">
         <h1 class="display-8">Film, acara TV tak terbatas, dan banyak
             lagi. Tonton di mana pun. Batalkan kapan pun. Siap belanja?
             Daftar dan mulai berbelanja film favoritmu!</h1>
     </div>
-    <div class="input-group mb-3 mt-5 search-container">
-        <input type="text" class="form-control search-input"
-            placeholder="Cari judul film" aria-label="Cari judul film"
-            aria-describedby="basic-addon2" id="search-input">
-        <div class="input-group-append">
+    <form action="/search">
+        <div class="input-group mb-3 mt-5 search-container">
+            <input type="text" class="form-control search-input"
+                placeholder="Cari judul film" aria-label="Cari judul film"
+                aria-describedby="basic-addon2" name = "q">
             <button
                 class="btn btn-outline-secondary search-button text-bg-danger"
-                type="button" id="search-button">Cari</button>
+                type="submit" id="search-button">Cari</button>
         </div>
-    </div>
+    </form>
 </div>
 
 <!-- end jumbotron kalimat landing page dan search -->

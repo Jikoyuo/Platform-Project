@@ -13,11 +13,22 @@ class DBProductController extends Controller
      */
     public function index()
     {
-        $products = DBProduct::all();
-        return view('index', [
-            'title' => 'Home Page',
-            'products' => $products
-        ]);
+        // dd(request('search'));
+        $products = DBProduct::latest();
+        if (request('q')){
+            $products->where('name', 'like', '%'.request('q').'%');
+            return view('search', [
+                'title' => 'Home Page',
+                'search' => request('q'),
+                'products' => $products->get()
+            ]);
+        }
+        else{
+            return view('index', [
+                'title' => 'Home Page',
+                'products' => $products->get()
+            ]);
+        }
     }
 
     /**
