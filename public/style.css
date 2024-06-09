@@ -14,6 +14,7 @@ body {
   }
 
   .hr-blurry {
+
     border: none; /* Menghilangkan border default */
     height: 2px; /* Menentukan tinggi dari hr */
     background: white; /* Mengatur warna latar belakang menjadi putih */
@@ -29,16 +30,16 @@ body {
   }
 
   .img-container {
-
-    display: flex; /* Mengubah kontainer menjadi flexbox */
-    justify-content: space-between; /* Meletakkan elemen secara merata di sepanjang sumbu horizontal */
-    align-items: top; /* Pusatkan elemen secara vertikal */
+    position: relative; /* Tambahkan properti position relative */
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    z-index: -1;
-  }
+    height: 100vh;
+    z-index: -1; /* Pindahkan ke bawah agar navbar dapat menimpanya */
+}
 
   .bg-image {
     flex: 1; /* Menggunakan sebanyak mungkin ruang yang tersedia */
@@ -49,7 +50,6 @@ body {
   }
 
   .jumbotron {
-    z-index: 5;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -117,9 +117,14 @@ body {
     }
   }
 
-  .navbar {
+.navbar {
+    position: absolute; /* Tambahkan properti position absolute */
+    top: 0; /* Atur posisi navbar di bagian atas */
+    left: 0;
+    width: 90%;
     margin-left: 7%;
-  }
+    z-index: 999; /* Atur z-index lebih tinggi dari bg-image */
+}
 
   .navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
@@ -359,7 +364,6 @@ body {
   }
 
   .swiper {
-    background-color: #6f1223;
     width: 100%;
     padding: 50px 0;
     margin-top: 20%; /* Ubah dari 80% menjadi 20% */
