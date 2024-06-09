@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('d_b_products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('year');
+            $table->integer('year');
             $table->text('description');
             $table->float('price');
             $table->integer('stock');
             $table->string('genre');
-            $table->string('img_url');
+            $table->string('img_url')->default('no_image.webp');
+            $table->timestamps();
         });
     }
 

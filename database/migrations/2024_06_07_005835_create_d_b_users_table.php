@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->text('address');
             $table->string('phone_number');
-            $table->string('role');
+            $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
