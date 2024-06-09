@@ -1,30 +1,40 @@
 body {
     background-color: black;
-    height: 200vh;
+    height: auto;
     margin: 0;
     padding: 0;
 }
 
+.describe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 1rem;
+    margin-bottom: 0;
+    z-index: 999;
+}
 
 .img-container {
+    position: relative; /* Tambahkan properti position relative */
     display: flex;
     justify-content: space-between;
     align-items: top;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 150vh;
-    z-index: -1;
+    height: 100vh;
+    z-index: -1; /* Pindahkan ke bawah agar navbar dapat menimpanya */
 }
 
-.bg-image {
-    flex: 1;
-    height: 30vh;
+  .bg-image {
+    flex: 1; /* Menggunakan sebanyak mungkin ruang yang tersedia */
+    height: 80vh; /* Sesuaikan tinggi gambar dengan tinggi container */
     background-size: cover;
     background-position: center;
     filter: brightness(50%) blur(4px);
-}
+  }
+
 
 .navbar {
     margin-left: 7%;
@@ -40,15 +50,15 @@ body {
 }
 
 .rating i {
-    
     color: #ffdd00;
     cursor: pointer;
 }
 
 .rating i:hover,
 .rating i:hover ~ i {
-    color: #ccc;    
+    color: #ccc;
 }
+
 .rating i.half::before {
     content: '\f089'; /* Unicode untuk ikon bintang setengah */
     position: absolute;
@@ -58,5 +68,25 @@ body {
     overflow: hidden;
 }
 
+#section1{
+    height: 100vh;
+    /* background-color: red; */
+}
 
+#section2{
+    height: 150vh;
+    background-color: #ffdd00;
+}
 
+#section3{
+    height: 100vh;
+    background-color: cyan;
+}
+
+.hr-blurry {
+    border: none;
+    height: 2px;
+    background: white;
+    filter: blur(2px);
+    margin: 20px 0;
+}

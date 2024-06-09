@@ -37,7 +37,7 @@
         </div>
         <div class="d-flex justify-end text-light me-xxl-5">
             <a href="/login">
-                <button class="btn btn-danger btn-lg">Login</button>
+                <button class="btn btn-danger btn-lg" style="height: 40px;">Login</button>
             </a>
         </div>
     </div>

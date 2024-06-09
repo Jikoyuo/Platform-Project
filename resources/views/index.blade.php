@@ -32,13 +32,13 @@
 
 
 <!-- Section 2 -->
-<section id="section2" class="full-height">
+<section id="section2">
     <hr class="hr hr-blurry">
     @include('partials.slide')
 </section>
 
 <!-- Section 3 -->
-<section id="section3" class="full-height">
+<section id="section3">
     <hr class="hr hr-blurry">
     <!-- katalog penjualan -->
     <div class="row container-film shadow-lg rounded">
@@ -49,7 +49,7 @@
 </section>
 
 <!-- Section 4 -->
-<section id="section4" class="full-height">
+<section id="section4">
 <hr class="hr hr-blurry">
 </section>
 
