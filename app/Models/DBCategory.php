@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DBProduct extends Model
+class DBCategory extends Model
 {
     use HasFactory;
 
-    public function categories(){
-        return $this->belongsToMany(DBCategory::class);
+    public function products(){
+        return $this->belongsToMany(DBProduct::class);
     }
 }
