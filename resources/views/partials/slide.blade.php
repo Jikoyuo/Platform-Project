@@ -20,11 +20,13 @@
             style="font-size: 3rem; font-weight: bold;">Unknown Series</h1>
 
         <div class="swiper-wrapper">
+            @foreach ( $slider as $sliders)
             <div class="swiper-slide">
                 <img
-                    src="no_image.webp" />
-                <p>Title</p>
+                    src="{{$sliders->img_url}}" />
+                <p>{{$sliders->name}}</p>
             </div>
+            @endforeach
         </div>
         <div class="swiper-pagination"></div>
     </div>
