@@ -28,6 +28,7 @@ class DBProductController extends Controller
         else{
             return view('index', [
                 'title' => 'Home Page',
+                'sliders' => $products->get(),
                 'products' => $products->get()
             ]);
         }
