@@ -28,8 +28,15 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/s', function () {
+    return view('s');
+});
+
 Route::get('/genres', [DBCategoryController::class, 'index']);
 
 Route::get('/genres/{slug}', [DBProductController::class, 'show']);
 
 Route::get('/search', [DBProductController::class, 'index']);
+
+
+

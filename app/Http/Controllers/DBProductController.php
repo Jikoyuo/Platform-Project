@@ -28,6 +28,7 @@ class DBProductController extends Controller
         else{
             return view('index', [
                 'title' => 'Home Page',
+                'slider' => $products->get(),
                 'products' => $products->get()
             ]);
         }
@@ -65,7 +66,7 @@ class DBProductController extends Controller
             'search' => $slug,
             'products' => $products
         ]);
-        
+
     }
 
     /**
