@@ -1,6 +1,6 @@
 <!-- navbar setelah login -->
-
-<nav class="navbar navbar-expand-lg bg-transparent mt-5">
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<nav class="navbar navbar-expand-lg mt-5">
     <div class="container-fluid">
         <a class="navbar-brand text-danger" href="#">Kasetflix</a>
         <button class="navbar-toggler" type="button"
@@ -51,9 +51,13 @@
                     </ul>
                 </li>
             </ul>
+
+            <a>
+            <box-icon name='cart' type='solid' color='#ffffff' ></box-icon>
+            </a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
+                    <a class="nav-link" href="#"
                         id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="profile.jpeg" width="40" height="40"
