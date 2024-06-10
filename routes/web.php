@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DBCategoryController;
 use App\Http\Controllers\DBProductController;
+use App\Http\Controllers\DBUsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
 use App\Models\DBCategory;
@@ -18,19 +19,11 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-// Tambahkan nama rute login
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
-// Tambahkan nama rute register
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/s', function () {
-    return view('s');
-});
+Route::get('/login', [DBUsersController::class, 'index']);
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
 
