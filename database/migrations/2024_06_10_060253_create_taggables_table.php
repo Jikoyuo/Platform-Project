@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('d_b_product__d_b_genres', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('product_id');
-            $table->foreignId('genre_id');
+        Schema::create('taggables', function (Blueprint $table) {
+            $table->integer('tag_id');
+            $table->integer('taggable_id');
+            $table->string('taggable_type')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('d_b_product__d_b_genres');
+        Schema::dropIfExists('taggables');
     }
 };

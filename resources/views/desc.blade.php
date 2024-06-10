@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-
 <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.6/font/bootstrap-icons.min.css" rel="stylesheet">
     <meta charset="utf-8">
@@ -18,22 +17,19 @@
     <section id="section1">
     <div id="particles-js" class="particles"></div>
         @include('partials.navbarDesc')
-        <div class="img-container">
-            <div class="bg-image" style="background-image: url('Dune.jpeg');"></div>
-            <div class="bg-image" style="background-image: url('Dunkirk.jpeg');"></div>
-            <div class="bg-image" style="background-image: url('PeakyBlinders.jpeg');"></div>
-            <div class="bg-image" style="background-image: url('endgame.jpeg');"></div>
-        </div>
-        <div class="describe d-flex justify-content-center align-items-center full-height">
-            <div class="card mb-3 text-white" style="height: 262px; width: 540px; margin-top: 10%; background-color: transparent; border-color: transparent;">
+        @include('partials.background')
+
+        <div class="describe d-flex align-items-center full-height">
+            <div class="card mb-3 text-white card-custom">
+
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="card-body">
                             <h5 class="card-title">Dune 2024</h5>
-                            <div class="rating">
+                            <div class="rating" data-rating="4.5">
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
@@ -41,6 +37,9 @@
                                 <i class="far fa-star"></i>
                             </div>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <iframe width="150%" height="400" src="https://www.youtube.com/embed/6tzur6JrUEA?si=dVnsLDluvVfSlUSF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <p class="card-price mt-3">Price: Rp. 100.999</p>
+                            <button class="btn btn-danger mt-2">Add to Cart</button>
                             <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -49,21 +48,101 @@
         </div>
 
     </section>
-    <section id="section2">
+
+    <!-- Section 2: Ulasan Pembeli -->
+    <section id="section2" class="my-5">
+        <div class="container">
+            <h2 class="text-center text-white mb-4">Ulasan Pembeli</h2>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pembeli 1</h5>
+                    <div class="rating" data-rating="4.0">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="card-text">Film yang sangat bagus! Saya sangat menikmatinya dan sangat merekomendasikan untuk ditonton.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pembeli 2</h5>
+                    <div class="rating" data-rating="5.0">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="card-text">Ceritanya sangat menarik dan visualnya luar biasa. Wajib ditonton!</p>
+                    <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+                </div>
+            </div>
+            <!-- Tambahkan ulasan lainnya di sini -->
+        </div>
+    </section>
+
+    <!-- Section 3: Rekomendasi Film Lain -->
+    <section id="section3" class="my-5">
+        <div class="container">
+            <h2 class="text-center text-white mb-4">Rekomendasi Film Lain</h2>
+            <div class="row">
+                <!-- Card Film 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
+                        <div class="card-body">
+                            <h5 class="card-title">Film 1</h5>
+                            <p class="card-text">Deskripsi singkat tentang film 1.</p>
+                            <a href="#" class="btn btn-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Film 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
+                        <div class="card-body">
+                            <h5 class="card-title">Film 2</h5>
+                            <p class="card-text">Deskripsi singkat tentang film 2.</p>
+                            <a href="#" class="btn btn-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Film 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
+                        <div class="card-body">
+                            <h5 class="card-title">Film 3</h5>
+                            <p class="card-text">Deskripsi singkat tentang film 3.</p>
+                            <a href="#" class="btn btn-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tambahkan kartu film lainnya di sini -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="section4">
         <hr class="hr hr-blurry">
+        @include('partials.footer')
     </section>
-    <section id="section3">
-    <hr class="hr hr-blurry">
-    </section>
+
     <script src="script.js"></script>
     <script>
         // Fungsi untuk mengubah penilaian ikon bintang dengan nilai desimal
-        function setRating(rating) {
-            const stars = document.querySelectorAll('.rating i');
-            const roundedRating = Math.round(rating * 2) / 2;
+        function setRating(ratingElement) {
+            const rating = parseFloat(ratingElement.getAttribute('data-rating'));
+            const stars = ratingElement.querySelectorAll('i');
 
             stars.forEach((star, index) => {
-                if (index < roundedRating) {
+                if (index < rating) {
                     star.classList.remove('far');
                     star.classList.add('fas');
                 } else {
@@ -73,13 +152,14 @@
             });
 
             // Add half-star class if the rating is not a whole number
-            if (roundedRating % 1 !== 0) {
-                stars[Math.floor(roundedRating)].classList.add('half');
+            if (rating % 1 !== 0) {
+                stars[Math.floor(rating)].classList.add('fas', 'fa-star-half-alt');
+                stars[Math.floor(rating)].classList.remove('fa-star');
             }
         }
 
-        // Contoh: atur penilaian bintang ke 4
-        setRating(4);
+        // Set rating for all elements with class rating
+        document.querySelectorAll('.rating').forEach(setRating);
     </script>
 </body>
 

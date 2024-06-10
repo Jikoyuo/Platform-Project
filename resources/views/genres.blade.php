@@ -3,20 +3,9 @@
 @include('partials.navbar')
 
 @section('content')
-<title>Kasetflix || {{$title}} </title>
+<title>Kasetflix </title>
 
-<!-- gambar background -->
-<div class="img-container">
-    <div class="bg-image"
-        style="background-image: url('Dune.jpeg');"></div>
-    <div class="bg-image"
-        style="background-image: url('Dunkirk.jpeg');"></div>
-    <div class="bg-image"
-        style="background-image: url('PeakyBlinders.jpeg');"></div>
-    <div class="bg-image"
-        style="background-image: url('endgame.jpeg');"></div>
-</div>
-<!-- end gambar background -->
+@include('partials.background')
 
 <!-- Container for movie genre list -->
 <div class="row container-film shadow-lg  rounded">
