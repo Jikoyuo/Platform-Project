@@ -28,9 +28,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/s', function () {
-    return view('s');
-});
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
 
