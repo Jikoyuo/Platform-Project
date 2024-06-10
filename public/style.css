@@ -131,7 +131,7 @@ body {
   }
 
   .container-film {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     position: relative;
     justify-content: center;
     align-items: center;
