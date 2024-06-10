@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DBProduct_DBGenre;
-use App\Http\Requests\StoreDBProduct_DBGenreRequest;
-use App\Http\Requests\UpdateDBProduct_DBGenreRequest;
+use App\Models\Taggable;
+use App\Http\Requests\StoreTaggableRequest;
+use App\Http\Requests\UpdateTaggableRequest;
 
-class DBProductDBGenreController extends Controller
+class TaggableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class DBProductDBGenreController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDBProduct_DBGenreRequest $request)
+    public function store(StoreTaggableRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class DBProductDBGenreController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DBProduct_DBGenre $dBProduct_DBGenre)
+    public function show(Taggable $taggable)
     {
         //
     }
@@ -43,7 +43,7 @@ class DBProductDBGenreController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DBProduct_DBGenre $dBProduct_DBGenre)
+    public function edit(Taggable $taggable)
     {
         //
     }
@@ -51,7 +51,7 @@ class DBProductDBGenreController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDBProduct_DBGenreRequest $request, DBProduct_DBGenre $dBProduct_DBGenre)
+    public function update(UpdateTaggableRequest $request, Taggable $taggable)
     {
         //
     }
@@ -59,7 +59,7 @@ class DBProductDBGenreController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DBProduct_DBGenre $dBProduct_DBGenre)
+    public function destroy(Taggable $taggable)
     {
         //
     }

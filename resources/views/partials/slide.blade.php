@@ -1,7 +1,7 @@
 <!-- start sliders gambar -->
 <audio id="background-music" loop>
     <source
-        src="https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/stranger-things-luxide-remix-no-copyright-music.mp3"
+        src="slide/SW.mp3"
         type="audio/mpeg" />
 </audio>
 <button id="play-pause-button">
