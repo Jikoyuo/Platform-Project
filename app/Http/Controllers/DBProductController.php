@@ -61,7 +61,7 @@ class DBProductController extends Controller
 
         $products = DBProduct::whereIn('id', $pivot)->get();
 
-        return view('index', [
+        return view('search', [
             'title' => 'Genre $slug',
             'search' => $slug,
             'products' => $products
