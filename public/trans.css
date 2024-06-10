@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+}
+
+
+.navbar {
+    position: absolute; /* Tambahkan properti position absolute */
+    top: 0; /* Atur posisi navbar di bagian atas */
+    left: 0;
+    width: 90%;
+    margin-left: 7%;
+    z-index: 999; /* Atur z-index lebih tinggi dari bg-image */
+}
+
+  .navbar-nav .nav-link {
+    margin-right: 40px; /* Atur jarak antara setiap link di navbar */
+  }
