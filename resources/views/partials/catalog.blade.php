@@ -1,5 +1,5 @@
 <!-- Container -->
-<div class="row" id="movie-list">
+<div class="row" id="movie-list" >
     @foreach($products as $product)
         <div class="col-md-3">
             <div class="card">
