@@ -8,12 +8,9 @@
             rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous">
-<<<<<<< HEAD
         <link rel="stylesheet" href="../style.css">
 
-=======
-        <link rel="stylesheet" href="style.css">
->>>>>>> d212d6129f0de4b7178416c095aacf98f8e4b734
+
     </head>
     <body>
 
