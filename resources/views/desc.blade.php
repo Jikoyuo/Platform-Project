@@ -1,8 +1,5 @@
-@extends('layouts.main')
-
 <!doctype html>
 <html lang="en">
-
 
 <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.6/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -22,13 +19,14 @@
         @include('partials.navbarDesc')
         @include('partials.background')
 
-        <div class="describe d-flex justify-content-center align-items-center full-height">
-            <div class="card mb-3 text-white" style="height: 262px; width: 540px; margin-top: 10%; background-color: transparent; border-color: transparent;">
+        <div class="describe d-flex align-items-center full-height">
+            <div class="card mb-3 text-white card-custom">
+
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="card-body">
                             <h5 class="card-title">Dune 2024</h5>
                             <div class="rating">
@@ -39,6 +37,9 @@
                                 <i class="far fa-star"></i>
                             </div>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/6tzur6JrUEA?si=dVnsLDluvVfSlUSF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <p class="card-price mt-3">Price: Rp. 100.999</p>
+                            <button class="btn btn-danger mt-2">Add to Cart</button>
                             <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -47,12 +48,13 @@
         </div>
 
     </section>
-    <section id="section2">
+
+    <!-- Section 4 -->
+    <section id="section4">
         <hr class="hr hr-blurry">
+        @include('partials.footer')
     </section>
-    <section id="section3">
-    <hr class="hr hr-blurry">
-    </section>
+
     <script src="script.js"></script>
     <script>
         // Fungsi untuk mengubah penilaian ikon bintang dengan nilai desimal

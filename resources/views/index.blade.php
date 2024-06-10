@@ -2,13 +2,17 @@
 
 
 @section('content')
-<title>Kasetflix || {{$title}} </title>
+<title>Kasetflix</title>
 
 <!-- Section 1 -->
 <section id="section1" class="full-height">
     @include('partials.navbar')
 
+
+    <!-- gambar background -->
    @include('partials.background')
+    <!-- end gambar background -->
+
 
     <div class="jumbotron jumbotron-fluid text-white">
         <div class="container">
