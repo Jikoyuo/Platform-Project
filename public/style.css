@@ -338,8 +338,8 @@ body {
   footer {
     position: absolute;
     width: 100%;
-    bottom: 0; /* Ubah dari margin-top menjadi bottom: 0; */
-    background-color: whitesmoke;
+    margin-top: -15px;
+    background-color: black;
     filter: brightness(50%);
 }
 
@@ -484,7 +484,7 @@ body {
   }
 
   #section4{
-    height: 50vh;
+    height: 25vh;
   }
 
   #section3{

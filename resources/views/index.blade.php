@@ -51,6 +51,7 @@
 <!-- Section 4 -->
 <section id="section4">
 <hr class="hr hr-blurry">
+@include('partials.footer')
 </section>
 
 @endsection
