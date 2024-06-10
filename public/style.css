@@ -23,10 +23,10 @@ body {
   }
 
   .full-height {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    /* display: flex; */
-    /* align-items: center;
-    justify-content: center; */
   }
 
   .img-container {
@@ -131,6 +131,7 @@ body {
   }
 
   .container-film {
+    /* background-color: yellowgreen; */
     position: relative;
     justify-content: center;
     align-items: center;
@@ -138,6 +139,7 @@ body {
     height: auto;
     border-radius: 30px;
     overflow: hidden; /* Penting untuk menjaga elemen pseudo di dalam kontainer */
+    margin: 0 auto; /* Menambahkan margin auto untuk horizontal centering */
   }
 
   .container-film::before {
