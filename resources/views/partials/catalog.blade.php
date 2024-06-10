@@ -1,3 +1,4 @@
+
 <!-- Container -->
 <div class="row" id="movie-list" >
     @foreach($products as $product)

@@ -1,3 +1,5 @@
+@extends('layouts.main')
+
 <!doctype html>
 <html lang="en">
 
@@ -18,12 +20,8 @@
     <section id="section1">
 
         @include('partials.navbarDesc')
-        <div class="img-container">
-            <div class="bg-image" style="background-image: url('Dune.jpeg');"></div>
-            <div class="bg-image" style="background-image: url('Dunkirk.jpeg');"></div>
-            <div class="bg-image" style="background-image: url('PeakyBlinders.jpeg');"></div>
-            <div class="bg-image" style="background-image: url('endgame.jpeg');"></div>
-        </div>
+        @include('partials.background')
+
         <div class="describe d-flex justify-content-center align-items-center full-height">
             <div class="card mb-3 text-white" style="height: 262px; width: 540px; margin-top: 10%; background-color: transparent; border-color: transparent;">
                 <div class="row g-0">
