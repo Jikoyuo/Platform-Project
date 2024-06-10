@@ -20,51 +20,11 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
 
-        <nav class="navbar navbar-expand-lg bg-transparent mt-5">
-            <div class="container-fluid">
-                <a class="navbar-brand text-#dc3545" href="#">NETFLIX</a>
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white"
-                                aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Horror</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Sci-Fi</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white"
-                                href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                More
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item"
-                                        href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another
-                                        action</a></li>
-                                <li><a class="dropdown-item" href="#">Something
-                                        else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('partials.navbar')
 
         <div class="container mt-5" id="container">
             <div class="form-container sign-up">
-                <form>
+                <form action="/login">
                     <h1>Create Account</h1>
                     <div class="social-icons">
                         <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -73,14 +33,14 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your email for registeration</span>
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="User Name">
-                    <input type="text" placeholder="Address">
-                    <input type="text" placeholder="Phone Number">
-                    <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
-                    <input type="password" placeholder="Password">
+                    <input type="text" placeholder="Full Name" name="full_name">
+                    <input type="text" placeholder="Username" name="username">
+                    <input type="text" placeholder="Address" name="address">
+                    <input type="text" placeholder="Phone Number" name="phone_number">
+                    <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" name="email">
+                    <input type="password" placeholder="Password" name="password">
                     <!-- eror -->
-                    <button id="login">Sign Up</button>
+                    <button type="submit" id="login">Sign Up</button>
                 </form>
             </div>
             <div class="form-container sign-in">
@@ -93,7 +53,7 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or login with your account</span>
-                    <input type="email" placeholder="Email">
+                    <input type="username" placeholder="Username">
                     <input type="password" placeholder="Password">
                     <a href="#">Forget Your Password?</a>
                     <button>Sign In</button>
