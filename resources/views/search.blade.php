@@ -9,7 +9,8 @@
             rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous">
-        <link rel="stylesheet" href="styleSearch.css">
+        <link rel="stylesheet" href="../style.css">
+
     </head>
     <body>
 
@@ -86,13 +87,13 @@
 
         <div class="img-container">
             <div class="bg-image"
-                style="background-image: url('Dune.jpeg');"></div>
+                style="background-image: url('../Dune.jpeg');"></div>
             <div class="bg-image"
-                style="background-image: url('Dunkirk.jpeg');"></div>
+                style="background-image: url('../Dunkirk.jpeg');"></div>
             <div class="bg-image"
-                style="background-image: url('PeakyBlinders.jpeg');"></div>
+                style="background-image: url('../PeakyBlinders.jpeg');"></div>
             <div class="bg-image"
-                style="background-image: url('endgame.jpeg');"></div>
+                style="background-image: url('../endgame.jpeg');"></div>
         </div>
 
         <div class="container-film shadow-lg p-3 mb-5 bg-body rounded">
