@@ -30,6 +30,6 @@ Route::get('/register', function () {
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
 
-Route::get('/genres/{genre:slug}', [DBCategoryController::class, 'index']);
+Route::get('/genres/{slug}', [DBProductController::class, 'show']);
 
 Route::get('/search', [DBProductController::class, 'index']);
