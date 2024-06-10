@@ -6,48 +6,77 @@
     <title>Kasetflix</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="admin.css">
+    <style>
+        /* Custom CSS for improved navbar */
+        .navbar-custom {
+            background-color: #343a40;
+            border-bottom: 3px solid #dc3545;
+        }
+        .navbar-brand-custom {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .nav-link-custom {
+            color: #ffffff;
+        }
+        .nav-link-custom:hover {
+            color: #dc3545;
+        }
+        .input-group-custom {
+            max-width: 600px;
+            margin-left: auto;
+        }
+        .dropdown-menu-dark-custom {
+            background-color: #343a40;
+            border: none;
+        }
+        .dropdown-item-custom {
+            color: #ffffff;
+        }
+        .dropdown-item-custom:hover {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body class="bg-white">
-<nav class="navbar navbar-expand-lg bg-dark">
-    <div class="navt navbar-dark container-fluid">
-        <a class="navbar-brand text-#dc3545" href="#">Kasetflix</a>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-brand-custom" href="#">Kasetflix</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    <a class="nav-link nav-link-custom" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="horror.html">Horror</a>
+                    <a class="nav-link nav-link-custom" href="horror.html">Horror</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Sci-Fi</a>
+                    <a class="nav-link nav-link-custom" href="#">Sci-Fi</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle nav-link-custom" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         More
                     </a>
-                    <ul class="dropdown-menu multi-column">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Comedy</a></li>
-                        <li><a class="dropdown-item" href="#">Romance</a></li>
-                        <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                        <li><a class="dropdown-item" href="#">Documenter</a></li>
-                        <li><a class="dropdown-item" href="#">Thriller</a></li>
-                        <li><a class="dropdown-item" href="#">Anime</a></li>
-                        <li><a class="dropdown-item" href="#">Drama</a></li>
-                        <li><a class="dropdown-item" href="#">Fiction</a></li>
+                    <ul class="dropdown-menu dropdown-menu-dark-custom">
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Action</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Comedy</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Romance</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Fantasy</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Documentary</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Thriller</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Anime</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Drama</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Fiction</a></li>
                     </ul>
                 </li>
             </ul>
-
-            <div class="input-group" style="width: 1000px;">
+            <div class="input-group input-group-custom">
                 <input type="text" class="form-control" placeholder="Cari judul film" aria-label="judul film" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Cari</button>
-                </div>
+                <button class="btn btn-outline-light" type="button">Cari</button>
             </div>
         </div>
     </div>
@@ -136,13 +165,8 @@
             </div>
         </div>
         <div class="col py-3">
-            <h2>Admin Dashboard</h2>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProductModal">
-                Edit Products
-            </button>
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewAccountsModal">
-                View Accounts
-            </button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProductModal">Edit Products</button>
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewAccountsModal">View Accounts</button>
 
             <!-- Edit Product Modal -->
             <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
