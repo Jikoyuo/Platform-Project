@@ -3,14 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Netflix</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous">
+<<<<<<< HEAD
         <link rel="stylesheet" href="../style.css">
 
+=======
+        <link rel="stylesheet" href="style.css">
+>>>>>>> d212d6129f0de4b7178416c095aacf98f8e4b734
     </head>
     <body>
 
