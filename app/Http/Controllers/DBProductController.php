@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DBProduct;
 use App\Http\Requests\StoreDBProductRequest;
 use App\Http\Requests\UpdateDBProductRequest;
+use App\Models\DBCategory;
 
 class DBProductController extends Controller
 {
@@ -50,9 +51,10 @@ class DBProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DBProduct $dBProduct)
+    public function show($slug)
     {
-        //
+        $genre_id = DBCategory::where('slug', $slug)->first()->id;
+        
     }
 
     /**
