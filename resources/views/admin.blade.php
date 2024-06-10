@@ -23,8 +23,9 @@
             color: #dc3545;
         }
         .input-group-custom {
-            max-width: 600px;
+            /* max-width: 1000px; */
             margin-left: auto;
+            width: 100%;
         }
         .dropdown-menu-dark-custom {
             background-color: #343a40;
@@ -47,7 +48,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link nav-link-custom" aria-current="page" href="#">Home</a>
                 </li>
@@ -73,7 +74,7 @@
                         <li><a class="dropdown-item dropdown-item-custom" href="#">Fiction</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
             <div class="input-group input-group-custom">
                 <input type="text" class="form-control" placeholder="Cari judul film" aria-label="judul film" aria-describedby="basic-addon2">
                 <button class="btn btn-outline-light" type="button">Cari</button>
@@ -95,23 +96,23 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Genre</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
@@ -122,10 +123,10 @@
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Genre</span> </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
@@ -152,95 +153,236 @@
                         <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-1">loser</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom text-small shadow">
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">New project...</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Settings</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item dropdown-item-custom" href="#">Sign out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col py-3">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProductModal">Edit Products</button>
-            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewAccountsModal">View Accounts</button>
-
-            <!-- Edit Product Modal -->
-            <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="editProductForm">
-                                <div class="mb-3">
-                                    <label for="productName" class="form-label">Product Name</label>
-                                    <input type="text" class="form-control" id="productName" name="productName" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="productPrice" class="form-label">Product Price</label>
-                                    <input type="number" class="form-control" id="productPrice" name="productPrice" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="productDescription" class="form-label">Product Description</label>
-                                    <textarea class="form-control" id="productDescription" name="productDescription" rows="3" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <h1>Product List</h1>
+            <!-- Add Product Button -->
+            <div class="d-flex justify-content-end mb-3">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
             </div>
-
-            <!-- View Accounts Modal -->
-            <div class="modal fade" id="viewAccountsModal" tabindex="-1" aria-labelledby="viewAccountsModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="viewAccountsModalLabel">View Accounts</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Role</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Example row, dynamically populate with server data -->
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>user1</td>
-                                        <td>user1@example.com</td>
-                                        <td>Admin</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>user2</td>
-                                        <td>user2@example.com</td>
-                                        <td>User</td>
-                                    </tr>
-                                    <!-- End example row -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table">
+                        <!-- Dynamically generated rows will go here -->
+                    </tbody>
+                </table>
             </div>
-
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm">
+                    <div class="mb-3">
+                        <label for="addProductTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="addProductTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addProductCategory" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="addProductCategory" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addProductPrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="addProductPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addProductStock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="addProductStock" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editProductForm">
+                    <div class="mb-3">
+                        <label for="editProductId" class="form-label">Product ID</label>
+                        <input type="text" class="form-control" id="editProductId" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="editProductTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductCategory" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="editProductCategory" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductPrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="editProductPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductStock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="editProductStock" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteProductModalLabel">Delete Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this product?</p>
+                <p id="deleteProductName"></p>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View Profile Modal -->
+<div class="modal fade" id="viewProfileModal" tabindex="-1" aria-labelledby="viewProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewProfileModalLabel">Admin Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Username: admin</p>
+                <p>Email: admin@example.com</p>
+                <!-- Add more profile details as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let products = [
+        { id: 1, title: 'Product 1', category: 'Category 1', price: 100, stock: 10 },
+        { id: 2, title: 'Product 2', category: 'Category 2', price: 200, stock: 20 }
+    ];
+
+    const productTable = document.getElementById('product-table');
+
+    function populateTable() {
+        productTable.innerHTML = '';
+        products.forEach(product => {
+            productTable.innerHTML += `
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.title}</td>
+                    <td>${product.category}</td>
+                    <td>${product.price}</td>
+                    <td>${product.stock}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="openEditModal(${product.id})">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="openDeleteModal(${product.id})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    document.getElementById('addProductForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const title = document.getElementById('addProductTitle').value;
+        const category = document.getElementById('addProductCategory').value;
+        const price = document.getElementById('addProductPrice').value;
+        const stock = document.getElementById('addProductStock').value;
+        const newProduct = {
+            id: products.length ? products[products.length - 1].id + 1 : 1,
+            title,
+            category,
+            price,
+            stock
+        };
+        products.push(newProduct);
+        populateTable();
+        document.getElementById('addProductForm').reset();
+        bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
+    });
+
+    function openEditModal(id) {
+        const product = products.find(p => p.id === id);
+        document.getElementById('editProductId').value = product.id;
+        document.getElementById('editProductTitle').value = product.title;
+        document.getElementById('editProductCategory').value = product.category;
+        document.getElementById('editProductPrice').value = product.price;
+        document.getElementById('editProductStock').value = product.stock;
+        new bootstrap.Modal(document.getElementById('editProductModal')).show();
+    }
+
+    document.getElementById('editProductForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const id = document.getElementById('editProductId').value;
+        const title = document.getElementById('editProductTitle').value;
+        const category = document.getElementById('editProductCategory').value;
+        const price = document.getElementById('editProductPrice').value;
+        const stock = document.getElementById('editProductStock').value;
+        const productIndex = products.findIndex(p => p.id == id);
+        products[productIndex] = { id: parseInt(id), title, category, price, stock };
+        populateTable();
+        bootstrap.Modal.getInstance(document.getElementById('editProductModal')).hide();
+    });
+
+    function openDeleteModal(id) {
+        const product = products.find(p => p.id === id);
+        document.getElementById('deleteProductName').textContent = product.title;
+        document.getElementById('confirmDeleteButton').onclick = function () {
+            products = products.filter(p => p.id !== id);
+            populateTable();
+            bootstrap.Modal.getInstance(document.getElementById('deleteProductModal')).hide();
+        };
+        new bootstrap.Modal(document.getElementById('deleteProductModal')).show();
+    }
+
+    document.getElementById('viewProfile').addEventListener('click', function () {
+        new bootstrap.Modal(document.getElementById('viewProfileModal')).show();
+    });
+
+    document.addEventListener('DOMContentLoaded', populateTable);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
