@@ -142,11 +142,20 @@ footer {
   }
 
 
+  .desc-prod{
+    position: relative;
+    top: -80%;
+    left: 12%;
+    background-color: beige;
+    height: 70%;
+    width: 50%;
+  }
+
 /*input number plus minus*/
   .quantity {
     position: relative;
-    left: 90%;
-    top: -20%;
+    left: 88%;
+    top: -92%;
     width: 105px;
     display: flex;
     border: 2px solid red;
