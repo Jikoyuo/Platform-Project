@@ -49,7 +49,7 @@
                             <li><a class="dropdown-item" href="admin.html">Dashboard</a></li>
                             <li><a class="dropdown-item" href="#">Edit
                                     Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Log
+                            <li><a class="dropdown-item" href="/logout">Log
                                     Out</a></li>
                         </ul>
                     </li>
