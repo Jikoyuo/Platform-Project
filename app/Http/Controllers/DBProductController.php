@@ -6,6 +6,7 @@ use App\Models\DBProduct;
 use App\Http\Requests\StoreDBProductRequest;
 use App\Http\Requests\UpdateDBProductRequest;
 use App\Models\DBCategory;
+use App\Models\DBReview;
 use App\Models\Taggable;
 
 class DBProductController extends Controller
@@ -40,12 +41,14 @@ class DBProductController extends Controller
         $product_id = DBProduct::where('slug', $slug)->first()->id;
 
         $pivot = Taggable::where('tag_id', $product_id)->pluck('taggable_id');
+        $review = DBReview::where('movie_id', $product_id)->get()->toArray();
         $genres = DBCategory::where('id', $pivot);
 
         return view('desc', [
             'title' => 'Product',
             'genres' => $genres,
-            'product' => $product
+            'product' => $product,
+            'reviews' => $review
         ]);
     }
 
