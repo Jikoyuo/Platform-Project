@@ -11,20 +11,16 @@ Route::get('/', [RedirectController::class, 'redirectToHome']);
 
 Route::get('/home', [DBProductController::class, 'index']);
 
-Route::get('/desc', function () {
-    return view('desc');
-});
+Route::get('/product/{slug}', [DBProductController::class, 'productDesc']);
 
 Route::get('/admin', function () {
     return view('admin');
 });
 
-// Route::get('/login', function () {
-//     return view('login');
-// });
-
-
 Route::get('/login', [DBUsersController::class, 'index']);
+Route::post('/login', [DBUsersController::class, 'login']);
+Route::post('/register', [DBUsersController::class, 'store']);
+Route::get('/logout', [DBUsersController::class, 'logout']);
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
 

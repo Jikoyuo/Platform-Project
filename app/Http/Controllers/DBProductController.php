@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DBReview;
+use App\Models\Taggable;
 use App\Models\DBProduct;
+use App\Models\DBCategory;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreDBProductRequest;
 use App\Http\Requests\UpdateDBProductRequest;
-use App\Models\DBCategory;
-use App\Models\Taggable;
 
 class DBProductController extends Controller
 {
@@ -17,19 +19,72 @@ class DBProductController extends Controller
     {
         // dd(request('search'));
         $products = DBProduct::latest();
+        $genres = DBCategory::all();
         if (request('q')){
             $products->where('name', 'like', '%'.request('q').'%');
-            return view('search', [
-                'title' => 'Home Page',
-                'search' => request('q'),
-                'products' => $products->get()
-            ]);
+
+            if (Auth::check()) {
+                return view('search', [
+                    'title' => 'search',
+                    'search' => request('q'),
+                    'genres' => $genres,
+                    'products' => $products->get(),
+                    'logged' => true
+                ]);
+            } else {
+                return view('search', [
+                    'title' => 'search',
+                    'search' => request('q'),
+                    'genres' => $genres,
+                    'products' => $products->get(),
+                    'logged' => false
+                ]);
+            }
+            
+        } else{
+            if (Auth::check()) {
+                return view('index', [
+                    'title' => 'Home Page',
+                    'genres' => $genres,
+                    'sliders' => $products->get(),
+                    'products' => $products->get(),
+                    'logged' => true
+                ]);
+            } else {
+                return view('index', [
+                    'title' => 'Home Page',
+                    'genres' => $genres,
+                    'sliders' => $products->get(),
+                    'products' => $products->get(),
+                    'logged' => false
+                ]);
+            }
         }
-        else{
-            return view('index', [
-                'title' => 'Home Page',
-                'sliders' => $products->get(),
-                'products' => $products->get()
+    }
+
+    public function productDesc($slug){
+        // $products = DBProduct::latest();
+        $product = DBProduct::where('slug', $slug)->first();
+        $product_id = DBProduct::where('slug', $slug)->first()->id;
+
+        $pivot = Taggable::where('tag_id', $product_id)->pluck('taggable_id');
+        $review = DBReview::where('movie_id', $product_id)->get()->toArray();
+        $genres = DBCategory::where('id', $pivot);
+        if (Auth::check()) {
+            return view('desc', [
+                'title' => 'Product',
+                'genres' => $genres,
+                'product' => $product,
+                'reviews' => $review,
+                'logged' => true
+            ]);
+        } else {
+            return view('desc', [
+                'title' => 'Product',
+                'genres' => $genres,
+                'product' => $product,
+                'reviews' => $review,
+                'logged' => false
             ]);
         }
     }
@@ -61,11 +116,26 @@ class DBProductController extends Controller
 
         $products = DBProduct::whereIn('id', $pivot)->get();
 
-        return view('search', [
-            'title' => 'Genre $slug',
-            'search' => $slug,
-            'products' => $products
-        ]);
+        $genres = DBCategory::all();
+
+        if (Auth::check()) {
+            return view('search', [
+                'title' => 'Genre $slug',
+                'genres' => $genres,
+                'search' => $slug,
+                'products' => $products,
+                'logged' => true
+            ]);
+        }
+        else {
+            return view('search', [
+                'title' => 'Genre $slug',
+                'genres' => $genres,
+                'search' => $slug,
+                'products' => $products,
+                'logged' => false
+            ]);
+        }
 
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DBCategory;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreDBCategoryRequest;
 use App\Http\Requests\UpdateDBCategoryRequest;
 
@@ -14,10 +15,19 @@ class DBCategoryController extends Controller
     public function index()
     {
         $genres = DBCategory::all();
-        return view('genres', [
-            'title' => 'Genres',
-            'genres' => $genres
-        ]);
+        if (Auth::check()) {
+            return view('genres', [
+                'title' => 'Genres',
+                'genres' => $genres,
+                'logged' => true
+            ]);
+        } else {
+            return view('genres', [
+                'title' => 'Genres',
+                'genres' => $genres,
+                'logged' => false
+            ]);
+        }
     }
 
     /**
