@@ -4,6 +4,7 @@ body{
 
 
 .navbar {
+    background-color: aqua;
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
     left: 0;
@@ -14,4 +15,11 @@ body{
 
   .navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
+  }
+
+  .container{
+    margin-top: 10%;
+    background-color: chartreuse;
+    height: 100vh;
+    width: 70%;
   }
