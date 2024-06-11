@@ -92,12 +92,12 @@ body {
 
 #section2 {
     height: 100vh;
-    background-color: #ffdd00;
+    /* background-color: #ffdd00; */
 }
 
 #section3 {
     height: auto;
-    background-color: cyan;
+    /* background-color: cyan; */
 }
 
 .hr-blurry {
