@@ -22,6 +22,7 @@ Route::get('/admin', function () {
 // });
 
 Route::get('/login', [DBUsersController::class, 'index']);
+Route::post('/login', [DBUsersController::class, 'store']);
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
 
