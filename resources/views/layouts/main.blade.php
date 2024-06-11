@@ -22,6 +22,7 @@
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script defer
             src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+            <link href='https://unpkg.com/css.gg@2.0.0/icons/css/shopping-cart.css' rel='stylesheet'>
         <script defer
             src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script defer src="../main.js"></script>
