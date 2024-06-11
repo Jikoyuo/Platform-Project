@@ -6,7 +6,7 @@
 
 <!-- Section 1 -->
 <section id="section1" class="full-height">
-    @include('partials.navbar')
+    @include('partials.navbarLog')
 
     <!-- gambar background -->
     <div class="img-container">
@@ -32,14 +32,13 @@
 
 
 <!-- Section 2 -->
-<section id="section2" class="full-height" id="particles-section">
-
+<section id="section2">
     <hr class="hr hr-blurry">
     @include('partials.slide')
 </section>
 
 <!-- Section 3 -->
-<section id="section3" class="full-height" id="particles-section">
+<section id="section3">
     <hr class="hr hr-blurry">
     <!-- katalog penjualan -->
     <div class="row container-film shadow-lg rounded">
