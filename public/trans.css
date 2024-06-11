@@ -4,6 +4,7 @@ body{
 
 
 .navbar {
+    background-color: aqua;
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
     left: 0;
@@ -15,3 +16,49 @@ body{
   .navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
   }
+
+  .container-trans{
+    background-color: chartreuse;
+    height: 200vh;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 7%;
+    margin-bottom: 10%;
+    border-radius: 3%;
+  }
+
+  .container-product{
+    background-color: aliceblue;
+
+    height: 100px;
+  }
+
+  .container-title{
+
+  }
+
+  .trans{
+    background-color: aqua;
+    height: 400px;
+    width: 530px;
+    margin-left: 105%;
+    border-radius: 5%;
+  }
+
+  .hr-blurry {
+
+    border: none; /* Menghilangkan border default */
+    height: 2px; /* Menentukan tinggi dari hr */
+    background: white; /* Mengatur warna latar belakang menjadi putih */
+    filter: blur(2px); /* Menambahkan efek blur */
+    margin: 20px 0; /* Menambahkan margin untuk jarak vertikal */
+  }
+
+
+  footer {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 0%;
+    background-color: black;
+    filter: brightness(50%);
+}
