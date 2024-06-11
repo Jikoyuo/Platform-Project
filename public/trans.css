@@ -1,9 +1,13 @@
-body{
+body {
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-
 .navbar {
+    /* background-color: aqua; */
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
     left: 0;
@@ -12,6 +16,106 @@ body{
     z-index: 999; /* Atur z-index lebih tinggi dari bg-image */
 }
 
-  .navbar-nav .nav-link {
+.navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
+}
+
+.container-trans {
+    position: relative;
+    /* background-color: chartreuse; */
+    height: auto;
+    width: 60%;
+    margin-top: -20.5%;
+    margin-left: 7%;
+    margin-bottom: 5%;
+    border-radius: 3%;
+}
+
+.container-product {
+    background-color: #444444;
+    margin-top: 2%;
+    height: 200px;
+}
+
+.container-title {
+    height: 100px;
+    background-color: #444444;
+    /* border: 2px solid red; */
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.trans {
+    background-color: #444444;
+    height: 400px;
+    width: 530px;
+    margin-left: 70%;
+    margin-top: 7%;
+    border-radius: 5%;
+}
+
+.hr-blurry {
+    border: none; /* Menghilangkan border default */
+    height: 2px; /* Menentukan tinggi dari hr */
+    background: white; /* Mengatur warna latar belakang menjadi putih */
+    filter: blur(2px); /* Menambahkan efek blur */
+    margin: 20px 0; /* Menambahkan margin untuk jarak vertikal */
+}
+
+.sectionfoot {
+    /* background-color: aqua; */
+}
+
+.footer-wrapper {
+    margin-top: auto; /* Membuat footer berada di bawah */
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    filter: brightness(50%);
+}
+
+/* Styling untuk form pencarian */
+.search-container {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .search-input {
+    border: none;
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    flex-grow: 1;
+  }
+
+  .search-button {
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .search-button:hover {
+    background-color: #e55d50;
+  }
+
+  .search-input:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
+
+  .prod{
+    margin-left:2.5%;
+    background-color: aquamarine;
+    height: 80%;
+    width: 95%;
   }
