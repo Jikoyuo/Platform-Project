@@ -24,7 +24,8 @@
 
         <div class="container mt-5" id="container">
             <div class="form-container sign-up">
-                <form action="/login">
+                <form method="POST" action="/login">
+                    @csrf
                     <h1>Create Account</h1>
                     <div class="social-icons">
                         <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -33,7 +34,6 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your email for registeration</span>
-                    <input type="text" placeholder="Full Name" name="full_name">
                     <input type="text" placeholder="Username" name="username">
                     <input type="text" placeholder="Address" name="address">
                     <input type="text" placeholder="Phone Number" name="phone_number">
@@ -89,5 +89,5 @@
         </div>
 
     </body>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </html>
