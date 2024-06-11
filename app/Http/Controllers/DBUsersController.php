@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreDBUsersRequest;
 use App\Http\Requests\UpdateDBUsersRequest;
+use App\Models\DBCategory;
 
 class DBUsersController extends Controller
 {
@@ -17,13 +18,16 @@ class DBUsersController extends Controller
      */
     public function index()
     {
+        $genres = DBCategory::all();
         if (Auth::check()){
             return view('login', [
+                'genres' => $genres,
                 'logged' => true
             ]);
         }
         else{
             return view('login', [
+                'genres' => $genres,
                 'logged' => false
             ]);
         }
