@@ -7,9 +7,9 @@ body {
     /* background-color: cyan; */
     width: 80%;
     max-height: 80%; /* Menggunakan max-height agar dapat mengatur batas konten */
-    overflow: auto; /* Menambahkan overflow untuk membuat konten scrollable */
+    /* overflow: auto; Menambahkan overflow untuk membuat konten scrollable */
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -91,13 +91,13 @@ body {
 }
 
 #section2 {
-    height: auto;
-    /* background-color: #ffdd00; */
+    height: 100vh;
+    background-color: #ffdd00;
 }
 
 #section3 {
     height: auto;
-    /* background-color: cyan; */
+    background-color: cyan;
 }
 
 .hr-blurry {
