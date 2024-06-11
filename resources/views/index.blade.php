@@ -6,7 +6,7 @@
 
 <!-- Section 1 -->
 <section id="section1" class="full-height">
-    @include('partials.navbarLog')
+    @include('partials.navbar')
 
     <!-- gambar background -->
     <div class="img-container">
