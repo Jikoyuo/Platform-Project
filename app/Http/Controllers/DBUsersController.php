@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreDBUsersRequest;
 use App\Http\Requests\UpdateDBUsersRequest;
+use App\Models\User;
 
 class DBUsersController extends Controller
 {
@@ -23,8 +24,7 @@ class DBUsersController extends Controller
      */
     protected function create(array $data)
     {
-        return DBUsers::create([
-            'full_name' => $data['full_name'],
+        return User::create([
             'username' => $data['username'],
             'address' => $data['address'],
             'phone_number' => $data['phone_number'],
@@ -36,12 +36,11 @@ class DBUsersController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'full_name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'address' => ['required', 'string'],
             'phone_number' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'confirmed'],
+            'password' => ['required', 'string'],
         ]);
     }
 
@@ -52,9 +51,9 @@ class DBUsersController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        $user = $this->create($request->all());
+        $user = $this->create($request->all())->save();
 
-        return redirect()->route('login')->with('success', 'Registration successful! Please login.');
+        return redirect('/login');
     }
 
     /**
