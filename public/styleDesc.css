@@ -7,12 +7,13 @@ body {
 }
 
 .describe {
-    background-color: red;
-    width: 80%;
-    position: relative;
-    top:-10%;
+    position: absolute;
+    top: 50%;
     left: 10%;
     transform: translateY(-50%);
+    padding: 2rem 1rem;
+    margin-top: 100px; /* Tambahkan jarak dari navbar */
+    margin-bottom: 0;
     z-index: 999;
 }
 
@@ -47,16 +48,6 @@ body {
     background-size: cover;
     background-position: center;
     filter: brightness(50%) blur(4px);
-}
-
-.footer-wrapper {
-    margin-top: auto; /* Membuat footer berada di bawah */
-}
-
-footer {
-    width: 100%;
-    background-color: black;
-    filter: brightness(50%);
 }
 
 .navbar {
@@ -97,7 +88,7 @@ footer {
 }
 
 #section1 {
-    height: 200vh;
+    height: 100vh;
 }
 
 #section2 {
@@ -117,4 +108,3 @@ footer {
     filter: blur(2px);
     margin: 20px 0;
 }
-
