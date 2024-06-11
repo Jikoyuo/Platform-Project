@@ -40,7 +40,7 @@
                             <iframe width="150%" height="400" src="https://www.youtube.com/embed/6tzur6JrUEA?si=dVnsLDluvVfSlUSF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             <p class="card-price mt-3">Price: Rp. 100.999</p>
                             <button class="btn btn-danger mt-2">Add to Cart</button>
-                            <p class="card-text"><small class="text-white">Updated at: {{$product->updated_at}}</small></p>
+                            <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
@@ -53,22 +53,34 @@
     <section id="section2" class="my-5">
         <div class="container">
             <h2 class="text-center text-white mb-4">Ulasan Pembeli</h2>
-            @foreach ($reviews as $review)
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Anonimous</h5>
-                        <div class="rating" data-rating="{{$review['star']}}">
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <p class="card-text">{{$review['review']}}</p>
-                        <p class="card-text"><small class="text-muted">Updated at: {{$review['updated_at']}}</small></p>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pembeli 1</h5>
+                    <div class="rating" data-rating="4.0">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
                     </div>
+                    <p class="card-text">Film yang sangat bagus! Saya sangat menikmatinya dan sangat merekomendasikan untuk ditonton.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-            @endforeach
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pembeli 2</h5>
+                    <div class="rating" data-rating="5.0">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="card-text">Ceritanya sangat menarik dan visualnya luar biasa. Wajib ditonton!</p>
+                    <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+                </div>
+            </div>
             <!-- Tambahkan ulasan lainnya di sini -->
         </div>
     </section>
