@@ -24,7 +24,7 @@
 
         <div class="container mt-5" id="container">
             <div class="form-container sign-up">
-                <form method="POST" action="/login">
+                <form method="POST" action="/register">
                     @csrf
                     <h1>Create Account</h1>
                     <div class="social-icons">
@@ -44,7 +44,8 @@
                 </form>
             </div>
             <div class="form-container sign-in">
-                <form>
+                <form method="POST" action="/login">
+                    @csrf
                     <h1>Sign In</h1>
                     <div class="social-icons">
                         <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -53,8 +54,8 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or login with your account</span>
-                    <input type="username" placeholder="Username">
-                    <input type="password" placeholder="Password">
+                    <input type="username" placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="password">
                     <a href="#">Forget Your Password?</a>
                     <button>Sign In</button>
                 </form>
