@@ -1,5 +1,5 @@
 <!-- navbar setelah login -->
- @if ($logged)
+@if ($logged)
     <!-- navbar setelah login -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <nav class="navbar navbar-expand-lg mt-5">

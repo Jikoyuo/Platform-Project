@@ -387,15 +387,14 @@ body {
     columns: 3;
   }
 
-  .footer-wrapper {
-    margin-top: auto; /* Membuat footer berada di bawah */
-}
-
-footer {
+  footer {
+    position: absolute;
     width: 100%;
+    margin-top: -15px;
     background-color: black;
     filter: brightness(50%);
 }
+
   *,
   *::before,
   *::after {
