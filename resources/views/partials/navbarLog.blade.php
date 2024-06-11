@@ -47,7 +47,7 @@
                         <img src="profile.jpeg" width="40" height="40"
                             class="rounded-circle">
 =======
-            <a href="/path-to-cart" style="margin-left: 61%;">
+            <a href="/path-to-cart" style="margin-left: 50%;">
             <box-icon name='receipt' type='solid' color='#ffffff' ></box-icon>
             </a>
 
@@ -59,7 +59,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="profile.jpeg" width="40" height="40" class="rounded-circle">
+                        <img src="public/profile.jpeg" width="40" height="40" class="rounded-circle">
 >>>>>>> 34c0d1fc511b32ed6f1f4e2cab5476bc244ce47d
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
