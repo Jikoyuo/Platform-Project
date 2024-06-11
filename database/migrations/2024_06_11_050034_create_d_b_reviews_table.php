@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('d_b_reviews', function (Blueprint $table) {
             $table->id();
-            $table->integer('star');
+            $table->integer('movie_id');
+            $table->float('star');
             $table->text('review');
             $table->timestamps();
         });
