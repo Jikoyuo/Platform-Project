@@ -50,7 +50,7 @@ body {
     height: 400px;
     width: 530px;
     margin-left: 70%;
-    margin-top: 12%;
+    margin-top: 7%;
     border-radius: 5%;
 }
 
@@ -75,3 +75,40 @@ footer {
     background-color: black;
     filter: brightness(50%);
 }
+
+/* Styling untuk form pencarian */
+.search-container {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .search-input {
+    border: none;
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    flex-grow: 1;
+  }
+
+  .search-button {
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .search-button:hover {
+    background-color: #e55d50;
+  }
+
+  .search-input:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
