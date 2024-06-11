@@ -34,7 +34,9 @@ body{
   }
 
   .container-title{
-
+    height: 100px;
+background-color: aqua;
+border-top: 100%;
   }
 
   .trans{
