@@ -54,6 +54,20 @@ body {
     border-radius: 5%;
 }
 
+.trans h1{
+    position: relative;
+    left:25%;
+    top: 5%;
+}
+
+.trans h2{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+
+
+}
+
 .hr-blurry {
     border: none; /* Menghilangkan border default */
     height: 2px; /* Menentukan tinggi dari hr */
