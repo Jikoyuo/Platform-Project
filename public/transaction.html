@@ -13,6 +13,9 @@
     <script defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.slim.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="trans.css">
 </head>
 <body>
@@ -112,6 +115,11 @@
                 <div class="prod">
                     <div class="card" style="width: 100px; height: auto; background-color: #444444;">
                         <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
+                    </div>
+                    <div class="quantity">
+                        <button class="minus" aria-label="Decrease">&minus;</button>
+                        <input type="number" class="input-box" value="1" min="1" max="10">
+                        <button class="plus" aria-label="Increase">&plus;</button>
                       </div>
                 </div>
             </div>
@@ -240,5 +248,59 @@
             </footer>
         </section>
     </div>
+
+    <script>
+        (function () {
+  const quantityContainer = document.querySelector(".quantity");
+  const minusBtn = quantityContainer.querySelector(".minus");
+  const plusBtn = quantityContainer.querySelector(".plus");
+  const inputBox = quantityContainer.querySelector(".input-box");
+
+  updateButtonStates();
+
+  quantityContainer.addEventListener("click", handleButtonClick);
+  inputBox.addEventListener("input", handleQuantityChange);
+
+  function updateButtonStates() {
+    const value = parseInt(inputBox.value);
+    minusBtn.disabled = value <= 1;
+    plusBtn.disabled = value >= parseInt(inputBox.max);
+  }
+
+  function handleButtonClick(event) {
+    if (event.target.classList.contains("minus")) {
+      decreaseValue();
+    } else if (event.target.classList.contains("plus")) {
+      increaseValue();
+    }
+  }
+
+  function decreaseValue() {
+    let value = parseInt(inputBox.value);
+    value = isNaN(value) ? 1 : Math.max(value - 1, 1);
+    inputBox.value = value;
+    updateButtonStates();
+    handleQuantityChange();
+  }
+
+  function increaseValue() {
+    let value = parseInt(inputBox.value);
+    value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
+    inputBox.value = value;
+    updateButtonStates();
+    handleQuantityChange();
+  }
+
+  function handleQuantityChange() {
+    let value = parseInt(inputBox.value);
+    value = isNaN(value) ? 1 : value;
+
+    // Execute your code here based on the updated quantity value
+    console.log("Quantity changed:", value);
+  }
+})();
+
+    </script>
+
 </body>
 </html>
