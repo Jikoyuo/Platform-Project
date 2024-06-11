@@ -20,7 +20,7 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
 
-        @include('partials.navbar')
+        @include('partials.navbarLog')
 
         <div class="container mt-5" id="container">
             <div class="form-container sign-up">

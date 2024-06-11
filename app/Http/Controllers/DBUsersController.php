@@ -21,13 +21,11 @@ class DBUsersController extends Controller
         $genres = DBCategory::all();
         if (Auth::check()){
             return view('login', [
-                'genres' => $genres,
                 'logged' => true
             ]);
         }
         else{
             return view('login', [
-                'genres' => $genres,
                 'logged' => false
             ]);
         }
