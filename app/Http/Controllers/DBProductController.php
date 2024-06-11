@@ -36,10 +36,15 @@ class DBProductController extends Controller
 
     public function productDesc($slug){
         $products = DBProduct::latest();
-        
         $products->where('slug', $slug)->first();
+
+        $products_id = $products->id;
+        $pivot = Taggable::where('tag_id', $products_id)->pluck('taggable_id');
+        $genres = DBCategory::where('id', $pivot)->get();
+
         return view('index', [
             'title' => 'Product',
+            'genres' => $genres,
             'products' => $products->get()
         ]);
     }
