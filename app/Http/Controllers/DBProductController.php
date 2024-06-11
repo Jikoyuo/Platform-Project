@@ -20,7 +20,7 @@ class DBProductController extends Controller
         if (request('q')){
             $products->where('name', 'like', '%'.request('q').'%');
             return view('search', [
-                'title' => 'Home Page',
+                'title' => 'search',
                 'search' => request('q'),
                 'products' => $products->get()
             ]);
@@ -32,6 +32,16 @@ class DBProductController extends Controller
                 'products' => $products->get()
             ]);
         }
+    }
+
+    public function productDesc($slug){
+        $products = DBProduct::latest();
+        
+        $products->where('slug', $slug)->first();
+        return view('index', [
+            'title' => 'Product',
+            'products' => $products->get()
+        ]);
     }
 
     /**

@@ -11,9 +11,7 @@ Route::get('/', [RedirectController::class, 'redirectToHome']);
 
 Route::get('/home', [DBProductController::class, 'index']);
 
-Route::get('/desc', function () {
-    return view('desc');
-});
+Route::get('/product/{slug}', [DBProductController::class, 'productDesc']);
 
 Route::get('/admin', function () {
     return view('admin');
