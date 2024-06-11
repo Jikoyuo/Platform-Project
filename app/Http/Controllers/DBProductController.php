@@ -35,17 +35,18 @@ class DBProductController extends Controller
     }
 
     public function productDesc($slug){
-        $products = DBProduct::latest();
-        $products->where('slug', $slug)->first();
+        // $products = DBProduct::latest();
+        // $products->where('slug', $slug)->first()->get();
 
-        $products_id = $products->id;
-        $pivot = Taggable::where('tag_id', $products_id)->pluck('taggable_id');
-        $genres = DBCategory::where('id', $pivot)->get();
+        // $products_id = $products->id;
+        // dd($products_id);
+        // $pivot = Taggable::where('tag_id', $products_id)->pluck('taggable_id');
+        // $genres = DBCategory::where('id', $pivot)->get();
 
-        return view('index', [
+        return view('desc', [
             'title' => 'Product',
-            'genres' => $genres,
-            'products' => $products->get()
+            // 'genres' => $genres,
+            // 'products' => $products->get()
         ]);
     }
 
