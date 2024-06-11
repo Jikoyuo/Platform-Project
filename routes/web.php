@@ -21,11 +21,6 @@ Route::get('/admin', function () {
 //     return view('login');
 // });
 
-Route::get('/desc', function () {
-    return view('desc');
-});
-
-
 Route::get('/login', [DBUsersController::class, 'index']);
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
