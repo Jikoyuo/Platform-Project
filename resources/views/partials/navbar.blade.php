@@ -31,11 +31,11 @@
                     </li>
                 </ul>
 
-                <a href="/path-to-cart" style="margin-left: 61%;">
+                <a href="/path-to-cart" style="margin-left: 55%;">
                 <box-icon name='receipt' type='solid' color='#ffffff' ></box-icon>
                 </a>
 
-                <a href="/path-to-cart" style="margin-left:30px;">
+                <a href="/path-to-cart" style="margin-left:40px;">
                     <box-icon name="cart" type="solid" color="#ffffff"></box-icon>
                 </a>
 
