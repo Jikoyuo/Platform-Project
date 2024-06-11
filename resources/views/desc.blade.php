@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kasetflix</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styleDesc.css">
+    <link rel="stylesheet" href="styleDesc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
@@ -24,11 +24,11 @@
 
                 <div class="row g-0">
                     <div class="col-md-6">
-                        <img src="{{$product->img_url}}" class="img-fluid rounded-start" alt="Dune">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <h5 class="card-title">{{$product->name}}</h5>
+                            <h5 class="card-title">Dune 2024</h5>
                             <div class="rating" data-rating="4.5">
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
@@ -36,9 +36,9 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <p class="card-text">{{$product->description}}</p>
-                            {!! $product->trailer !!}
-                            <p class="card-price mt-3">Price: Rp. {{$product->price}}</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <iframe width="150%" height="400" src="https://www.youtube.com/embed/6tzur6JrUEA?si=dVnsLDluvVfSlUSF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <p class="card-price mt-3">Price: Rp. 100.999</p>
                             <button class="btn btn-danger mt-2">Add to Cart</button>
                             <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p>
                         </div>
@@ -93,7 +93,7 @@
                 <!-- Card Film 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="../Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
                         <div class="card-body">
                             <h5 class="card-title">Film 1</h5>
                             <p class="card-text">Deskripsi singkat tentang film 1.</p>
@@ -104,7 +104,7 @@
                 <!-- Card Film 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="../Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
                         <div class="card-body">
                             <h5 class="card-title">Film 2</h5>
                             <p class="card-text">Deskripsi singkat tentang film 2.</p>
@@ -115,7 +115,7 @@
                 <!-- Card Film 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="../Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
+                        <img src="Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
                         <div class="card-body">
                             <h5 class="card-title">Film 3</h5>
                             <p class="card-text">Deskripsi singkat tentang film 3.</p>
@@ -134,7 +134,7 @@
         @include('partials.footer')
     </section>
 
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
     <script>
         // Fungsi untuk mengubah penilaian ikon bintang dengan nilai desimal
         function setRating(ratingElement) {
