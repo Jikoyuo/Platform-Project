@@ -167,7 +167,7 @@ body {
   }
 
 .navbar {
-    background-color: #e55d50;
+    /* background-color: #e55d50; */
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
     left: 0;
@@ -387,14 +387,15 @@ body {
     columns: 3;
   }
 
-  footer {
-    position: absolute;
+  .footer-wrapper {
+    margin-top: auto; /* Membuat footer berada di bawah */
+}
+
+footer {
     width: 100%;
-    margin-top: -15px;
     background-color: black;
     filter: brightness(50%);
 }
-
   *,
   *::before,
   *::after {
@@ -407,7 +408,7 @@ body {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 336vh;
+    height: auto;
     z-index: -1;
   }
 
