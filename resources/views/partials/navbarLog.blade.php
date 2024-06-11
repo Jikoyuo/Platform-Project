@@ -1,13 +1,11 @@
-<!-- navbar setelah login -->
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-<nav class="navbar navbar-expand-lg mt-5">
+<nav class="navbar navbar-expand-lg  mt-5">
     <div class="container-fluid">
-        <a class="navbar-brand text-danger" href="#">Kasetflix</a>
+        <a class="navbar-brand text-light" href="/home">Kasetflix</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
                 </li>
@@ -35,7 +33,6 @@
                 </li>
             </ul>
 
-<<<<<<< HEAD
             <a>
             <box-icon name='cart' type='solid' color='#ffffff' ></box-icon>
             </a>
@@ -46,7 +43,6 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="profile.jpeg" width="40" height="40"
                             class="rounded-circle">
-=======
             <a href="/path-to-cart" style="margin-left: 50%;">
             <box-icon name='receipt' type='solid' color='#ffffff' ></box-icon>
             </a>
@@ -60,7 +56,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="public/profile.jpeg" width="40" height="40" class="rounded-circle">
->>>>>>> 34c0d1fc511b32ed6f1f4e2cab5476bc244ce47d
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="admin.html">Dashboard</a></li>
@@ -69,10 +64,10 @@
                         <li><a class="dropdown-item" href="#">Log
                                 Out</a></li>
                     </ul>
+                    <a class="nav-link active text-light" aria-current="page" href="/home">Home</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
 <!-- end navbar login -->

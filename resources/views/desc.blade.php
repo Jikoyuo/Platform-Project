@@ -51,6 +51,7 @@
 
     <!-- Section 2: Ulasan Pembeli -->
     <section id="section2" class="my-5">
+    <div id="particles-js" class="particles"></div>
         <div class="container">
             <h2 class="text-center text-white mb-4">Ulasan Pembeli</h2>
             @foreach ($reviews as $review)
