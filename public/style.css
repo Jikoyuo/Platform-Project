@@ -408,7 +408,7 @@ footer {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: auto;
+    height: 336vh;
     z-index: -1;
   }
 
