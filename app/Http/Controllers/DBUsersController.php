@@ -17,7 +17,16 @@ class DBUsersController extends Controller
      */
     public function index()
     {
-        return view('login');
+        if (Auth::check()){
+            return view('login', [
+                'logged' => true
+            ]);
+        }
+        else{
+            return view('login', [
+                'logged' => false
+            ]);
+        }
     }
 
     /**
