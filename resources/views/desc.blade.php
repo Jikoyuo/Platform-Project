@@ -53,7 +53,7 @@
     <section id="section2" class="my-5">
     <div id="particles-js" class="particles"></div>
         <div class="container">
-            <h2 class="text-center text-white mb-4">Ulasan Pembeli</h2>
+            <h2 class="text-center text-white mb-4" style="background-color: blue; margin-top: 15%;">Ulasan Pembeli</h2>
             @foreach ($reviews as $review)
                 <div class="card mb-3">
                     <div class="card-body">
