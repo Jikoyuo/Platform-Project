@@ -67,9 +67,12 @@ body {
 }
 
 .btn-trans{
+    position: relative;
+    left: 6%;
+    top: 60%;
     font-size: 20px;
      padding: 15px 30px;
-     width: 70%;
+     width: 85%;
 }
 
 .hr-blurry {
