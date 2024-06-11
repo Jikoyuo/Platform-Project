@@ -82,6 +82,11 @@ class DBUsersController extends Controller
         //
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect('/login');
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

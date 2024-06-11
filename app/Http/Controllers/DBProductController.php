@@ -19,6 +19,7 @@ class DBProductController extends Controller
     {
         // dd(request('search'));
         $products = DBProduct::latest();
+        $genres = DBCategory::all();
         if (request('q')){
             $products->where('name', 'like', '%'.request('q').'%');
 
@@ -26,6 +27,7 @@ class DBProductController extends Controller
                 return view('search', [
                     'title' => 'search',
                     'search' => request('q'),
+                    'genres' => $genres,
                     'products' => $products->get(),
                     'logged' => true
                 ]);
@@ -33,6 +35,7 @@ class DBProductController extends Controller
                 return view('search', [
                     'title' => 'search',
                     'search' => request('q'),
+                    'genres' => $genres,
                     'products' => $products->get(),
                     'logged' => false
                 ]);
@@ -42,6 +45,7 @@ class DBProductController extends Controller
             if (Auth::check()) {
                 return view('index', [
                     'title' => 'Home Page',
+                    'genres' => $genres,
                     'sliders' => $products->get(),
                     'products' => $products->get(),
                     'logged' => true
@@ -49,6 +53,7 @@ class DBProductController extends Controller
             } else {
                 return view('index', [
                     'title' => 'Home Page',
+                    'genres' => $genres,
                     'sliders' => $products->get(),
                     'products' => $products->get(),
                     'logged' => false
@@ -111,9 +116,12 @@ class DBProductController extends Controller
 
         $products = DBProduct::whereIn('id', $pivot)->get();
 
+        $genres = DBCategory::all();
+
         if (Auth::check()) {
             return view('search', [
                 'title' => 'Genre $slug',
+                'genres' => $genres,
                 'search' => $slug,
                 'products' => $products,
                 'logged' => true
@@ -122,6 +130,7 @@ class DBProductController extends Controller
         else {
             return view('search', [
                 'title' => 'Genre $slug',
+                'genres' => $genres,
                 'search' => $slug,
                 'products' => $products,
                 'logged' => false

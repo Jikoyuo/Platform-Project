@@ -20,6 +20,7 @@ Route::get('/admin', function () {
 Route::get('/login', [DBUsersController::class, 'index']);
 Route::post('/login', [DBUsersController::class, 'login']);
 Route::post('/register', [DBUsersController::class, 'store']);
+Route::post('/logout', [DBUsersController::class, 'logout']);
 
 Route::get('/genres', [DBCategoryController::class, 'index']);
 
