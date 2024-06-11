@@ -11,7 +11,7 @@ Route::get('/', [RedirectController::class, 'redirectToHome']);
 
 Route::get('/home', [DBProductController::class, 'index']);
 
-Route::get('/product/{slug}', [DBProductController::class, 'index']);
+Route::get('/product/{slug}', [DBProductController::class, 'productDesc']);
 
 Route::get('/admin', function () {
     return view('admin');
@@ -20,6 +20,10 @@ Route::get('/admin', function () {
 // Route::get('/login', function () {
 //     return view('login');
 // });
+
+Route::get('/desc', function () {
+    return view('desc');
+});
 
 
 Route::get('/login', [DBUsersController::class, 'index']);

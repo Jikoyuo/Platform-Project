@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('price');
             $table->integer('stock');
             $table->string('img_url')->default('no_image.webp');
+            $table->string('trailer')->nullable();
             $table->timestamps();
         });
     }
