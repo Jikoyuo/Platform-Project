@@ -249,7 +249,7 @@
     </div>
 
 <!-- User Details Modal -->
-<div class="modal fade" id="viewUserModal" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="viewUserModal" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -262,12 +262,12 @@
                     <li class="list-group-item"><strong>Username:</strong> <span id="userUsername"></span></li>
                     <li class="list-group-item"><strong>Email:</strong> <span id="userEmail"></span></li>
                     <li class="list-group-item"><strong>RiwayatPembelian:</strong> <span id="userRiwayatPembelian"></span></li>
-                    <!-- Add more user details here as needed -->
+                     Add more user details here as needed 
                 </ul>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Purchase History Modal -->
 <div class="modal fade" id="viewPurchaseHistoryModal" tabindex="-1" aria-labelledby="viewPurchaseHistoryModalLabel" aria-hidden="true">
@@ -395,79 +395,85 @@
     // Show the home section by default
     showHome();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFw5pfKNzL2F51f8HJO9C9tyIMq06keq+08LrD91RPX" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-FTK/hKNBSh5CYf2ZIdcb46gWJOdFg6Q5Wz2eFSF9GOTpxEyWBRk/tolPeODy+opk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-VgNrIt+Srr1wbIkh+LfAbeFFskG+dNLOupuyb8+nNAEnqk4RzkFoHqAO+B2Im63z" crossorigin="anonymous"></script>
 <script>
-    let products = [
-        { id: 1, title: 'Star Wars', category: 'Sci-Fi', price: 60000, stock: 100 }
-    ];
-
+    // Sample user accounts data
     let accounts = [
         { id: 1, username: 'johndoe', email: 'john@example.com', riwayatPembelian: 'Purchase history details' }
     ];
 
-// Fungsi untuk memuat daftar produk
-function loadProducts() {
-    const productTable = document.getElementById('product-table');
-    productTable.innerHTML = '';
-    products.forEach(product => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${product.id}</td>
-            <td>${product.title}</td>
-            <td>${product.category}</td>
-            <td>$${product.price}</td>
-            <td>${product.stock}</td>
-            <td>
-                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal" onclick="editProduct(${product.id})">Edit</button>
-                <button class="btn btn-danger btn-sm" onclick="deleteProduct(${product.id})">Delete</button>
-            </td>
-        `;
-        productTable.appendChild(row);
-    });
-}
+    // Function to display the home section
+    function showHome() {
+        document.getElementById('home-section').style.display = 'block';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'none';
+    }
 
-// Fungsi untuk mengedit produk
-function editProduct(id) {
-    const product = products.find(p => p.id === id);
-    document.getElementById('editProductTitle').value = product.title;
-    document.getElementById('editProductCategory').value = product.category;
-    document.getElementById('editProductPrice').value = product.price;
-    document.getElementById('editProductStock').value = product.stock;
-    document.getElementById('editProductForm').onsubmit = function(event) {
-        event.preventDefault();
-        product.title = document.getElementById('editProductTitle').value;
-        product.category = document.getElementById('editProductCategory').value;
-        product.price = document.getElementById('editProductPrice').value;
-        product.stock = document.getElementById('editProductStock').value;
-        loadProducts();
-        bootstrap.Modal.getInstance(document.getElementById('editProductModal')).hide();
-    };
-}
+    // Function to display the product list section
+    function showProductList() {
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'block';
+        document.getElementById('user-accounts-section').style.display = 'none';
+    }
 
-// Fungsi untuk menghapus produk
-function deleteProduct(id) {
-    products = products.filter(p => p.id !== id);
-    loadProducts();
-}
+    // Function to display the user accounts section
+    function showUserAccounts() {
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'block';
+        loadUserAccounts();
+    }
 
-// Fungsi untuk menambah produk baru
-document.getElementById('addProductForm').onsubmit = function(event) {
-    event.preventDefault();
-    const newProduct = {
-        id: products.length ? products[products.length - 1].id + 1 : 1,
-        title: document.getElementById('addProductTitle').value,
-        category: document.getElementById('addProductCategory').value,
-        price: document.getElementById('addProductPrice').value,
-        stock: document.getElementById('addProductStock').value
-    };
-    products.push(newProduct);
-    loadProducts();
-    bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
-};
+    // Function to load user accounts into the table
+    function loadUserAccounts() {
+        const userTable = document.getElementById('user-table');
+        userTable.innerHTML = '';
+        accounts.forEach(account => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${account.id}</td>
+                <td>${account.username}</td>
+                <td>${account.email}</td>
+                <td>${account.riwayatPembelian}</td>
+            `;
+            userTable.appendChild(row);
+        });
+    }
 
-// Inisialisasi daftar produk
-loadProducts();
+    // Function to initialize the product list (dummy data)
+    function initializeProducts() {
+        const products = [
+            { id: 1, title: 'Product 1', category: 'Category 1', price: 100, stock: 10 },
+            { id: 2, title: 'Product 2', category: 'Category 2', price: 200, stock: 20 },
+            // Add more products as needed
+        ];
+
+        const productTable = document.getElementById('product-table');
+        productTable.innerHTML = '';
+        products.forEach(product => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${product.id}</td>
+                <td>${product.title}</td>
+                <td>${product.category}</td>
+                <td>${product.price}</td>
+                <td>${product.stock}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            `;
+            productTable.appendChild(row);
+        });
+    }
+
+    // Initialize the product list
+    initializeProducts();
+
+    // Show the home section by default
+    showHome();
 </script>
 </body>
 </html>
+
