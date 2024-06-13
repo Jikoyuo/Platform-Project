@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script type="module" defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.slim.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="trans.css">
+    <link rel="stylesheet" href="../trans.css">
+
 </head>
+
 <body>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-            @include('partials.navbar')
+    @include('partials.navbar')
 
 
     <div class="main-content">
@@ -45,7 +40,7 @@
                         <button class="minus" aria-label="Decrease">&minus;</button>
                         <input type="number" class="input-box" value="1" min="1" max="99">
                         <button class="plus" aria-label="Increase">&plus;</button>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -60,7 +55,7 @@
                         <button class="minus" aria-label="Decrease">&minus;</button>
                         <input type="number" class="input-box" value="1" min="1" max="99">
                         <button class="plus" aria-label="Increase">&plus;</button>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -74,7 +69,7 @@
                         <button class="minus" aria-label="Decrease">&minus;</button>
                         <input type="number" class="input-box" value="1" min="1" max="99">
                         <button class="plus" aria-label="Increase">&plus;</button>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -113,7 +108,7 @@
                         </a>
                         <a href class="me-4 text-reset">
                             <i class="fab fa-github"></i>
-                        </div>
+                    </div>
                     <!-- Right -->
                 </section>
                 <!-- Section: Social media -->
@@ -205,7 +200,7 @@
     </div>
 
     <script>
-        (function () {
+        (function() {
             const quantityContainers = document.querySelectorAll(".quantity");
             quantityContainers.forEach(quantityContainer => {
                 const minusBtn = quantityContainer.querySelector(".minus");
@@ -260,26 +255,27 @@
             buttonPay.addEventListener("click", showAlert);
 
             function showAlert() {
-    const alertBox = document.createElement("div");
-    alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
-    alertBox.role = "alert";
-    alertBox.innerHTML = `
+                const alertBox = document.createElement("div");
+                alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
+                alertBox.role = "alert";
+                alertBox.innerHTML = `
         <strong>Success!</strong> Your payment has been processed.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
-    document.body.appendChild(alertBox);
+                document.body.appendChild(alertBox);
 
-    // Automatically remove the alert after a certain time (optional)
-    setTimeout(() => {
-        alertBox.classList.remove('show');
-        alertBox.addEventListener('transitionend', () => {
-            alertBox.remove();
-        });
-    }, 5000); // 5 seconds
-}
+                // Automatically remove the alert after a certain time (optional)
+                setTimeout(() => {
+                    alertBox.classList.remove('show');
+                    alertBox.addEventListener('transitionend', () => {
+                        alertBox.remove();
+                    });
+                }, 5000); // 5 seconds
+            }
 
         })();
     </script>
 
 </body>
+
 </html>
