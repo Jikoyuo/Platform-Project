@@ -113,7 +113,7 @@
             <h1 class="text-light">Rincian Belanja</h1>
             <h2 class="text-light">Item :</h2>
             <h2 class="text-light" style="margin-top: 7%;">Total :</h2>
-            <button type="button" class="btn btn-dark btn-trans">Dark</button>
+            <button id="buttonPay" href="" type="button" class="btn btn-dark btn-trans">Dark</button>
 
         </div>
 
@@ -290,55 +290,79 @@
 
     <script>
         (function () {
-  const quantityContainer = document.querySelector(".quantity");
-  const minusBtn = quantityContainer.querySelector(".minus");
-  const plusBtn = quantityContainer.querySelector(".plus");
-  const inputBox = quantityContainer.querySelector(".input-box");
+            const quantityContainers = document.querySelectorAll(".quantity");
+            quantityContainers.forEach(quantityContainer => {
+                const minusBtn = quantityContainer.querySelector(".minus");
+                const plusBtn = quantityContainer.querySelector(".plus");
+                const inputBox = quantityContainer.querySelector(".input-box");
 
-  updateButtonStates();
+                updateButtonStates();
 
-  quantityContainer.addEventListener("click", handleButtonClick);
-  inputBox.addEventListener("input", handleQuantityChange);
+                quantityContainer.addEventListener("click", handleButtonClick);
+                inputBox.addEventListener("input", handleQuantityChange);
 
-  function updateButtonStates() {
-    const value = parseInt(inputBox.value);
-    minusBtn.disabled = value <= 1;
-    plusBtn.disabled = value >= parseInt(inputBox.max);
-  }
+                function updateButtonStates() {
+                    const value = parseInt(inputBox.value);
+                    minusBtn.disabled = value <= 1;
+                    plusBtn.disabled = value >= parseInt(inputBox.max);
+                }
 
-  function handleButtonClick(event) {
-    if (event.target.classList.contains("minus")) {
-      decreaseValue();
-    } else if (event.target.classList.contains("plus")) {
-      increaseValue();
-    }
-  }
+                function handleButtonClick(event) {
+                    if (event.target.classList.contains("minus")) {
+                        decreaseValue();
+                    } else if (event.target.classList.contains("plus")) {
+                        increaseValue();
+                    }
+                }
 
-  function decreaseValue() {
-    let value = parseInt(inputBox.value);
-    value = isNaN(value) ? 1 : Math.max(value - 1, 1);
-    inputBox.value = value;
-    updateButtonStates();
-    handleQuantityChange();
-  }
+                function decreaseValue() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : Math.max(value - 1, 1);
+                    inputBox.value = value;
+                    updateButtonStates();
+                    handleQuantityChange();
+                }
 
-  function increaseValue() {
-    let value = parseInt(inputBox.value);
-    value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
-    inputBox.value = value;
-    updateButtonStates();
-    handleQuantityChange();
-  }
+                function increaseValue() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
+                    inputBox.value = value;
+                    updateButtonStates();
+                    handleQuantityChange();
+                }
 
-  function handleQuantityChange() {
-    let value = parseInt(inputBox.value);
-    value = isNaN(value) ? 1 : value;
+                function handleQuantityChange() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : value;
 
-    // Execute your code here based on the updated quantity value
-    console.log("Quantity changed:", value);
-  }
-})();
+                    // Execute your code here based on the updated quantity value
+                    console.log("Quantity changed:", value);
+                }
+            });
 
+            const buttonPay = document.getElementById("buttonPay");
+            buttonPay.addEventListener("click", showAlert);
+
+            function showAlert() {
+    const alertBox = document.createElement("div");
+    alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
+    alertBox.role = "alert";
+    alertBox.innerHTML = `
+        <strong>Success!</strong> Your payment has been processed.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    document.body.appendChild(alertBox);
+
+    // Automatically remove the alert after a certain time (optional)
+    setTimeout(() => {
+        alertBox.classList.remove('show');
+        alertBox.addEventListener('transitionend', () => {
+            alertBox.remove();
+        });
+    }, 5000); // 5 seconds
+}
+
+        })();
     </script>
 
 </body>
