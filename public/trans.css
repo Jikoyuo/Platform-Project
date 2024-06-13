@@ -22,11 +22,11 @@ body {
 
 .container-trans {
     position: relative;
-    /* background-color: chartreuse; */
+    background-color: chartreuse;
     height: auto;
-    width: 60%;
+    width: 40%;
     margin-top: -20.5%;
-    margin-left: 7%;
+    margin-left: 17%;
     margin-bottom: 5%;
     border-radius: 3%;
 }
@@ -136,17 +136,23 @@ footer {
 
   .prod{
     margin-left:2.5%;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     height: 80%;
     width: 95%;
   }
 
+  .priceProd{
+    position: relative;
+    background-color: #155724;
+    width: 900px;
+    height: 100px;
+  }
 
   .desc-prod{
     position: relative;
-    top: -80%;
-    left: 12%;
-    background-color: beige;
+    top: -85%;
+    left: 17%;
+    /* background-color: beige; */
     height: 70%;
     width: 65%;
   }
@@ -154,12 +160,12 @@ footer {
 /*input number plus minus*/
   .quantity {
     position: relative;
-    left: 88%;
+    left: 85%;
     top: -92%;
-    width: 105px;
+    width: 100px;
     display: flex;
-    border: 2px solid red;
-    border-radius: 4px;
+    /* border: 2px solid red; */
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
