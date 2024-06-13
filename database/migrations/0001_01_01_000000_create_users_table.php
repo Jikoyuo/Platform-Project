@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('google_id');
             $table->string('username');
-            $table->text('address');
+            $table->text('address')->nullable();
             $table->string('phone_number');
             $table->string('role')->default('user');
             $table->string('email')->unique();

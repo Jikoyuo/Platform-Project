@@ -29,68 +29,28 @@
         </div>
 
         <div class="container-trans">
-            <div class="container-title"></div>
-            <div class="container-product align-content-center">
-                <div class="prod">
-                    <div class="card" style="width: 100px; height: auto; background-color: #444444;">
-                        <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
-                    </div>
-                    <div class="priceProd">
-                        <h5 class="text-white">RP 150.000</h5>
-                    </div>
-                    <div class="desc-prod">
-                        <h3 class="text-white">Dune</h3>
-                        <h4 class="text-white">2024</h4>
-                    </div>
-                    <div class="quantity">
-                        <button class="minus" aria-label="Decrease">&minus;</button>
-                        <input type="number" class="input-box" value="1" min="1" max="99">
-                        <button class="plus" aria-label="Increase">&plus;</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-product align-content-center">
-                <div class="prod">
-                    <div class="card" style="width: 100px; height: auto; background-color: #444444;">
-                        <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
-                    </div>
-
-                    <div class="priceProd">
-                        <h5 class="text-white">RP 150.000</h5>
-                    </div>
-                    <div class="desc-prod">
-                        <h3 class="text-white">Dune</h3>
-                        <h4 class="text-white">2024</h4>
-                    </div>
-                    <div class="quantity">
-                        <button class="minus" aria-label="Decrease">&minus;</button>
-                        <input type="number" class="input-box" value="1" min="1" max="99">
-                        <button class="plus" aria-label="Increase">&plus;</button>
+            @foreach ($items as $item)
+                <div class="container-title"></div>
+                <div class="container-product align-content-center">
+                    <div class="prod">
+                        <div class="card" style="width: 100px; height: auto; background-color: #444444;">
+                            <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
+                        </div>
+                        <div class="priceProd">
+                            <h5 class="text-white">RP 150.000</h5>
+                        </div>
+                        <div class="desc-prod">
+                            <h3 class="text-white">Dune</h3>
+                            <h4 class="text-white">2024</h4>
+                        </div>
+                        <div class="quantity">
+                            <button class="minus" aria-label="Decrease">&minus;</button>
+                            <input type="number" class="input-box" value="1" min="1" max="99">
+                            <button class="plus" aria-label="Increase">&plus;</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="container-product align-content-center">
-                <div class="prod">
-                    <div class="card" style="width: 100px; height: auto; background-color: #444444;">
-                        <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
-                    </div>
-                    <div class="priceProd">
-                        <h5 class="text-white">RP 150.000</h5>
-                    </div>
-                    <div class="desc-prod">
-                        <h3 class="text-white">Dune</h3>
-                        <h4 class="text-white">2024</h4>
-                    </div>
-                    <div class="quantity">
-                        <button class="minus" aria-label="Decrease">&minus;</button>
-                        <input type="number" class="input-box" value="1" min="1" max="99">
-                        <button class="plus" aria-label="Increase">&plus;</button>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 
