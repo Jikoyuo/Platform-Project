@@ -4,6 +4,7 @@ use App\Http\Controllers\DBCartController;
 use App\Http\Controllers\DBCategoryController;
 use App\Http\Controllers\DBProductController;
 use App\Http\Controllers\DBUsersController;
+use App\Http\Controllers\GoogleAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
 use App\Models\DBCategory;
@@ -31,3 +32,5 @@ Route::get('/search', [DBProductController::class, 'index']);
 
 Route::get('/cart', [DBCartController::class, 'index']);
 
+Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
+Route::get('/auth/google/callback', [GoogleAuthController::class, 'callbackGoogle']);
