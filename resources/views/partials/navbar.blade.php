@@ -35,7 +35,7 @@
                 <box-icon name='receipt' type='solid' color='#ffffff' ></box-icon>
                 </a>
 
-                <a href="/path-to-cart" style="margin-left:40px;">
+                <a href="/cart" style="margin-left:40px;">
                     <box-icon name="cart" type="solid" color="#ffffff"></box-icon>
                 </a>
 

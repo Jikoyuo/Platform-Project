@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DBCartController;
 use App\Http\Controllers\DBCategoryController;
 use App\Http\Controllers\DBProductController;
 use App\Http\Controllers\DBUsersController;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
 use App\Models\DBCategory;
 use App\Http\Controllers\IMDbController;
+use App\Models\DBCart;
 
 Route::get('/fetch-imdb-data', [IMDbController::class, 'fetchData']);
 
@@ -31,5 +33,5 @@ Route::get('/genres/{slug}', [DBProductController::class, 'show']);
 
 Route::get('/search', [DBProductController::class, 'index']);
 
-
+Route::get('/cart', [DBCartController::class, 'index']);
 

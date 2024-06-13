@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\DBCart;
+use App\Models\DBCategory;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreDBCartRequest;
 use App\Http\Requests\UpdateDBCartRequest;
 
@@ -13,7 +15,23 @@ class DBCartController extends Controller
      */
     public function index()
     {
-        //
+        $items = DBCart::all();
+        $genres = DBCategory::all();
+        if (Auth::check()){
+            return view('cart', [
+                'title' => 'Cart',
+                'genres' => $genres,
+                'items' => $items,
+                'logged' => true
+            ]);
+        } else {
+            return view('cart', [
+                'title' => 'Cart',
+                'genres' => $genres,
+                'items' => $items,
+                'logged' => false
+            ]);
+        }
     }
 
     /**

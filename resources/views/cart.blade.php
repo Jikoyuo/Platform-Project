@@ -30,35 +30,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white"
-                            aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Horror</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Sci-Fi</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white"
-                            href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            More
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                    href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Comedy</a></li>
-                            <li><a class="dropdown-item" href="#">Romance</a></li>
-                            <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                            <li><a class="dropdown-item" href="#">Documenter</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            @include('partials.navbar')
         </div>
         <div class="input-group mb-3 mt-4" style="margin-right: 40%;">
             <input type="text" class="form-control"
