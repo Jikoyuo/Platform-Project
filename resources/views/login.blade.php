@@ -20,11 +20,12 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
 
-        @include('partials.navbar')
+        @include('partials.navbarLog')
 
         <div class="container mt-5" id="container">
             <div class="form-container sign-up">
-                <form action="/login">
+                <form method="POST" action="/register">
+                    @csrf
                     <h1>Create Account</h1>
                     <div class="social-icons">
                         <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -33,7 +34,6 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or use your email for registeration</span>
-                    <input type="text" placeholder="Full Name" name="full_name">
                     <input type="text" placeholder="Username" name="username">
                     <input type="text" placeholder="Address" name="address">
                     <input type="text" placeholder="Phone Number" name="phone_number">
@@ -44,7 +44,8 @@
                 </form>
             </div>
             <div class="form-container sign-in">
-                <form>
+                <form method="POST" action="/login">
+                    @csrf
                     <h1>Sign In</h1>
                     <div class="social-icons">
                         <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -53,8 +54,8 @@
                         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <span>or login with your account</span>
-                    <input type="username" placeholder="Username">
-                    <input type="password" placeholder="Password">
+                    <input type="username" placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="password">
                     <a href="#">Forget Your Password?</a>
                     <button>Sign In</button>
                 </form>
@@ -79,15 +80,15 @@
 
         <div class="img-container">
             <div class="bg-image"
-                style="background-image: url('Dune.jpeg');"></div>
+                style="background-image: url('../Dune.jpeg');"></div>
             <div class="bg-image"
-                style="background-image: url('Dunkirk.jpeg');"></div>
+                style="background-image: url('../Dunkirk.jpeg');"></div>
             <div class="bg-image"
-                style="background-image: url('PeakyBlinders.jpeg');"></div>
+                style="background-image: url('../PeakyBlinders.jpeg');"></div>
             <div class="bg-image"
-                style="background-image: url('endgame.jpeg');"></div>
+                style="background-image: url('../endgame.jpeg');"></div>
         </div>
 
     </body>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </html>

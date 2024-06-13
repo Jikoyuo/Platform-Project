@@ -34,7 +34,7 @@ body {
 .container-product {
     background-color: #444444;
     margin-top: 2%;
-    height: 100px;
+    height: 200px;
 }
 
 .container-title {
@@ -52,6 +52,27 @@ body {
     margin-left: 70%;
     margin-top: 7%;
     border-radius: 5%;
+}
+
+.trans h1{
+    position: relative;
+    left:25%;
+    top: 5%;
+}
+
+.trans h2{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.btn-trans{
+    position: relative;
+    left: 6%;
+    top: 60%;
+    font-size: 20px;
+     padding: 15px 30px;
+     width: 85%;
 }
 
 .hr-blurry {
@@ -112,3 +133,70 @@ footer {
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     border: 1px solid rgba(81, 203, 238, 1);
   }
+
+  .prod{
+    margin-left:2.5%;
+    background-color: aquamarine;
+    height: 80%;
+    width: 95%;
+  }
+
+
+  .desc-prod{
+    position: relative;
+    top: -80%;
+    left: 12%;
+    background-color: beige;
+    height: 70%;
+    width: 65%;
+  }
+
+/*input number plus minus*/
+  .quantity {
+    position: relative;
+    left: 88%;
+    top: -92%;
+    width: 105px;
+    display: flex;
+    border: 2px solid red;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .quantity button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 30px;
+    height: auto;
+    text-align: center;
+    transition: background-color 0.2s;
+  }
+
+  .quantity button:hover {
+    background-color: #2980b9;
+  }
+
+  .input-box {
+    width: 40px;
+    text-align: center;
+    border: none;
+    padding: 8px 10px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  /* Hide the number input spin buttons */
+  .input-box::-webkit-inner-spin-button,
+  .input-box::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .input-box[type="number"] {
+    -moz-appearance: textfield;
+  }
+

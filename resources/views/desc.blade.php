@@ -51,8 +51,9 @@
 
     <!-- Section 2: Ulasan Pembeli -->
     <section id="section2" class="my-5">
+    <div id="particles-js" class="particles"></div>
         <div class="container">
-            <h2 class="text-center text-white mb-4">Ulasan Pembeli</h2>
+            <h2 class="text-center text-white mb-4" style="margin-top: 15%;">Ulasan Pembeli</h2>
             @foreach ($reviews as $review)
                 <div class="card mb-3">
                     <div class="card-body">
@@ -65,7 +66,7 @@
                             <i class="far fa-star"></i>
                         </div>
                         <p class="card-text">{{$review['review']}}</p>
-                        <p class="card-text"><small class="text-muted">Updated at: {{$review['updated_at']}}</small></p>
+                        <p class="card-text"><small class="text-muted">Posted At: {{$review['created_at']}}</small></p>
                     </div>
                 </div>
             @endforeach

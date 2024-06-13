@@ -6,38 +6,38 @@ const login1Btn = document.getElementById("pindah");
 
 // Tambahkan event listener ke tombol register
 registerBtn.addEventListener("click", () => {
-  container.classList.add("active");
+    container.classList.add("active");
 });
 
-// Tambahkan event listener ke tombol login
-loginBtn.addEventListener("click", () => {
-  container.classList.remove("active");
-  alert("Button Clicked!");
-  window.open("https://github.com/Jikoyuo", "_blank");
-});
+// // Tambahkan event listener ke tombol login
+// loginBtn.addEventListener("click", () => {
+//   container.classList.remove("active");
+//   alert("Button Clicked!");
+//   window.open("https://github.com/Jikoyuo", "_blank");
+// });
 
 // Tambahkan event listener ke tombol login1
 login1Btn.addEventListener("click", () => {
-  container.classList.remove("active");
+    container.classList.remove("active");
 });
 
 // Fungsi untuk mencari film
 function searchMovie() {
-  $("#movie-list").html("");
-  $.ajax({
-    url: "https://omdbapi.com",
-    type: "get",
-    dataType: "json",
-    data: {
-      apikey: "ccd14ef6",
-      s: $("#search-input").val(),
-    },
-    success: function (result) {
-      if (result.Response === "True") {
-        let movies = result.Search;
-        $.each(movies, function (i, data) {
-          $("#movie-list").append(
-            `
+    $("#movie-list").html("");
+    $.ajax({
+        url: "https://omdbapi.com",
+        type: "get",
+        dataType: "json",
+        data: {
+            apikey: "ccd14ef6",
+            s: $("#search-input").val(),
+        },
+        success: function (result) {
+            if (result.Response === "True") {
+                let movies = result.Search;
+                $.each(movies, function (i, data) {
+                    $("#movie-list").append(
+                        `
               <div class="col-md-3">
                 <div class="card">
                   <img src="${data.Poster}" class="card-img-top" alt="${data.Title}">
@@ -49,45 +49,45 @@ function searchMovie() {
                 </div>
               </div>
             `
-          );
-        });
-        $("#search-input").val("");
-      } else {
-        $("#movie-list").html(`
+                    );
+                });
+                $("#search-input").val("");
+            } else {
+                $("#movie-list").html(`
           <div class="col">
             <h1 class="text-center">${result.Error}</h1>
           </div>
         `);
-      }
-    },
-  });
+            }
+        },
+    });
 }
 
 // Event listener untuk tombol search
 $("#search-button").on("click", function () {
-  searchMovie();
+    searchMovie();
 });
 
 // Event listener untuk input pencarian film
 $("#search-input").on("keyup", function (e) {
-  if (e.which === 13) {
-    searchMovie();
-  }
+    if (e.which === 13) {
+        searchMovie();
+    }
 });
 
 // Event listener untuk melihat detail film
 $("#movie-list").on("click", ".see-detail", function () {
-  $.ajax({
-    url: "https://omdbapi.com",
-    type: "get",
-    dataType: "json",
-    data: {
-      apikey: "ccd14ef6",
-      i: $(this).data("id"),
-    },
-    success: function (movie) {
-      if (movie.Response === "True") {
-        $("#movie-list").html(`
+    $.ajax({
+        url: "https://omdbapi.com",
+        type: "get",
+        dataType: "json",
+        data: {
+            apikey: "ccd14ef6",
+            i: $(this).data("id"),
+        },
+        success: function (movie) {
+            if (movie.Response === "True") {
+                $("#movie-list").html(`
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-4">
@@ -105,7 +105,7 @@ $("#movie-list").on("click", ".see-detail", function () {
             </div>
           </div>
         `);
-      }
-    },
-  });
+            }
+        },
+    });
 });
