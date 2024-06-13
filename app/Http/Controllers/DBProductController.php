@@ -68,14 +68,20 @@ class DBProductController extends Controller
         $product_id = DBProduct::where('slug', $slug)->first()->id;
 
         $pivot = Taggable::where('tag_id', $product_id)->pluck('taggable_id');
-        $review = DBReview::where('movie_id', $product_id)->get()->toArray();
+        $reviews = DBReview::where('movie_id', $product_id)->get()->toArray();
+        $rating = 0;
+        foreach ($reviews as $review){
+            $rating += $review['star'];
+        }
+        $rating /= count($reviews);
         $genres = DBCategory::where('id', $pivot);
         if (Auth::check()) {
             return view('desc', [
                 'title' => 'Product',
                 'genres' => $genres,
                 'product' => $product,
-                'reviews' => $review,
+                'reviews' => $reviews,
+                'rating' => $rating,
                 'logged' => true
             ]);
         } else {
@@ -83,7 +89,8 @@ class DBProductController extends Controller
                 'title' => 'Product',
                 'genres' => $genres,
                 'product' => $product,
-                'reviews' => $review,
+                'reviews' => $reviews,
+                'rating' =>  $rating,
                 'logged' => false
             ]);
         }
