@@ -27,8 +27,10 @@
                 <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
             </div>
         @else
-            <div class="trans">
-                <h1 class="text-light">Cart anda Kosong!</h1>
+            <div class="jumbotron jumbotron-fluid text-white">
+                <div class="container">
+                    <h1 class="display-8">Keranjang Anda Kosong !<br> Ayo Isi Keranjang Anda Dengan Film Favorite Kamu !</h1>
+                </div>
             </div>
         @endif
 
