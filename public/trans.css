@@ -11,6 +11,7 @@ body {
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
     left: 0;
+    margin-top: 2%;
     width: 90%;
     margin-left: 7%;
     z-index: 999; /* Atur z-index lebih tinggi dari bg-image */
