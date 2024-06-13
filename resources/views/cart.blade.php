@@ -20,64 +20,8 @@
 </head>
 <body>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <nav class="navbar navbar-expand-lg bg-transparent mt-5">
-        <div class="container-fluid">
-            <a class="navbar-brand text-danger" href="#">Kasetflix</a>
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             @include('partials.navbar')
-        </div>
-        <div class="input-group mb-3 mt-4" style="margin-right: 40%;">
-            <input type="text" class="form-control"
-                placeholder="Cari judul film"
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Button</button>
-                </div>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person"></i> <!-- Menggunakan ikon user -->
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
 
-        </nav>
-
-
-
-                <a href="/path-to-cart" style="margin-left: 61%;">
-                    <box-icon name='receipt' type='solid' color='#ffffff'></box-icon>
-                </a>
-
-                <a href="/path-to-cart" style="margin-left:30px;">
-                    <box-icon name="cart" type="solid" color="#ffffff"></box-icon>
-                </a>
-
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="profile.jpeg" width="40" height="40" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="admin.html">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <div class="main-content">
 
