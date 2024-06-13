@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title || {{$title}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,14 +19,18 @@
 
 
     <div class="main-content">
-
-        <div class="trans">
-            <h1 class="text-light">Rincian Belanja</h1>
-            <h2 class="text-light">Item :</h2>
-            <h2 class="text-light" style="margin-top: 7%;">Total :</h2>
-            <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
-
-        </div>
+        @if ($cart != null)
+            <div class="trans">
+                <h1 class="text-light">Rincian Belanja</h1>
+                <h2 class="text-light">Item :</h2>
+                <h2 class="text-light" style="margin-top: 7%;">Total :</h2>
+                <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
+            </div>
+        @else
+            <div class="trans">
+                <h1 class="text-light">Cart anda Kosong!</h1>
+            </div>
+        @endif
 
         <div class="container-trans">
             @foreach ($items as $item)
