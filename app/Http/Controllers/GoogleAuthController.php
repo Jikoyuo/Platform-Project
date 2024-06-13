@@ -26,6 +26,7 @@ class GoogleAuthController extends Controller
                     'username' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
                     'google_id'=>$google_user->getId()
+                    
                 ]);
                 Auth::login($new_user);
                 return redirect()->intended('home');
