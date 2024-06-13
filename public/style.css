@@ -13,7 +13,7 @@ body {
     margin-left: 65%;
   }
   .gg-shopping-cart {
-    color: white;
+    color: black;
     display: block;
     box-sizing: border-box;
     position: relative;
@@ -167,7 +167,7 @@ body {
   }
 
 .navbar {
-    /* background-color: #e55d50; */
+    background-color: #e55d50;
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
     left: 0;
@@ -412,6 +412,7 @@ body {
   }
 
   .container {
+
     width: 80%;
   }
 
