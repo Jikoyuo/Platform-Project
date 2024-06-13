@@ -1,0 +1,753 @@
+[
+  {
+    "Title": "The Avengers",
+    "Year": "2012",
+    "Rated": "PG-13",
+    "Released": "04 May 2012",
+    "Runtime": "143 min",
+    "Genre": "Action, Sci-Fi",
+    "Director": "Joss Whedon",
+    "Writer": "Joss Whedon, Zak Penn",
+    "Actors": "Robert Downey Jr., Chris Evans, Scarlett Johansson",
+    "Plot": "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+    "Language": "English, Russian",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Oscar. 39 wins & 81 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "91%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "69/100"
+      }
+    ],
+    "Metascore": "69",
+    "imdbRating": "8.0",
+    "imdbVotes": "1,457,886",
+    "imdbID": "tt0848228",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$623,357,910",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "The Avengers",
+    "Year": "1998",
+    "Rated": "PG-13",
+    "Released": "14 Aug 1998",
+    "Runtime": "89 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Jeremiah S. Chechik",
+    "Writer": "Sydney Newman, Don MacPherson",
+    "Actors": "Ralph Fiennes, Uma Thurman, Sean Connery",
+    "Plot": "Two British Agents team up to stop Sir August de Wynter from destroying the world with a weather-changing machine.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "4 wins & 17 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZTQ4NmIzMTktOTdjOC00NzE4LWIzNTgtODkwNzM5ZjUzZDkxXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "3.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "5%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "12/100"
+      }
+    ],
+    "Metascore": "12",
+    "imdbRating": "3.8",
+    "imdbVotes": "45,414",
+    "imdbID": "tt0118661",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$23,384,939",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Avengers: Endgame",
+    "Year": "2019",
+    "Rated": "PG-13",
+    "Released": "26 Apr 2019",
+    "Runtime": "181 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "Anthony Russo, Joe Russo",
+    "Writer": "Christopher Markus, Stephen McFeely, Stan Lee",
+    "Actors": "Robert Downey Jr., Chris Evans, Mark Ruffalo",
+    "Plot": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+    "Language": "English, Japanese, Xhosa, German",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Oscar. 70 wins & 133 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "94%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "78/100"
+      }
+    ],
+    "Metascore": "78",
+    "imdbRating": "8.4",
+    "imdbVotes": "1,275,119",
+    "imdbID": "tt4154796",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$858,373,000",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Avengers: Age of Ultron",
+    "Year": "2015",
+    "Rated": "PG-13",
+    "Released": "01 May 2015",
+    "Runtime": "141 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Joss Whedon",
+    "Writer": "Joss Whedon, Stan Lee, Jack Kirby",
+    "Actors": "Robert Downey Jr., Chris Evans, Mark Ruffalo",
+    "Plot": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.",
+    "Language": "English, Korean",
+    "Country": "United States",
+    "Awards": "8 wins & 52 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.3/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "76%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "66/100"
+      }
+    ],
+    "Metascore": "66",
+    "imdbRating": "7.3",
+    "imdbVotes": "925,880",
+    "imdbID": "tt2395427",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$459,005,868",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Avengers: Infinity War",
+    "Year": "2018",
+    "Rated": "PG-13",
+    "Released": "27 Apr 2018",
+    "Runtime": "149 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Anthony Russo, Joe Russo",
+    "Writer": "Christopher Markus, Stephen McFeely, Stan Lee",
+    "Actors": "Robert Downey Jr., Chris Hemsworth, Mark Ruffalo",
+    "Plot": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+    "Language": "English",
+    "Country": "United States, Norway",
+    "Awards": "Nominated for 1 Oscar. 46 wins & 80 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "85%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "68/100"
+      }
+    ],
+    "Metascore": "68",
+    "imdbRating": "8.4",
+    "imdbVotes": "1,211,845",
+    "imdbID": "tt4154756",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$678,815,482",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Ultimate Avengers: The Movie",
+    "Year": "2006",
+    "Rated": "PG-13",
+    "Released": "21 Feb 2006",
+    "Runtime": "72 min",
+    "Genre": "Animation, Action, Adventure, Sci-Fi",
+    "Director": "Curt Geda, Steven E. Gordon, Bob Richardson",
+    "Writer": "Mark Millar (comic book: \"The Ultimates\"), Bryan Hitch (comic book: \"The Ultimates\"), Greg Johnson (screen story), Boyd Kirkland (screen story), Craig Kyle (screen story), Greg Johnson (screenplay), Christopher L. Yost (additional writing), Joe Simon (comic book & character: Captain America), Jack Kirby (comic book & character: Captain America)",
+    "Actors": "Justin Gross, Grey Griffin, Michael Massee, Marc Worden",
+    "Plot": "To confront an alien menace, General Fury assembles a team of superheroes lead by a recently resuscitated Captain America.",
+    "Language": "Spanish, English",
+    "Country": "USA",
+    "Awards": "1 win & 1 nomination.",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTYyMjk0NTMwMl5BMl5BanBnXkFtZTgwNzY0NjAwNzE@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "6.7",
+    "imdbVotes": "12,075",
+    "imdbID": "tt0491703",
+    "Type": "movie",
+    "DVD": "06 Oct 2016",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Avengers Assemble",
+    "Year": "2012–2019",
+    "Rated": "TV-Y7",
+    "Released": "26 May 2013",
+    "Runtime": "23 min",
+    "Genre": "Animation, Action, Adventure",
+    "Director": "N/A",
+    "Writer": "Jack Kirby, Joe Simon, Stan Lee",
+    "Actors": "Roger Craig Smith, Troy Baker, Fred Tatasciore",
+    "Plot": "The further adventures of the Marvel Universe's mightiest general membership superhero team.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "11 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTY0NTUyMDQwOV5BMl5BanBnXkFtZTgwNjAwMTA0MDE@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.0/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.0",
+    "imdbVotes": "8,322",
+    "imdbID": "tt2455546",
+    "Type": "series",
+    "totalSeasons": "5",
+    "Response": "True"
+  },
+  {
+    "Title": "Ultimate Avengers II",
+    "Year": "2006",
+    "Rated": "PG-13",
+    "Released": "08 Aug 2006",
+    "Runtime": "73 min",
+    "Genre": "Animation, Action, Adventure, Sci-Fi",
+    "Director": "Will Meugniot, Dick Sebast, Bob Richardson",
+    "Writer": "Mark Millar (comic book: \"The Ultimates\"), Bryan Hitch (comic book: \"The Ultimates\"), Greg Johnson (screen story), Craig Kyle (screen story), Greg Johnson (screenplay), Joe Simon (comic book & character: Captain America), Jack Kirby (comic book & character: Captain America)",
+    "Actors": "Justin Gross, Grey Griffin, Michael Massee, Marc Worden",
+    "Plot": "When the Chitauri invaders are sighted in the African kingdom of Wakanda, the Avengers covertly enter the advanced nation to investigate.",
+    "Language": "Spanish, English",
+    "Country": "USA",
+    "Awards": "1 nomination.",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "6.6",
+    "imdbVotes": "8,790",
+    "imdbID": "tt0803093",
+    "Type": "movie",
+    "DVD": "06 Oct 2016",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "The Avengers: Earth's Mightiest Heroes",
+    "Year": "2010–2012",
+    "Rated": "TV-Y7",
+    "Released": "22 Sep 2010",
+    "Runtime": "30 min",
+    "Genre": "Animation, Action, Adventure",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Eric Loomis, Colleen O'Shaughnessey, Brian Bloom",
+    "Plot": "After 74 villains break out of prison, Marvel's most powerful superheroes team up to capture all of them, and also to defend the Earth from widespread threats.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "8 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYzA4ZjVhYzctZmI0NC00ZmIxLWFmYTgtOGIxMDYxODhmMGQ2XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.3",
+    "imdbVotes": "16,290",
+    "imdbID": "tt1626038",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  },
+  {
+    "Title": "The Avengers",
+    "Year": "1961–1969",
+    "Rated": "TV-14",
+    "Released": "28 Mar 1966",
+    "Runtime": "60 min",
+    "Genre": "Action, Comedy, Crime",
+    "Director": "N/A",
+    "Writer": "Sydney Newman",
+    "Actors": "Patrick Macnee, Diana Rigg, Honor Blackman",
+    "Plot": "A quirky spy show of the adventures of eccentrically suave British Agent John Steed and his predominantly female partners.",
+    "Language": "English",
+    "Country": "United Kingdom",
+    "Awards": "Nominated for 4 Primetime Emmys. 1 win & 5 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZWQwZTdjMDUtNTY1YS00MDI0LWFkNjYtZDA4MDdmZjdlMDRlXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.3",
+    "imdbVotes": "8,777",
+    "imdbID": "tt0054518",
+    "Type": "series",
+    "totalSeasons": "7",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode IV - A New Hope",
+    "Year": "1977",
+    "Rated": "PG",
+    "Released": "25 May 1977",
+    "Runtime": "121 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "George Lucas",
+    "Writer": "George Lucas",
+    "Actors": "Mark Hamill, Harrison Ford, Carrie Fisher",
+    "Plot": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ...",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 6 Oscars. 67 wins & 31 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "93%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "90/100"
+      }
+    ],
+    "Metascore": "90",
+    "imdbRating": "8.6",
+    "imdbVotes": "1,456,358",
+    "imdbID": "tt0076759",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$460,998,507",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode VII - The Force Awakens",
+    "Year": "2015",
+    "Rated": "PG-13",
+    "Released": "18 Dec 2015",
+    "Runtime": "138 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "J.J. Abrams",
+    "Writer": "Lawrence Kasdan, J.J. Abrams, Michael Arndt",
+    "Actors": "Daisy Ridley, John Boyega, Oscar Isaac",
+    "Plot": "As a new threat to the galaxy rises, Rey, a desert scavenger, and Finn, an ex-stormtrooper, must join Han Solo and Chewbacca to search for the one hope of restoring peace.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 5 Oscars. 64 wins & 140 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "93%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "80/100"
+      }
+    ],
+    "Metascore": "80",
+    "imdbRating": "7.8",
+    "imdbVotes": "977,065",
+    "imdbID": "tt2488496",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$936,662,225",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode IX - The Rise of Skywalker",
+    "Year": "2019",
+    "Rated": "PG-13",
+    "Released": "20 Dec 2019",
+    "Runtime": "141 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "J.J. Abrams",
+    "Writer": "Chris Terrio, J.J. Abrams, Derek Connolly",
+    "Actors": "Daisy Ridley, John Boyega, Oscar Isaac",
+    "Plot": "In the riveting conclusion of the landmark Skywalker saga, new legends will be born-and the final battle for freedom is yet to come.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 3 Oscars. 21 wins & 55 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "51%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "53/100"
+      }
+    ],
+    "Metascore": "53",
+    "imdbRating": "6.4",
+    "imdbVotes": "490,416",
+    "imdbID": "tt2527338",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$515,202,542",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode V - The Empire Strikes Back",
+    "Year": "1980",
+    "Rated": "PG",
+    "Released": "18 Jun 1980",
+    "Runtime": "124 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "Irvin Kershner",
+    "Writer": "Leigh Brackett, Lawrence Kasdan, George Lucas",
+    "Actors": "Mark Hamill, Harrison Ford, Carrie Fisher",
+    "Plot": "After the Rebel Alliance are overpowered by the Empire, Luke Skywalker begins his Jedi training with Yoda, while his friends are pursued across the galaxy by Darth Vader and bounty hunter Boba Fett.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 1 Oscar. 27 wins & 20 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.7/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "95%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "82/100"
+      }
+    ],
+    "Metascore": "82",
+    "imdbRating": "8.7",
+    "imdbVotes": "1,384,702",
+    "imdbID": "tt0080684",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$292,753,960",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Rogue One: A Star Wars Story",
+    "Year": "2016",
+    "Rated": "PG-13",
+    "Released": "16 Dec 2016",
+    "Runtime": "133 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Gareth Edwards",
+    "Writer": "Chris Weitz, Tony Gilroy, John Knoll",
+    "Actors": "Felicity Jones, Diego Luna, Alan Tudyk",
+    "Plot": "In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire's ultimate weapon of destruction.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 2 Oscars. 24 wins & 85 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "84%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "65/100"
+      }
+    ],
+    "Metascore": "65",
+    "imdbRating": "7.8",
+    "imdbVotes": "690,201",
+    "imdbID": "tt3748528",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$533,539,991",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode I - The Phantom Menace",
+    "Year": "1999",
+    "Rated": "PG",
+    "Released": "19 May 1999",
+    "Runtime": "136 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "George Lucas",
+    "Writer": "George Lucas",
+    "Actors": "Ewan McGregor, Liam Neeson, Natalie Portman",
+    "Plot": "Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their original glory.",
+    "Language": "English, Sanskrit",
+    "Country": "United States",
+    "Awards": "Nominated for 3 Oscars. 28 wins & 71 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "52%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "51/100"
+      }
+    ],
+    "Metascore": "51",
+    "imdbRating": "6.5",
+    "imdbVotes": "862,851",
+    "imdbID": "tt0120915",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$487,576,624",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode VI - Return of the Jedi",
+    "Year": "1983",
+    "Rated": "PG",
+    "Released": "25 May 1983",
+    "Runtime": "131 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "Richard Marquand",
+    "Writer": "Lawrence Kasdan, George Lucas",
+    "Actors": "Mark Hamill, Harrison Ford, Carrie Fisher",
+    "Plot": "After rescuing Han Solo from Jabba the Hutt, the Rebels attempt to destroy the second Death Star, while Luke struggles to help Darth Vader back from the dark side.",
+    "Language": "English, Kikuyu, Tagalog, Kalmyk-Oirat, Quechua, Polish",
+    "Country": "United States",
+    "Awards": "Nominated for 4 Oscars. 24 wins & 23 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "82%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "58/100"
+      }
+    ],
+    "Metascore": "58",
+    "imdbRating": "8.3",
+    "imdbVotes": "1,116,149",
+    "imdbID": "tt0086190",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$316,566,101",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode VIII - The Last Jedi",
+    "Year": "2017",
+    "Rated": "PG-13",
+    "Released": "15 Dec 2017",
+    "Runtime": "152 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "Rian Johnson",
+    "Writer": "Rian Johnson, George Lucas",
+    "Actors": "Daisy Ridley, John Boyega, Mark Hamill",
+    "Plot": "Rey develops her abilities with the help of Luke Skywalker, as the Resistance prepares for battle against the First Order.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 4 Oscars. 26 wins & 99 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "91%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "84/100"
+      }
+    ],
+    "Metascore": "84",
+    "imdbRating": "6.9",
+    "imdbVotes": "674,667",
+    "imdbID": "tt2527336",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$620,181,382",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode III - Revenge of the Sith",
+    "Year": "2005",
+    "Rated": "PG-13",
+    "Released": "19 May 2005",
+    "Runtime": "140 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "George Lucas",
+    "Writer": "George Lucas, John Ostrander, Jan Duursema",
+    "Actors": "Hayden Christensen, Natalie Portman, Ewan McGregor",
+    "Plot": "Three years into the Clone Wars, Obi-Wan Kenobi pursues a new threat, while Anakin Skywalker is lured by Chancellor Palpatine into a sinister plot to rule the galaxy.",
+    "Language": "English",
+    "Country": "United States, Italy, Switzerland, Thailand",
+    "Awards": "Nominated for 1 Oscar. 29 wins & 64 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "79%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "68/100"
+      }
+    ],
+    "Metascore": "68",
+    "imdbRating": "7.6",
+    "imdbVotes": "848,634",
+    "imdbID": "tt0121766",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$380,270,577",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Wars: Episode II - Attack of the Clones",
+    "Year": "2002",
+    "Rated": "PG",
+    "Released": "16 May 2002",
+    "Runtime": "142 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "George Lucas",
+    "Writer": "George Lucas, Jonathan Hales",
+    "Actors": "Hayden Christensen, Natalie Portman, Ewan McGregor",
+    "Plot": "Ten years after initially meeting, Anakin Skywalker shares a forbidden romance with Padmé Amidala, while Obi-Wan Kenobi discovers a secret clone army crafted for the Jedi.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Oscar. 21 wins & 71 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "65%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "54/100"
+      }
+    ],
+    "Metascore": "54",
+    "imdbRating": "6.6",
+    "imdbVotes": "758,917",
+    "imdbID": "tt0121765",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "$310,676,740",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+  }
+]
