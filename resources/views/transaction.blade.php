@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script type="module" defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.slim.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="trans.css">
+</head>
+<body>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <nav class="navbar navbar-expand-lg bg-transparent mt-5">
+        <div class="container-fluid">
+            <a class="navbar-brand text-danger" href="#">Kasetflix</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white"
+                            aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Horror</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Sci-Fi</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white"
+                            href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Comedy</a></li>
+                            <li><a class="dropdown-item" href="#">Romance</a></li>
+                            <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                            <li><a class="dropdown-item" href="#">Documenter</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="input-group mb-3 mt-4" style="margin-right: 40%;">
+            <input type="text" class="form-control"
+                placeholder="Cari judul film"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person"></i> <!-- Menggunakan ikon user -->
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+        </nav>
+
+
+
+                <a href="/path-to-cart" style="margin-left: 61%;">
+                    <box-icon name='receipt' type='solid' color='#ffffff'></box-icon>
+                </a>
+
+                <a href="/path-to-cart" style="margin-left:30px;">
+                    <box-icon name="cart" type="solid" color="#ffffff"></box-icon>
+                </a>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="profile.jpeg" width="40" height="40" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="admin.html">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+
+        <div class="trans">
+            <h1 class="text-light">Rincian Belanja</h1>
+            <h2 class="text-light">Item :</h2>
+            <h2 class="text-light" style="margin-top: 7%;">Total :</h2>
+            <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
+
+        </div>
+
+        <div class="container-trans">
+            <div class="container-title"></div>
+            <div class="container-product align-content-center">
+                <div class="prod">
+                    <div class="card" style="width: 100px; height: auto; background-color: #444444;">
+                        <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
+                    </div>
+                    <div class="desc-prod"></div>
+                    <div class="quantity">
+                        <button class="minus" aria-label="Decrease">&minus;</button>
+                        <input type="number" class="input-box" value="1" min="1" max="99">
+                        <button class="plus" aria-label="Increase">&plus;</button>
+                      </div>
+                </div>
+            </div>
+
+            <div class="container-product align-content-center">
+                <div class="prod">
+                    <div class="card" style="width: 100px; height: auto; background-color: #444444;">
+                        <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
+                    </div>
+
+                    <div class="desc-prod"></div>
+                    <div class="quantity">
+                        <button class="minus" aria-label="Decrease">&minus;</button>
+                        <input type="number" class="input-box" value="1" min="1" max="99">
+                        <button class="plus" aria-label="Increase">&plus;</button>
+                      </div>
+                </div>
+            </div>
+
+            <div class="container-product align-content-center">
+                <div class="prod">
+                    <div class="card" style="width: 100px; height: auto; background-color: #444444;">
+                        <img class="card-img-top" src="Dune.jpeg" alt="Card image cap">
+                    </div>
+                    <div class="desc-prod"></div>
+                    <div class="quantity">
+                        <button class="minus" aria-label="Decrease">&minus;</button>
+                        <input type="number" class="input-box" value="1" min="1" max="99">
+                        <button class="plus" aria-label="Increase">&plus;</button>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-wrapper">
+        <section class="sectionfoot">
+            <hr class="hr hr-blurry">
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-muted">
+                <!-- Section: Social media -->
+                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                    <!-- Left -->
+                    <div class="me-5 d-none d-lg-block text-white">
+                        <span>Get connected with us on social networks:</span>
+                    </div>
+                    <!-- Left -->
+
+                    <!-- Right -->
+                    <div>
+                        <a href class="me-4 text-reset">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href class="me-4 text-reset">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href class="me-4 text-reset">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href class="me-4 text-reset">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href class="me-4 text-reset">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href class="me-4 text-reset">
+                            <i class="fab fa-github"></i>
+                        </div>
+                    <!-- Right -->
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Links  -->
+                <section class>
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold mb-4 text-white">
+                                    <i class="fas fa-gem me-3"></i>Company name
+                                </h6>
+                                <p class="text-white">
+                                    Here you can use rows and columns to organize your footer content. Lorem ipsum
+                                    dolor sit amet, consectetur adipisicing elit.
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    ####
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    ####
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">####</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Help</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                                <p><i class="fas fa-home me-3"></i> Sleman, DIY, Indonesia</p>
+                                <p><i class="fas fa-envelope me-3"></i> sadhar@sadhar.com</p>
+                                <p><i class="fas fa-phone me-3"></i> 911</p>
+                                <p><i class="fas fa-print me-3"></i> 911</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2024 Copyright:
+                    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </section>
+    </div>
+
+    <script>
+        (function () {
+            const quantityContainers = document.querySelectorAll(".quantity");
+            quantityContainers.forEach(quantityContainer => {
+                const minusBtn = quantityContainer.querySelector(".minus");
+                const plusBtn = quantityContainer.querySelector(".plus");
+                const inputBox = quantityContainer.querySelector(".input-box");
+
+                updateButtonStates();
+
+                quantityContainer.addEventListener("click", handleButtonClick);
+                inputBox.addEventListener("input", handleQuantityChange);
+
+                function updateButtonStates() {
+                    const value = parseInt(inputBox.value);
+                    minusBtn.disabled = value <= 1;
+                    plusBtn.disabled = value >= parseInt(inputBox.max);
+                }
+
+                function handleButtonClick(event) {
+                    if (event.target.classList.contains("minus")) {
+                        decreaseValue();
+                    } else if (event.target.classList.contains("plus")) {
+                        increaseValue();
+                    }
+                }
+
+                function decreaseValue() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : Math.max(value - 1, 1);
+                    inputBox.value = value;
+                    updateButtonStates();
+                    handleQuantityChange();
+                }
+
+                function increaseValue() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
+                    inputBox.value = value;
+                    updateButtonStates();
+                    handleQuantityChange();
+                }
+
+                function handleQuantityChange() {
+                    let value = parseInt(inputBox.value);
+                    value = isNaN(value) ? 1 : value;
+
+                    // Execute your code here based on the updated quantity value
+                    console.log("Quantity changed:", value);
+                }
+            });
+
+            const buttonPay = document.getElementById("buttonPay");
+            buttonPay.addEventListener("click", showAlert);
+
+            function showAlert() {
+    const alertBox = document.createElement("div");
+    alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
+    alertBox.role = "alert";
+    alertBox.innerHTML = `
+        <strong>Success!</strong> Your payment has been processed.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    document.body.appendChild(alertBox);
+
+    // Automatically remove the alert after a certain time (optional)
+    setTimeout(() => {
+        alertBox.classList.remove('show');
+        alertBox.addEventListener('transitionend', () => {
+            alertBox.remove();
+        });
+    }, 5000); // 5 seconds
+}
+
+        })();
+    </script>
+
+</body>
+</html>
