@@ -36,7 +36,7 @@ class GoogleAuthController extends Controller
 
             }
                 } catch (\Throwable $th) {
-            //throw $th;
+            dd('Ada yang salah!', $th->getMessage());
         }
         
     }
