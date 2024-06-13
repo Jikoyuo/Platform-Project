@@ -8,8 +8,8 @@
 @include('partials.background')
 
 <!-- Container for movie genre list -->
-<div class="row container-film shadow-lg  rounded">
-    <div class="jumbotron mt-5 text-white bg-dark">
+<div class="row container-film shadow-lg  rounded" style=" margin-top: -40%;">
+    <div class="jumbotron text-white bg-dark" style="margin-top: 10%;">
         <h1 class="display-3 text-center">Genre List</h1>
     </div>
         @foreach($genres as $genre)

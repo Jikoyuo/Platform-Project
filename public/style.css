@@ -167,9 +167,10 @@ body {
   }
 
 .navbar {
-    background-color: #e55d50;
+    /* background-color: #e55d50; */
     position: absolute; /* Tambahkan properti position absolute */
     top: 0; /* Atur posisi navbar di bagian atas */
+    margin-top: 2%;
     left: 0;
     width: 90%;
     margin-left: 7%;
