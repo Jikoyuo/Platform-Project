@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreDBCartRequest;
 use App\Http\Requests\UpdateDBCartRequest;
 
+use function PHPUnit\Framework\isEmpty;
+
 class DBCartController extends Controller
 {
     /**
@@ -21,6 +23,7 @@ class DBCartController extends Controller
             return view('cart', [
                 'title' => 'Cart',
                 'genres' => $genres,
+                'cart' => $items->first(),
                 'items' => $items,
                 'logged' => true
             ]);
