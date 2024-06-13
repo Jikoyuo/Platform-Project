@@ -7,10 +7,6 @@ use App\Http\Controllers\DBUsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
 use App\Models\DBCategory;
-use App\Http\Controllers\IMDbController;
-use App\Models\DBCart;
-
-Route::get('/fetch-imdb-data', [IMDbController::class, 'fetchData']);
 
 Route::get('/', [RedirectController::class, 'redirectToHome']);
 
