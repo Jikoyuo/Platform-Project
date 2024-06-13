@@ -29,7 +29,7 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <h5 class="card-title">{{$product->name}}</h5>
-                            <div class="rating" data-rating="4.5">
+                            <div class="rating" data-rating="{{$rating}}">
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
