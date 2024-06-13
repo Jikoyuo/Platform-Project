@@ -25,12 +25,7 @@ class DBCartController extends Controller
                 'logged' => true
             ]);
         } else {
-            return view('cart', [
-                'title' => 'Cart',
-                'genres' => $genres,
-                'items' => $items,
-                'logged' => false
-            ]);
+            return redirect('/home');
         }
     }
 
