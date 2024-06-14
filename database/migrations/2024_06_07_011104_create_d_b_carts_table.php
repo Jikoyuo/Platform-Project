@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->float('price');
             $table->integer('quantity');
-            $table->string('status');
             $table->foreignId('product_id');
             $table->foreignId('user_id');
             $table->timestamps();
