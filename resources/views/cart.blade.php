@@ -35,23 +35,23 @@
         @endif
 
         <div class="container-trans">
+            <div class="container-title"></div>
             @foreach ($items as $item)
-                <div class="container-title"></div>
                 <div class="container-product align-content-center">
                     <div class="prod">
                         <div class="card" style="width: 100px; height: auto; background-color: #444444;">
-                            <img class="card-img-top" src="{{$item->img_url}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap">
                         </div>
                         <div class="priceProd">
-                            <h5 class="text-white">RP {{$item->price}}</h5>
+                            <h5 class="text-white">RP {{$item['price']}}</h5>
                         </div>
                         <div class="desc-prod">
-                            <h3 class="text-white">{{$item->name}}</h3>
-                            <h4 class="text-white">{{$item->year}}</h4>
+                            <h3 class="text-white">{{$item['name']}}</h3>
+                            <h4 class="text-white">{{$item['year']}}</h4>
                         </div>
                         <div class="quantity">
                             <button class="minus" aria-label="Decrease">&minus;</button>
-                            <input type="number" class="input-box" value="1" min="1" max="{{$item->stock}}">
+                            <input type="number" class="input-box" value="1" min="1" max="{{$item['stock']}}">
                             <button class="plus" aria-label="Increase">&plus;</button>
                         </div>
                     </div>

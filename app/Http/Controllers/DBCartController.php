@@ -7,6 +7,7 @@ use App\Models\DBCategory;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreDBCartRequest;
 use App\Http\Requests\UpdateDBCartRequest;
+use App\Models\DBProduct;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -17,13 +18,14 @@ class DBCartController extends Controller
      */
     public function index()
     {
-        $items = DBCart::all();
-        $genres = DBCategory::all();
         if (Auth::check()){
+            $user_id = Auth::id();
+            $items = DBCart::where('user_id', $user_id)->leftJoin('d_b_products', 'd_b_carts.product_id', '=', 'd_b_products.id')->get();
+            $genres = DBCategory::all();
             return view('cart', [
                 'title' => 'Cart',
                 'genres' => $genres,
-                'cart' => $items->first(),
+                'cart' => $items,
                 'items' => $items,
                 'logged' => true
             ]);
