@@ -473,6 +473,91 @@
 
     // Show the home section by default
     showHome();
+
+    const productTable = document.getElementById('product-table');
+
+    function populateTable() {
+        productTable.innerHTML = '';
+        products.forEach(product => {
+            productTable.innerHTML += `
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.title}</td>
+                    <td>${product.category}</td>
+                    <td>${product.price}</td>
+                    <td>${product.stock}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="openEditModal(${product.id})">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="openDeleteModal(${product.id})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    document.getElementById('addProductForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const title = document.getElementById('addProductTitle').value;
+        const category = document.getElementById('addProductCategory').value;
+        const price = document.getElementById('addProductPrice').value;
+        const stock = document.getElementById('addProductStock').value;
+        const newProduct = {
+            id: products.length ? products[products.length - 1].id + 1 : 1,
+            title,
+            category,
+            price,
+            stock
+        };
+        products.push(newProduct);
+        populateTable();
+        document.getElementById('addProductForm').reset();
+        bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
+    });
+
+    function openEditModal(id) {
+        const product = products.find(p => p.id === id);
+        document.getElementById('editProductId').value = product.id;
+        document.getElementById('editProductTitle').value = product.title;
+        document.getElementById('editProductCategory').value = product.category;
+        document.getElementById('editProductPrice').value = product.price;
+        document.getElementById('editProductStock').value = product.stock;
+        new bootstrap.Modal(document.getElementById('editProductModal')).show();
+    }
+
+    document.getElementById('editProductForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const id = document.getElementById('editProductId').value;
+        const title = document.getElementById('editProductTitle').value;
+        const category = document.getElementById('editProductCategory').value;
+        const price = document.getElementById('editProductPrice').value;
+        const stock = document.getElementById('editProductStock').value;
+        const productIndex = products.findIndex(p => p.id == id);
+        products[productIndex] = { id: parseInt(id), title, category, price, stock };
+        populateTable();
+        bootstrap.Modal.getInstance(document.getElementById('editProductModal')).hide();
+    });
+
+    function openDeleteModal(id) {
+        const product = products.find(p => p.id === id);
+        document.getElementById('deleteProductName').textContent = product.title;
+        document.getElementById('confirmDeleteButton').onclick = function () {
+            products = products.filter(p => p.id !== id);
+            populateTable();
+            bootstrap.Modal.getInstance(document.getElementById('deleteProductModal')).hide();
+        };
+        new bootstrap.Modal(document.getElementById('deleteProductModal')).show();
+    }
+
+    document.getElementById('viewProfile').addEventListener('click', function () {
+        new bootstrap.Modal(document.getElementById('viewProfileModal')).show();
+    });
+
+    document.addEventListener('DOMContentLoaded', populateTable);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </script>
 </body>
 </html>
