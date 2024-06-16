@@ -6,7 +6,6 @@
 <title>Kasetflix </title>
 
 @include('partials.background')
-
 <!-- Container for movie genre list -->
 <div class="row container-film shadow-lg  rounded" style=" margin-top: -40%;">
     <div class="jumbotron text-white bg-dark" style="margin-top: 10%;">
