@@ -2,7 +2,7 @@ body {
     background-color: black;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 150vh;
     margin: 0;
 }
 
@@ -19,6 +19,13 @@ body {
 
 .navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
+}
+
+.jumbotron{
+    text-align: center;
+    position: relative;
+    top: 40vh;
+/* background-color: #155724; */
 }
 
 .container-trans {
@@ -94,7 +101,7 @@ body {
 
 footer {
     width: 100%;
-    background-color: black;
+    /* background-color: green; */
     filter: brightness(50%);
 }
 
