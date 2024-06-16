@@ -11,6 +11,14 @@ particlesJS("particles-js", {
             value: "#ffffff",
         },
         shape: {
+
+            // jika ingin menggunakan image sebagai particle
+            // type: "image",
+            // image: {
+            //     src: "Dune.jpeg", // Path to the image
+            //     width: 100,
+            //     height: 100},
+
             type: "circle",
             stroke: {
                 width: 0,
@@ -31,7 +39,7 @@ particlesJS("particles-js", {
             },
         },
         size: {
-            value: 2,
+            value: 3,
             random: true,
             anim: {
                 enable: false,
