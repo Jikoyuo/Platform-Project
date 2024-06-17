@@ -47,12 +47,12 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="input-group input-group-custom">
                 <input type="text" class="form-control" placeholder="Cari judul film" aria-label="judul film" aria-describedby="basic-addon2">
                 <button class="btn btn-outline-light" type="button">Cari</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </nav>
 
@@ -61,7 +61,7 @@
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    <span class="fs-5 d-none d-sm-inline">Home</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
@@ -109,17 +109,9 @@
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
+                    <a href="/" class="align-items-center text-white text-decoration-none">
+                        <button class="text-xl-center mx-1">Back to Home</button>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom text-small shadow">
-                        <li><a class="dropdown-item dropdown-item-custom" href="#">New project...</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom" href="#">Settings</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item dropdown-item-custom" href="#">Sign out</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -143,14 +135,24 @@
                     <tr>
                         <th>Product ID</th>
                         <th>Title</th>
-                        <th>Category</th>
                         <th>Price</th>
                         <th>Stock</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                        <tbody id="product-table">
-                        <!-- Dynamically generated rows will go here -->
+                        <tbody>
+                            @foreach($products as $product)
+                                <tr>
+                                    <td>{{$product->id}}</td>
+                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->price}}</td>
+                                    <td>{{$product->stock}}</td>
+                                    <td>
+                                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal">Edit</button>
+                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -168,12 +170,23 @@
                                 <th>User ID</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Riwayat Pembelian</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th>Role</th>
                                 <!-- <th>Actions</th> -->
                             </tr>
                         </thead>
-                        <tbody id="user-table">
-                            <!-- Dynamically generated rows will go here -->
+                        <tbody>
+                            @foreach($users as $user)
+                                <tr>
+                                    <td>{{$user->id}}</td>
+                                    <td>{{$user->username}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->address}}</td>
+                                    <td>{{$user->phone_number}}</td>
+                                    <td>{{$user->role}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -461,9 +474,8 @@
 
     // Function to initialize the product list (dummy data)
     function initializeProducts() {
-        var products = $products;
-
         const productTable = document.getElementById('product-table');
+        var products = productTable.value;
         productTable.innerHTML = '';
         products.forEach(product => {
             const row = document.createElement('tr');
