@@ -8,6 +8,7 @@ use App\Http\Controllers\DBUsersController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\DBProductController;
 use App\Http\Controllers\DBCategoryController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleAuthController;
 
 Route::get('/', [RedirectController::class, 'redirectToHome']);
@@ -33,3 +34,6 @@ Route::get('/cart', [DBCartController::class, 'index']);
 
 Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callbackGoogle']);
+
+Route::get('/auth/facebook', [FacebookController::class, 'facebookpage']);;
+Route::get('/auth/facebook', [FacebookController::class, 'facebookredirect']);;
