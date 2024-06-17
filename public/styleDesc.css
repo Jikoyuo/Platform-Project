@@ -6,10 +6,10 @@ body {
 .describe {
     /* background-color: cyan; */
     width: 80%;
-    max-height: 80%; /* Menggunakan max-height agar dapat mengatur batas konten */
+    /* max-height: 80%; Menggunakan max-height agar dapat mengatur batas konten */
     /* overflow: auto; Menambahkan overflow untuk membuat konten scrollable */
     position: absolute;
-    top: 65%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
