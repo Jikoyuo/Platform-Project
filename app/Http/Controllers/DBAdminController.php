@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\DBProduct;
 use Illuminate\Http\Request;
 
 class DBAdminController extends Controller
 {
-    public function showProducts(){
-        $products = DBProduct::all()->toArray();
+    public function show(){
+        $products = DBProduct::all();
+        $users = User::all();
         return view('admin', [
             'title' => 'Dashboard',
-            'products' => $products
+            'products' => $products,
+            'users' => $users
         ]);
     }
 }
