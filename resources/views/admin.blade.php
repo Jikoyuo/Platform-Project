@@ -127,7 +127,7 @@
             <h1>Product List</h1>
             <!-- Add Product Button -->
             <div class="d-flex justify-content-end mb-3">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
+                <button class="btn btn-primary" onclick="showAddProduct()">Add Product</button>
             </div>
             <div class="table-responsive">
             <table class="table table-striped">
@@ -190,6 +190,87 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <!-- Add Product Section -->
+            <div class="container mt-5" id="add-product-section">
+                <h1 class="mb-4">Add Product</h1>
+                <form action="/admin/add" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Description</label>
+                        <input type="text" class="form-control" id="title" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Slug</label>
+                        <input type="text" class="form-control" id="title" name="slug" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Year</label>
+                        <input type="text" class="form-control" id="title" name="year" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" step="100" class="form-control" id="price" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" class="form-control" id="stock" name="stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Image URL</label>
+                        <input type="text" class="form-control" id="stock" name="img_url" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Trailer Embedded URL</label>
+                        <input type="text" class="form-control" id="stock" name="trailer" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Edit Product Section -->
+        <div class="container mt-5" id="edit-product-section">
+                <h1 class="mb-4">Edit Product</h1>
+                <form action="/admin/add" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Description</label>
+                        <input type="text" class="form-control" id="title" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Slug</label>
+                        <input type="text" class="form-control" id="title" name="slug" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Year</label>
+                        <input type="text" class="form-control" id="title" name="year" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" step="100" class="form-control" id="price" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" class="form-control" id="stock" name="stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Image URL</label>
+                        <input type="text" class="form-control" id="stock" name="img_url" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Trailer Embedded URL</label>
+                        <input type="text" class="form-control" id="stock" name="trailer" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </div>
@@ -321,21 +402,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFw5pfKNzL2F51f8HJO9C9tyIMq06keq+08LrD91RPX" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
-<script src="admin.js"></script>
+<script src="../admin.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFw5pfKNzL2F51f8HJO9C9tyIMq06keq+08LrD91RPX" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
 
 <script>
-
-        
-
-
     // Function to show Home section and hide other sections
     function showHome() {
         document.getElementById('home-section').style.display = 'block';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
     }
 
     // Function to show Product List section and hide other sections
@@ -343,6 +421,7 @@
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'block';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
     }
 
     // Function to show User Accounts section and hide other sections
@@ -350,6 +429,14 @@
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'block';
+        document.getElementById('add-product-section').style.display = 'none';
+    }
+
+    function showAddProduct(){
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'block';
     }
 
     // Fetch and display user accounts
@@ -439,21 +526,31 @@
         document.getElementById('home-section').style.display = 'block';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
     }
 
-    // Function to display the product list section
+    // Function to show Product List section and hide other sections
     function showProductList() {
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'block';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
     }
 
-    // Function to display the user accounts section
+    // Function to show User Accounts section and hide other sections
     function showUserAccounts() {
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'block';
+        document.getElementById('add-product-section').style.display = 'none';
         loadUserAccounts();
+    }
+
+    function showAddProduct(){
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'block';
     }
 
     // Function to load user accounts into the table

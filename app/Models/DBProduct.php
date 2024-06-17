@@ -12,4 +12,8 @@ class DBProduct extends Model
     public function categories(){
         return $this->belongsToMany(DBCategory::class);
     }
+
+    protected $guarded = [
+        'id'
+    ];
 }
