@@ -135,28 +135,34 @@
                     <tr>
                         <th>Product ID</th>
                         <th>Title</th>
+                        <th>Description</th>
                         <th>Price</th>
                         <th>Stock</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                        <tbody>
-                            @foreach($products as $product)
-                                <tr>
-                                    <td>{{$product->id}}</td>
-                                    <td>{{$product->name}}</td>
-                                    <td>{{$product->price}}</td>
-                                    <td>{{$product->stock}}</td>
-                                    <td>
-                                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal">Edit</button>
-                                        <button class="btn btn-danger btn-sm">Delete</button>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                    <tbody>
+                        @foreach($products as $product)
+                            <tr data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-description="{{ $product->description }}" data-slug="{{ $product->slug }}" data-year="{{ $product->year }}" data-price="{{ $product->price }}" data-stock="{{ $product->stock }}" data-img="{{ $product->img_url }}" data-trailer="{{ $product->trailer }}">
+                                <td>{{$product->id}}</td>
+                                <td>{{$product->name}}</td>
+                                <td>{{$product->description}}</td>
+                                <td>{{$product->price}}</td>
+                                <td>{{$product->stock}}</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm" onclick="showEditProduct(this)">Edit</button>
+                                    <form action="/admin/delete" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$product->id}}">
+                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
+        </div>
 
 
             <!-- User Accounts Section -->
@@ -198,60 +204,60 @@
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="name" required>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Description</label>
-                        <input type="text" class="form-control" id="title" name="description" required>
+                        <input type="text" class="form-control" name="description" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Slug</label>
-                        <input type="text" class="form-control" id="title" name="slug" required>
+                        <input type="text" class="form-control" name="slug" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Year</label>
-                        <input type="text" class="form-control" id="title" name="year" required>
+                        <input type="text" class="form-control" name="year" required>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" step="100" class="form-control" id="price" name="price" required>
+                        <input type="number" step="100" class="form-control" name="price" required>
                     </div>
                     <div class="form-group">
                         <label for="stock">Stock</label>
-                        <input type="number" class="form-control" id="stock" name="stock" required>
+                        <input type="number" class="form-control" name="stock" required>
                     </div>
                     <div class="form-group">
                         <label for="stock">Image URL</label>
-                        <input type="text" class="form-control" id="stock" name="img_url" required>
+                        <input type="text" class="form-control" name="img_url" required>
                     </div>
                     <div class="form-group">
                         <label for="stock">Trailer Embedded URL</label>
-                        <input type="text" class="form-control" id="stock" name="trailer" required>
+                        <input type="text" class="form-control" name="trailer" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </div>
-        <!-- Edit Product Section -->
-        <div class="container mt-5" id="edit-product-section">
+            <!-- Edit Product Section -->
+            <div class="container mt-5" id="edit-product-section">
                 <h1 class="mb-4">Edit Product</h1>
-                <form action="/admin/add" method="POST">
+                <form action="/admin/edit" method="POST">
                     @csrf
+                    <input type="hidden" id="product-id" name="id">>
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Description</label>
-                        <input type="text" class="form-control" id="title" name="description" required>
+                        <input type="text" class="form-control" id="description" name="description" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Slug</label>
-                        <input type="text" class="form-control" id="title" name="slug" required>
+                        <input type="text" class="form-control" id="slug" name="slug" required>
                     </div>
                     <div class="form-group">
                         <label for="title">Year</label>
-                        <input type="text" class="form-control" id="title" name="year" required>
+                        <input type="text" class="form-control" id="year" name="year" required>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
@@ -263,11 +269,11 @@
                     </div>
                     <div class="form-group">
                         <label for="stock">Image URL</label>
-                        <input type="text" class="form-control" id="stock" name="img_url" required>
+                        <input type="text" class="form-control" id="img_url" name="img_url" required>
                     </div>
                     <div class="form-group">
                         <label for="stock">Trailer Embedded URL</label>
-                        <input type="text" class="form-control" id="stock" name="trailer" required>
+                        <input type="text" class="form-control" id="trailer" name="trailer" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -414,6 +420,7 @@
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'none';
     }
 
     // Function to show Product List section and hide other sections
@@ -422,6 +429,7 @@
         document.getElementById('product-list-section').style.display = 'block';
         document.getElementById('user-accounts-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'none';
     }
 
     // Function to show User Accounts section and hide other sections
@@ -430,6 +438,7 @@
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'block';
         document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'none';
     }
 
     function showAddProduct(){
@@ -437,6 +446,37 @@
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'block';
+        document.getElementById('edit-product-section').style.display = 'none';
+    }
+
+    function showEditProduct(button){
+
+        var row = button.closest('tr');
+        var id = row.getAttribute('data-id');
+        var title = row.getAttribute('data-name');
+        var desc = row.getAttribute('data-description');
+        var year = row.getAttribute('data-year');
+        var slug = row.getAttribute('data-slug');
+        var price = row.getAttribute('data-price');
+        var stock = row.getAttribute('data-stock');
+        var img = row.getAttribute('data-img');
+        var trailer = row.getAttribute('data-trailer');
+
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'block';
+
+        document.getElementById('product-id').value = id;
+        document.getElementById('name').value = title;
+        document.getElementById('description').value = desc;
+        document.getElementById('year').value = year;
+        document.getElementById('slug').value = slug;
+        document.getElementById('price').value = parseFloat(price);
+        document.getElementById('stock').value = parseInt(stock);
+        document.getElementById('img_url').value = img;
+        document.getElementById('trailer').value = trailer;
     }
 
     // Fetch and display user accounts
@@ -527,6 +567,7 @@
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'none';
     }
 
     // Function to show Product List section and hide other sections
@@ -535,6 +576,7 @@
         document.getElementById('product-list-section').style.display = 'block';
         document.getElementById('user-accounts-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'none';
     }
 
     // Function to show User Accounts section and hide other sections
@@ -543,7 +585,7 @@
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'block';
         document.getElementById('add-product-section').style.display = 'none';
-        loadUserAccounts();
+        document.getElementById('edit-product-section').style.display = 'none';
     }
 
     function showAddProduct(){
@@ -551,6 +593,37 @@
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'block';
+        document.getElementById('edit-product-section').style.display = 'none';
+    }
+
+    function showEditProduct(button){
+
+        var row = button.closest('tr');
+        var id = row.getAttribute('data-id');
+        var title = row.getAttribute('data-name');
+        var desc = row.getAttribute('data-description');
+        var year = row.getAttribute('data-year');
+        var slug = row.getAttribute('data-slug');
+        var price = row.getAttribute('data-price');
+        var stock = row.getAttribute('data-stock');
+        var img = row.getAttribute('data-img');
+        var trailer = row.getAttribute('data-trailer');
+
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'block';
+
+        document.getElementById('product-id').value = id;
+        document.getElementById('name').value = title;
+        document.getElementById('description').value = desc;
+        document.getElementById('year').value = year;
+        document.getElementById('slug').value = slug;
+        document.getElementById('price').value = parseFloat(price);
+        document.getElementById('stock').value = parseInt(stock);
+        document.getElementById('img_url').value = img;
+        document.getElementById('trailer').value = trailer;
     }
 
     // Function to load user accounts into the table
