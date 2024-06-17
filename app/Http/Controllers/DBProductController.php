@@ -22,14 +22,14 @@ class DBProductController extends Controller
         $genres = DBCategory::all();
         if (request('q')){
             $products->where('name', 'like', '%'.request('q').'%');
-
             if (Auth::check()) {
                 return view('search', [
                     'title' => 'search',
                     'search' => request('q'),
                     'genres' => $genres,
                     'products' => $products->get(),
-                    'logged' => true
+                    'logged' => true,
+                    'admin' => Auth::user()->role === 'admin'
                 ]);
             } else {
                 return view('search', [
@@ -37,7 +37,8 @@ class DBProductController extends Controller
                     'search' => request('q'),
                     'genres' => $genres,
                     'products' => $products->get(),
-                    'logged' => false
+                    'logged' => false,
+                    'admin' => false
                 ]);
             }
             
@@ -48,7 +49,8 @@ class DBProductController extends Controller
                     'genres' => $genres,
                     'sliders' => $products->get(),
                     'products' => $products->get(),
-                    'logged' => true
+                    'logged' => true,
+                    'admin' => Auth::user()->role === 'admin'
                 ]);
             } else {
                 return view('index', [
@@ -56,7 +58,8 @@ class DBProductController extends Controller
                     'genres' => $genres,
                     'sliders' => $products->get(),
                     'products' => $products->get(),
-                    'logged' => false
+                    'logged' => false,
+                    'admin' => false
                 ]);
             }
         }
@@ -82,7 +85,8 @@ class DBProductController extends Controller
                 'product' => $product,
                 'reviews' => $reviews,
                 'rating' => $rating,
-                'logged' => true
+                'logged' => true,
+                'admin' => Auth::user()->role === 'admin'
             ]);
         } else {
             return view('desc', [
@@ -91,7 +95,8 @@ class DBProductController extends Controller
                 'product' => $product,
                 'reviews' => $reviews,
                 'rating' =>  $rating,
-                'logged' => false
+                'logged' => false,
+                'admin' => false
             ]);
         }
     }
@@ -131,7 +136,8 @@ class DBProductController extends Controller
                 'genres' => $genres,
                 'search' => $slug,
                 'products' => $products,
-                'logged' => true
+                'logged' => true,
+                'admin' => Auth::user()->role === 'admin'
             ]);
         }
         else {
@@ -140,7 +146,8 @@ class DBProductController extends Controller
                 'genres' => $genres,
                 'search' => $slug,
                 'products' => $products,
-                'logged' => false
+                'logged' => false,
+                'admin' => false
             ]);
         }
 

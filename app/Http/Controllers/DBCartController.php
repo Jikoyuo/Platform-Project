@@ -27,7 +27,8 @@ class DBCartController extends Controller
                 'genres' => $genres,
                 'cart' => $items,
                 'items' => $items,
-                'logged' => true
+                'logged' => true,
+                'admin' => Auth::user()->role === 'admin'
             ]);
         } else {
             return redirect('/home');

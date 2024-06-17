@@ -19,13 +19,15 @@ class DBCategoryController extends Controller
             return view('genres', [
                 'title' => 'Genres',
                 'genres' => $genres,
-                'logged' => true
+                'logged' => true,
+                'admin' => Auth::user()->role === 'admin'
             ]);
         } else {
             return view('genres', [
                 'title' => 'Genres',
                 'genres' => $genres,
-                'logged' => false
+                'logged' => false,
+                'admin' => false
             ]);
         }
     }
