@@ -24,7 +24,7 @@
 
                 <div class="row g-0">
                     <div class="col-md-6">
-                        <img src="{{$product->img_url}}" class="img-fluid rounded-start" alt="Dune">
+                        <img src="{{$product->img_url}}" class="img-fluid rounded-start" alt="Dune" style="max-height: 75vh;">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
