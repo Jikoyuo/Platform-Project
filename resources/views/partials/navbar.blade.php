@@ -46,7 +46,9 @@
                         <img src="../profile.jpeg" width="40" height="40" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="admin.html">Dashboard</a></li>
+                        @if ($admin)
+                            <li><a class="dropdown-item" href="/admin">Dashboard</a></li>
+                        @endif
                         <li><a class="dropdown-item" href="#">Edit
                                 Profile</a></li>
                         <li><a class="dropdown-item" href="/logout">Log
