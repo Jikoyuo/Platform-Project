@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\DBCartController;
-use App\Http\Controllers\DBCategoryController;
-use App\Http\Controllers\DBProductController;
-use App\Http\Controllers\DBUsersController;
-use App\Http\Controllers\GoogleAuthController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RedirectController;
 use App\Models\DBCategory;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DBCartController;
+use App\Http\Controllers\DBAdminController;
+use App\Http\Controllers\DBUsersController;
+use App\Http\Controllers\RedirectController;
+use App\Http\Controllers\DBProductController;
+use App\Http\Controllers\DBCategoryController;
+use App\Http\Controllers\GoogleAuthController;
 
 Route::get('/', [RedirectController::class, 'redirectToHome']);
 
@@ -15,9 +16,7 @@ Route::get('/home', [DBProductController::class, 'index']);
 
 Route::get('/product/{slug}', [DBProductController::class, 'productDesc']);
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/admin', [DBAdminController::class, 'showProducts']);
 
 Route::get('/login', [DBUsersController::class, 'index']);
 Route::post('/login', [DBUsersController::class, 'login']);

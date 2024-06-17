@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kasetflix</title>
+    <title>Kasetflix || {{$title}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="admin.css">
     <style>
@@ -461,18 +461,14 @@
 
     // Function to initialize the product list (dummy data)
     function initializeProducts() {
-        const products = [
-            { id: 1, title: 'Product 1', category: 'Category 1', price: 100, stock: 10 },
-            { id: 2, title: 'Product 2', category: 'Category 2', price: 200, stock: 20 },
-            // Add more products as needed
-        ];
+        var products = $products;
 
         const productTable = document.getElementById('product-table');
         productTable.innerHTML = '';
         products.forEach(product => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${product.id}</td>
+                <td>{${product.id}}</td>
                 <td>${product.title}</td>
                 <td>${product.category}</td>
                 <td>${product.price}</td>

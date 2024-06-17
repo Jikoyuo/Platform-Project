@@ -76,7 +76,9 @@ class DBProductController extends Controller
         foreach ($reviews as $review){
             $rating += $review['star'];
         }
-        $rating /= count($reviews);
+        if ($rating != 0){
+            $rating /= count($reviews);
+        }
         $genres = DBCategory::where('id', $pivot);
         if (Auth::check()) {
             return view('desc', [
