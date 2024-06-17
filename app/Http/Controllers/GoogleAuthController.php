@@ -15,31 +15,36 @@ class GoogleAuthController extends Controller
     }
     public function callbackGoogle()
     {
-
         try {
             $google_user = Socialite::driver('google')->user();
-
-            $user = User::where('google_id',$google_user->getId())->first();
-
-            if(!$user){
+    
+            // Check if the user exists by google_id or email
+            $user = User::where('google_id', $google_user->getId())
+                ->orWhere('email', $google_user->getEmail())
+                ->first();
+    
+            if (!$user) {
+                // If user does not exist, create a new user
                 $new_user = User::create([
                     'username' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
-                    'google_id'=>$google_user->getId()
-                    
+                    'google_id' => $google_user->getId()
                 ]);
                 Auth::login($new_user);
-                return redirect()->intended('home');
-            }
-            else{
+            } else {
+                // If user exists, update the google_id if it's missing
+                if (!$user->google_id) {
+                    $user->google_id = $google_user->getId();
+                    $user->save();
+                }
                 Auth::login($user);
-                return redirect()->intended('home');
-
             }
-                } catch (\Throwable $th) {
+    
+            return redirect()->intended('home');
+        } catch (\Throwable $th) {
             dd('Ada yang salah!', $th->getMessage());
         }
-        
     }
+    
 
 }
