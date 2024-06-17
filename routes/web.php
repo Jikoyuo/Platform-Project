@@ -19,6 +19,8 @@ Route::get('/product/{slug}', [DBProductController::class, 'productDesc']);
 
 Route::get('/admin', [DBAdminController::class, 'show']);
 Route::post('/admin/add', [DBAdminController::class, 'store']);
+Route::post('/admin/edit', [DBAdminController::class, 'edit']);
+Route::post('/admin/delete', [DBAdminController::class, 'delete']);
 
 Route::get('/login', [DBUsersController::class, 'index']);
 Route::post('/login', [DBUsersController::class, 'login']);
