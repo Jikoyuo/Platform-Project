@@ -38,5 +38,5 @@ Route::get('/cart', [DBCartController::class, 'index']);
 Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callbackGoogle']);
 
-Route::get('/auth/facebook', [FacebookController::class, 'facebookpage']);;
-Route::get('/auth/facebook', [FacebookController::class, 'facebookredirect']);;
+Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('facebook-auth');
+Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect']);
