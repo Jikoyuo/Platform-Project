@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\DBProduct;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Log;
 class DBAdminController extends Controller
 {
     public function show(){
@@ -35,6 +35,30 @@ class DBAdminController extends Controller
         return redirect('/admin');
     }
 
+    public function addProduct(Request $request){
+        Log::info('Request data:', $request->all()); // Logging request data
+        
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|max:99999',
+            'slug' => 'required|string|max:255',
+            'year' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer',
+            'img_url' => 'nullable|max:99999',
+            'trailer' => 'required|max:99999',
+        ]);
+    
+        try {
+            DBProduct::create($request->all());
+            Log::info('Product created successfully:', $request->all());
+            return response()->json(['success' => true, 'message' => 'Product added successfully']);
+        } catch (\Exception $e) {
+            Log::error('Error storing product:', ['error' => $e->getMessage()]); // Logging error
+            return response()->json(['success' => false, 'message' => 'Failed to add product']);
+        }
+    }
+    
     public function edit(Request $request){
         $request->validate([
             'id' => 'required',
