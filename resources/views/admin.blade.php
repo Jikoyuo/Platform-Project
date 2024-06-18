@@ -559,6 +559,7 @@ $("#movie-list").on("click", ".tambah-barang", function () {
     // Initial display of home section
     showHome();
 </script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>
 </html>
