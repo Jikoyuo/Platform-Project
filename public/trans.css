@@ -2,7 +2,11 @@ body {
     background-color: black;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     min-height: 180vh;
+=======
+    min-height: 150vh;
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
     margin: 0;
 }
 
@@ -327,6 +331,7 @@ footer {
     left: 26px; /* Menyesuaikan posisi garis */
     transform: skew(-12deg)
 }
+<<<<<<< HEAD
 
 
  /* Shopping Cart */
@@ -421,3 +426,5 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+=======
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80

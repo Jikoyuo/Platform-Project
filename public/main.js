@@ -192,5 +192,8 @@ $("#movie-list").on("click", ".see-detail", function () {
     },
   });
 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
