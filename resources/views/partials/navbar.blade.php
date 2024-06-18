@@ -31,7 +31,7 @@
                 </li>
             </ul>
 
-            <a href="/path-to-cart" style="margin-left: 55%;">
+            <a href="#" style="margin-left: 55%;" id="buttonPay">
                 <box-icon name='receipt' type='solid' color='#ffffff'></box-icon>
             </a>
 
@@ -60,6 +60,59 @@
     </div>
 </nav>
 <!-- end navbar login -->
+
+<script>
+const buttonPay = document.getElementById("buttonPay");
+            buttonPay.addEventListener("click", showAlert);
+
+
+        function showAlert() {
+                const alertBox = document.createElement("div");
+                alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
+                alertBox.role = "alert";
+                alertBox.innerHTML = `
+                    <strong>Success!</strong> Your payment has been processed.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                document.body.appendChild(alertBox);
+
+                // Automatically remove the alert after a certain time (optional)
+                setTimeout(() => {
+                    alertBox.classList.remove('show');
+                    alertBox.addEventListener('transitionend', () => {
+                        alertBox.remove();
+                    });
+                }, 5000); // 5 seconds
+
+                // Create the popup div
+                const popupDiv = document.createElement("div");
+                popupDiv.className = "popup";
+                popupDiv.innerHTML = `
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <h2>Payment Details</h2>
+                        <p>Your payment has been successfully processed.</p>
+                    </div>
+                `;
+                document.body.appendChild(popupDiv);
+
+                // Display the popup
+                popupDiv.style.display = "block";
+
+                // Add close event to the close button
+                const closeBtn = popupDiv.querySelector(".close");
+                closeBtn.addEventListener("click", () => {
+                    popupDiv.style.display = "none";
+                });
+
+                // Close the popup when clicking outside of the popup content
+                window.addEventListener("click", (event) => {
+                    if (event.target == popupDiv) {
+                        popupDiv.style.display = "none";
+                    }
+                });
+            }
+</script>
 @else
 <nav class="navbar navbar-expand-lg  mt-5">
     <div class="container-fluid">
