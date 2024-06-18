@@ -23,7 +23,6 @@
             color: #dc3545;
         }
         .input-group-custom {
-            /* max-width: 1000px; */
             margin-left: auto;
             width: 100%;
         }
@@ -47,12 +46,12 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="input-group input-group-custom">
-                <input type="text" class="form-control" placeholder="Cari judul film" aria-label="judul film" aria-describedby="basic-addon2">
-                <button class="btn btn-outline-light" type="button">Cari</button>
-            </div>
-        </div> -->
+                <input type="text" id="search-input" class="form-control" placeholder="Cari judul film" aria-label="judul film" aria-describedby="basic-addon2">
+                <button class="btn btn-outline-light" id="search-button" type="button">Cari</button>
+            </div>            
+        </div>
     </div>
 </nav>
 
@@ -69,41 +68,19 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Genre</span> </a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li> -->
-                    <!-- Add admin buttons for toggling views -->
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle" onclick="showProductList()">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0" onclick="showProductList()">
                             <i class="fs-4 bi-box-seam"></i> <span class="ms-1 d-none d-sm-inline">Product List</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle" onclick="showUserAccounts()">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0" onclick="showUserAccounts()">
                             <i class="fs-4 bi-person"></i> <span class="ms-1 d-none d-sm-inline">User Accounts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0" onclick="showSearchSection()">
+                            <i class="fs-4 bi-search"></i> <span class="ms-1 d-none d-sm-inline">Cari kaset</span>
                         </a>
                     </li>
                 </ul>
@@ -123,52 +100,50 @@
             </div>
 
             <!-- Product List Section -->
-            <div id="product-list-section">
-            <h1>Product List</h1>
-            <!-- Add Product Button -->
-            <div class="d-flex justify-content-end mb-3">
-                <button class="btn btn-primary" onclick="showAddProduct()">Add Product</button>
-            </div>
-            <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        @foreach($products as $product)
-                            <tr data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-description="{{ $product->description }}" data-slug="{{ $product->slug }}" data-year="{{ $product->year }}" data-price="{{ $product->price }}" data-stock="{{ $product->stock }}" data-img="{{ $product->img_url }}" data-trailer="{{ $product->trailer }}">
-                                <td>{{$product->id}}</td>
-                                <td>{{$product->name}}</td>
-                                <td>{{$product->description}}</td>
-                                <td>{{$product->price}}</td>
-                                <td>{{$product->stock}}</td>
-                                <td>
-                                    <button class="btn btn-warning btn-sm" onclick="showEditProduct(this)">Edit</button>
-                                    <form action="/admin/delete" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{$product->id}}">
-                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                                    </form>
-                                </td>
+            <div id="product-list-section" style="display: none;">
+                <h1>Product List</h1>
+                <!-- Add Product Button -->
+                <div class="d-flex justify-content-end mb-3">
+                    <button class="btn btn-primary" onclick="showAddProduct()">Add Product</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach($products as $product)
+                                <tr data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-description="{{ $product->description }}" data-slug="{{ $product->slug }}" data-year="{{ $product->year }}" data-price="{{ $product->price }}" data-stock="{{ $product->stock }}" data-img="{{ $product->img_url }}" data-trailer="{{ $product->trailer }}">
+                                    <td>{{$product->id}}</td>
+                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->description}}</td>
+                                    <td>{{$product->price}}</td>
+                                    <td>{{$product->stock}}</td>
+                                    <td>
+                                        <button class="btn btn-warning btn-sm" onclick="showEditProduct(this)">Edit</button>
+                                        <form action="/admin/delete" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$product->id}}">
+                                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-
 
             <!-- User Accounts Section -->
             <div id="user-accounts-section" style="display: none;">
                 <h1>User Accounts</h1>
-                <!-- User Accounts Table -->
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -179,7 +154,6 @@
                                 <th>Address</th>
                                 <th>Phone Number</th>
                                 <th>Role</th>
-                                <!-- <th>Actions</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -197,8 +171,19 @@
                     </table>
                 </div>
             </div>
+
+            <!-- Search Section -->
+            <!-- Search Section -->
+            <div id="search-section" style="display: none;">
+                <h1>Search Results</h1>
+                <div class="row" id="movie-list">
+                    <!-- Movie results will be appended here -->
+                </div>
+            </div>
+
+
             <!-- Add Product Section -->
-            <div class="container mt-5" id="add-product-section">
+            <div class="container mt-5" id="add-product-section" style="display: none;">
                 <h1 class="mb-4">Add Product</h1>
                 <form action="/admin/add" method="POST">
                     @csrf
@@ -207,15 +192,15 @@
                         <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="title">Description</label>
+                        <label for="description">Description</label>
                         <input type="text" class="form-control" name="description" required>
                     </div>
                     <div class="form-group">
-                        <label for="title">Slug</label>
+                        <label for="slug">Slug</label>
                         <input type="text" class="form-control" name="slug" required>
                     </div>
                     <div class="form-group">
-                        <label for="title">Year</label>
+                        <label for="year">Year</label>
                         <input type="text" class="form-control" name="year" required>
                     </div>
                     <div class="form-group">
@@ -227,36 +212,37 @@
                         <input type="number" class="form-control" name="stock" required>
                     </div>
                     <div class="form-group">
-                        <label for="stock">Image URL</label>
+                        <label for="img_url">Image URL</label>
                         <input type="text" class="form-control" name="img_url" required>
                     </div>
                     <div class="form-group">
-                        <label for="stock">Trailer Embedded URL</label>
+                        <label for="trailer">Trailer Embedded URL</label>
                         <input type="text" class="form-control" name="trailer" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+
             <!-- Edit Product Section -->
-            <div class="container mt-5" id="edit-product-section">
+            <div class="container mt-5" id="edit-product-section" style="display: none;">
                 <h1 class="mb-4">Edit Product</h1>
                 <form action="/admin/edit" method="POST">
                     @csrf
-                    <input type="hidden" id="product-id" name="id">>
+                    <input type="hidden" id="product-id" name="id">
                     <div class="form-group">
-                        <label for="title">Title</label>
+                        <label for="name">Title</label>
                         <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="title">Description</label>
+                        <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" name="description" required>
                     </div>
                     <div class="form-group">
-                        <label for="title">Slug</label>
+                        <label for="slug">Slug</label>
                         <input type="text" class="form-control" id="slug" name="slug" required>
                     </div>
                     <div class="form-group">
-                        <label for="title">Year</label>
+                        <label for="year">Year</label>
                         <input type="text" class="form-control" id="year" name="year" required>
                     </div>
                     <div class="form-group">
@@ -268,11 +254,11 @@
                         <input type="number" class="form-control" id="stock" name="stock" required>
                     </div>
                     <div class="form-group">
-                        <label for="stock">Image URL</label>
+                        <label for="img_url">Image URL</label>
                         <input type="text" class="form-control" id="img_url" name="img_url" required>
                     </div>
                     <div class="form-group">
-                        <label for="stock">Trailer Embedded URL</label>
+                        <label for="trailer">Trailer Embedded URL</label>
                         <input type="text" class="form-control" id="trailer" name="trailer" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -282,73 +268,71 @@
     </div>
 </div>
 
-<!-- Add Product Modal -->
+<!-- Modals -->
 <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="addProductForm">
-                        <div class="mb-3">
-                            <label for="addProductTitle" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="addProductTitle" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addProductCategory" class="form-label">Category</label>
-                            <input type="text" class="form-control" id="addProductCategory" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addProductPrice" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="addProductPrice" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="addProductStock" class="form-label">Stock</label>
-                            <input type="number" class="form-control" id="addProductStock" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Add Product</button>
-                    </form>
-                </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm">
+                    <div class="mb-3">
+                        <label for="addProductTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="addProductTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addProductCategory" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="addProductCategory" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addProductPrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="addProductPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addProductStock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="addProductStock" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Edit Product Modal -->
-    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editProductForm">
-                        <div class="mb-3">
-                            <label for="editProductTitle" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="editProductTitle" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editProductCategory" class="form-label">Category</label>
-                            <input type="text" class="form-control" id="editProductCategory" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editProductPrice" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="editProductPrice" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editProductStock" class="form-label">Stock</label>
-                            <input type="number" class="form-control" id="editProductStock" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                    </form>
-                </div>
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editProductForm">
+                    <div class="mb-3">
+                        <label for="editProductTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="editProductTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductCategory" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="editProductCategory" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductPrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="editProductPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editProductStock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="editProductStock" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-<!-- Delete Modal -->
 <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -366,28 +350,6 @@
     </div>
 </div>
 
-<!-- User Details Modal -->
-<!-- <div class="modal fade" id="viewUserModal" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="viewUserModalLabel">User Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <ul class="list-group">
-                    <li class="list-group-item"><strong>ID:</strong> <span id="userId"></span></li>
-                    <li class="list-group-item"><strong>Username:</strong> <span id="userUsername"></span></li>
-                    <li class="list-group-item"><strong>Email:</strong> <span id="userEmail"></span></li>
-                    <li class="list-group-item"><strong>RiwayatPembelian:</strong> <span id="userRiwayatPembelian"></span></li>
-                     Add more user details here as needed 
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- Purchase History Modal -->
 <div class="modal fade" id="viewPurchaseHistoryModal" tabindex="-1" aria-labelledby="viewPurchaseHistoryModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -404,39 +366,43 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFw5pfKNzL2F51f8HJO9C9tyIMq06keq+08LrD91RPX" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFw5pfKNzL2F51f8HJO9C9tyIMq06keq+08LrD91RPX" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
-<script src="../admin.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzFw5pfKNzL2F51f8HJO9C9tyIMq06keq+08LrD91RPX" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-GLsWn3BGgiATK4gOuTnbQEF61wdex0LiQ6ZWZBIB5iwjm1z9xX3gNCJ7/Rfw5p5T" crossorigin="anonymous"></script>
 
 <script>
-    // Function to show Home section and hide other sections
     function showHome() {
         document.getElementById('home-section').style.display = 'block';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('search-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
         document.getElementById('edit-product-section').style.display = 'none';
     }
 
-    // Function to show Product List section and hide other sections
     function showProductList() {
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'block';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('search-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
         document.getElementById('edit-product-section').style.display = 'none';
     }
 
-    // Function to show User Accounts section and hide other sections
     function showUserAccounts() {
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'block';
+        document.getElementById('search-section').style.display = 'none';
+        document.getElementById('add-product-section').style.display = 'none';
+        document.getElementById('edit-product-section').style.display = 'none';
+    }
+
+    function showSearchSection() {
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('product-list-section').style.display = 'none';
+        document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('search-section').style.display = 'block';
         document.getElementById('add-product-section').style.display = 'none';
         document.getElementById('edit-product-section').style.display = 'none';
     }
@@ -445,12 +411,12 @@
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('search-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'block';
         document.getElementById('edit-product-section').style.display = 'none';
     }
 
-    function showEditProduct(button){
-
+    function showEditProduct(button) {
         var row = button.closest('tr');
         var id = row.getAttribute('data-id');
         var title = row.getAttribute('data-name');
@@ -465,6 +431,7 @@
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('product-list-section').style.display = 'none';
         document.getElementById('user-accounts-section').style.display = 'none';
+        document.getElementById('search-section').style.display = 'none';
         document.getElementById('add-product-section').style.display = 'none';
         document.getElementById('edit-product-section').style.display = 'block';
 
@@ -479,281 +446,77 @@
         document.getElementById('trailer').value = trailer;
     }
 
-    // Fetch and display user accounts
-    async function fetchUserAccounts() {
-        try {
-            const response = await fetch('/api/user-accounts');  // Replace with your API endpoint
-            const users = await response.json();
+    function searchMovie() {
+    $("#movie-list").html("");
+    $.ajax({
+        url: "https://omdbapi.com",
+        type: "get",
+        dataType: "json",
+        data: {
+            apikey: "ccd14ef6",
+            s: $("#search-input").val(),
+        },
+        success: function (result) {
+            if (result.Response === "True") {
+                let movies = result.Search;
+                $.each(movies, function (i, data) {
+                    $("#movie-list").append(
+                        `
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="${data.Poster}" class="card-img-top" alt="${data.Title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${data.Title}</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">${data.Year}</h6>
+                                    <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
+                                    <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
+                                    <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}">Tambah Barang</button>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    );
+                });
+                $("#search-input").val("");
+            } else {
+                $("#movie-list").html(`
+                    <div class="col">
+                        <h1 class="text-center">${result.Error}</h1>
+                    </div>
+                `);
+            }
+        },
+    });
+}
 
-            const userTable = document.getElementById('user-table');
-            userTable.innerHTML = '';
+$("#search-button").on("click", function () {
+    searchMovie();
+});
 
-            users.forEach(user => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${user.id}</td>
-                    <td>${user.username}</td>
-                    <td>${user.email}</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm" onclick="viewUserDetails(${user.id})">View</button>
-                        <button class="btn btn-secondary btn-sm" onclick="viewPurchaseHistory(${user.id})">View Purchase History</button>
-                    </td>
-                `;
-                userTable.appendChild(row);
-            });
-        } catch (error) {
-            console.error('Error fetching user accounts:', error);
-        }
+$("#search-input").on("keyup", function (e) {
+    if (e.which === 13) {
+        searchMovie();
     }
+});
 
-    // View user details
-    async function viewUserDetails(userId) {
-        try {
-            const response = await fetch(`/api/user-accounts/${userId}`);  // Replace with your API endpoint
-            const user = await response.json();
-
-            document.getElementById('userId').textContent = user.id;
-            document.getElementById('userUsername').textContent = user.username;
-            document.getElementById('userEmail').textContent = user.email;
-            // Populate more fields as needed
-
-            const viewUserModal = new bootstrap.Modal(document.getElementById('viewUserModal'));
-            viewUserModal.show();
-        } catch (error) {
-            console.error('Error fetching user details:', error);
-        }
+$("#movie-list").on("click", ".tambah-barang", function () {
+    var id = $(this).data("id");
+    var title = $(this).data("title");
+    var stock = $(`#stock-${id}`).val();
+    var price = $(`#price-${id}`).val();
+    
+    if (stock && price) {
+        // Add your code to handle adding the item with the specified stock and price
+        console.log("Tambah Barang:", { id, title, stock, price });
+        alert(`Barang ${title} dengan stock ${stock} dan harga ${price} telah ditambahkan.`);
+    } else {
+        alert("Mohon masukkan jumlah stock dan harga.");
     }
+});
 
-    // View purchase history
-    async function viewPurchaseHistory(userId) {
-        try {
-            const response = await fetch(`/api/user-accounts/${userId}/purchase-history`);  // Replace with your API endpoint
-            const purchaseHistory = await response.json();
-
-            const purchaseHistoryList = document.getElementById('purchaseHistoryList');
-            purchaseHistoryList.innerHTML = '';
-
-            purchaseHistory.forEach(purchase => {
-                const item = document.createElement('li');
-                item.className = 'list-group-item';
-                item.textContent = `Order ID: ${purchase.orderId}, Product: ${purchase.product}, Date: ${purchase.date}, Amount: ${purchase.amount}`;
-                purchaseHistoryList.appendChild(item);
-            });
-
-            const viewPurchaseHistoryModal = new bootstrap.Modal(document.getElementById('viewPurchaseHistoryModal'));
-            viewPurchaseHistoryModal.show();
-        } catch (error) {
-            console.error('Error fetching purchase history:', error);
-        }
-    }
-
-    // Initial fetch of user accounts
-    fetchUserAccounts();
-
-    // Show the home section by default
+    // Initial display of home section
     showHome();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-FTK/hKNBSh5CYf2ZIdcb46gWJOdFg6Q5Wz2eFSF9GOTpxEyWBRk/tolPeODy+opk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-VgNrIt+Srr1wbIkh+LfAbeFFskG+dNLOupuyb8+nNAEnqk4RzkFoHqAO+B2Im63z" crossorigin="anonymous"></script>
-<script>
-    // Sample user accounts data
-    let accounts = [
-        { id: 1, username: 'johndoe', email: 'john@example.com', riwayatPembelian: 'Purchase history details' }
-    ];
-
-    // Function to display the home section
-    function showHome() {
-        document.getElementById('home-section').style.display = 'block';
-        document.getElementById('product-list-section').style.display = 'none';
-        document.getElementById('user-accounts-section').style.display = 'none';
-        document.getElementById('add-product-section').style.display = 'none';
-        document.getElementById('edit-product-section').style.display = 'none';
-    }
-
-    // Function to show Product List section and hide other sections
-    function showProductList() {
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('product-list-section').style.display = 'block';
-        document.getElementById('user-accounts-section').style.display = 'none';
-        document.getElementById('add-product-section').style.display = 'none';
-        document.getElementById('edit-product-section').style.display = 'none';
-    }
-
-    // Function to show User Accounts section and hide other sections
-    function showUserAccounts() {
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('product-list-section').style.display = 'none';
-        document.getElementById('user-accounts-section').style.display = 'block';
-        document.getElementById('add-product-section').style.display = 'none';
-        document.getElementById('edit-product-section').style.display = 'none';
-    }
-
-    function showAddProduct(){
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('product-list-section').style.display = 'none';
-        document.getElementById('user-accounts-section').style.display = 'none';
-        document.getElementById('add-product-section').style.display = 'block';
-        document.getElementById('edit-product-section').style.display = 'none';
-    }
-
-    function showEditProduct(button){
-
-        var row = button.closest('tr');
-        var id = row.getAttribute('data-id');
-        var title = row.getAttribute('data-name');
-        var desc = row.getAttribute('data-description');
-        var year = row.getAttribute('data-year');
-        var slug = row.getAttribute('data-slug');
-        var price = row.getAttribute('data-price');
-        var stock = row.getAttribute('data-stock');
-        var img = row.getAttribute('data-img');
-        var trailer = row.getAttribute('data-trailer');
-
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('product-list-section').style.display = 'none';
-        document.getElementById('user-accounts-section').style.display = 'none';
-        document.getElementById('add-product-section').style.display = 'none';
-        document.getElementById('edit-product-section').style.display = 'block';
-
-        document.getElementById('product-id').value = id;
-        document.getElementById('name').value = title;
-        document.getElementById('description').value = desc;
-        document.getElementById('year').value = year;
-        document.getElementById('slug').value = slug;
-        document.getElementById('price').value = parseFloat(price);
-        document.getElementById('stock').value = parseInt(stock);
-        document.getElementById('img_url').value = img;
-        document.getElementById('trailer').value = trailer;
-    }
-
-    // Function to load user accounts into the table
-    function loadUserAccounts() {
-        const userTable = document.getElementById('user-table');
-        userTable.innerHTML = '';
-        accounts.forEach(account => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${account.id}</td>
-                <td>${account.username}</td>
-                <td>${account.email}</td>
-                <td>${account.riwayatPembelian}</td>
-            `;
-            userTable.appendChild(row);
-        });
-    }
-
-    // Function to initialize the product list (dummy data)
-    function initializeProducts() {
-        const productTable = document.getElementById('product-table');
-        var products = productTable.value;
-        productTable.innerHTML = '';
-        products.forEach(product => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>{${product.id}}</td>
-                <td>${product.title}</td>
-                <td>${product.category}</td>
-                <td>${product.price}</td>
-                <td>${product.stock}</td>
-                <td>
-                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal">Edit</button>
-                    <button class="btn btn-danger btn-sm">Delete</button>
-                </td>
-            `;
-            productTable.appendChild(row);
-        });
-    }
-
-    // Initialize the product list
-    initializeProducts();
-
-    // Show the home section by default
-    showHome();
-
-    const productTable = document.getElementById('product-table');
-
-    function populateTable() {
-        productTable.innerHTML = '';
-        products.forEach(product => {
-            productTable.innerHTML += `
-                <tr>
-                    <td>${product.id}</td>
-                    <td>${product.title}</td>
-                    <td>${product.category}</td>
-                    <td>${product.price}</td>
-                    <td>${product.stock}</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick="openEditModal(${product.id})">Edit</button>
-                        <button class="btn btn-danger btn-sm" onclick="openDeleteModal(${product.id})">Delete</button>
-                    </td>
-                </tr>
-            `;
-        });
-    }
-
-    document.getElementById('addProductForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const title = document.getElementById('addProductTitle').value;
-        const category = document.getElementById('addProductCategory').value;
-        const price = document.getElementById('addProductPrice').value;
-        const stock = document.getElementById('addProductStock').value;
-        const newProduct = {
-            id: products.length ? products[products.length - 1].id + 1 : 1,
-            title,
-            category,
-            price,
-            stock
-        };
-        products.push(newProduct);
-        populateTable();
-        document.getElementById('addProductForm').reset();
-        bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
-    });
-
-    function openEditModal(id) {
-        const product = products.find(p => p.id === id);
-        document.getElementById('editProductId').value = product.id;
-        document.getElementById('editProductTitle').value = product.title;
-        document.getElementById('editProductCategory').value = product.category;
-        document.getElementById('editProductPrice').value = product.price;
-        document.getElementById('editProductStock').value = product.stock;
-        new bootstrap.Modal(document.getElementById('editProductModal')).show();
-    }
-
-    document.getElementById('editProductForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const id = document.getElementById('editProductId').value;
-        const title = document.getElementById('editProductTitle').value;
-        const category = document.getElementById('editProductCategory').value;
-        const price = document.getElementById('editProductPrice').value;
-        const stock = document.getElementById('editProductStock').value;
-        const productIndex = products.findIndex(p => p.id == id);
-        products[productIndex] = { id: parseInt(id), title, category, price, stock };
-        populateTable();
-        bootstrap.Modal.getInstance(document.getElementById('editProductModal')).hide();
-    });
-
-    function openDeleteModal(id) {
-        const product = products.find(p => p.id === id);
-        document.getElementById('deleteProductName').textContent = product.title;
-        document.getElementById('confirmDeleteButton').onclick = function () {
-            products = products.filter(p => p.id !== id);
-            populateTable();
-            bootstrap.Modal.getInstance(document.getElementById('deleteProductModal')).hide();
-        };
-        new bootstrap.Modal(document.getElementById('deleteProductModal')).show();
-    }
-
-    document.getElementById('viewProfile').addEventListener('click', function () {
-        new bootstrap.Modal(document.getElementById('viewProfileModal')).show();
-    });
-
-    document.addEventListener('DOMContentLoaded', populateTable);
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
