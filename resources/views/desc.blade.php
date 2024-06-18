@@ -45,6 +45,10 @@
                     </div>
                 </div>
             </div>
+            <div class="product">
+        <h2>Product Name</h2>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
         </div>
 
     </section>
@@ -149,6 +153,18 @@
 
         // Set rating for all elements with class rating
         document.querySelectorAll('.rating').forEach(setRating);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const cartCount = document.querySelector('.cart-count');
+
+    let itemCount = 0;
+
+    addToCartButton.addEventListener('click', () => {
+        itemCount++;
+        cartCount.textContent = itemCount;
+    });
+});
     </script>
 </body>
 

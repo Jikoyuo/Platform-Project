@@ -39,6 +39,11 @@
                 <box-icon name="cart" type="solid" color="#ffffff"></box-icon>
             </a>
 
+            <div class="cart-icon">
+            <span class="cart-count">0</span>
+            🛒
+        </div>
+
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
@@ -113,6 +118,20 @@ const buttonPay = document.getElementById("buttonPay");
                     }
                 });
             }
+
+            // scripts.js
+document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const cartCount = document.querySelector('.cart-count');
+
+    let itemCount = 0;
+
+    addToCartButton.addEventListener('click', () => {
+        itemCount++;
+        cartCount.textContent = itemCount;
+    });
+});
+
 </script>
 @else
 <nav class="navbar navbar-expand-lg  mt-5">
