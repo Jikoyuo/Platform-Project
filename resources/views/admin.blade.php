@@ -6,6 +6,7 @@
     <title>Kasetflix || {{$title}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="admin.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         /* Custom CSS for improved navbar */
         .navbar-custom {
@@ -470,6 +471,7 @@
                                     <h6 class="card-subtitle mb-2 text-body-secondary">${data.Year}</h6>
                                     <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
                                     <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
+                                    <input type="text" class="form-control mb-2" placeholder="Masukkan URL trailer" id="trailer-${data.imdbID}">
                                     <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}">Tambah Barang</button>
                                 </div>
                             </div>
@@ -504,19 +506,60 @@ $("#movie-list").on("click", ".tambah-barang", function () {
     var title = $(this).data("title");
     var stock = $(`#stock-${id}`).val();
     var price = $(`#price-${id}`).val();
+    var trailer = $(`#trailer-${id}`).val();
     
-    if (stock && price) {
-        // Add your code to handle adding the item with the specified stock and price
-        console.log("Tambah Barang:", { id, title, stock, price });
-        alert(`Barang ${title} dengan stock ${stock} dan harga ${price} telah ditambahkan.`);
+    console.log("Sending data to server:", {
+        _token: $('meta[name="csrf-token"]').attr('content'),
+        name: title,
+        description: 'Film ' + title,
+        slug: title.toLowerCase().replace(/ /g, '-'),
+        year: new Date().getFullYear(),
+        price: price,
+        stock: stock,
+        img_url: '',
+        trailer: trailer
+    });
+
+    if (stock && price && trailer) {
+        $.ajax({
+            url: '/admin/add-product',
+            type: 'POST',
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                name: title,
+                description: 'Film ' + title,
+                slug: title.toLowerCase().replace(/ /g, '-'),
+                year: new Date().getFullYear(),
+                price: price,
+                stock: stock,
+                img_url: '',
+                trailer: trailer
+            },
+            success: function (response) {
+                if(response.success) {
+                    alert(`Barang ${title} dengan stock ${stock}, harga ${price}, dan trailer telah ditambahkan.`);
+                } else {
+                    alert("Terjadi kesalahan saat menambahkan barang.");
+                }
+            },
+            error: function (error) {
+                console.error("There was an error adding the product:", error);
+                alert("Terjadi kesalahan saat menambahkan barang.");
+            }
+        });
     } else {
-        alert("Mohon masukkan jumlah stock dan harga.");
+        alert("Mohon masukkan jumlah stock, harga, dan URL trailer.");
     }
 });
+
+
+
+
 
     // Initial display of home section
     showHome();
 </script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>
 </html>
