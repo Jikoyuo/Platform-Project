@@ -24,8 +24,8 @@
         @if ($cart != null)
             <div class="trans">
                 <h1 class="text-light">Rincian Belanja</h1>
-                <h2 class="text-light">Item: <span id="quantity">{{$amount}}</span></h2>
-                <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total">{{$total}}</span></h2>
+                <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
+                <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
                 <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
             </div>
         @else
@@ -39,23 +39,22 @@
         <div class="container-trans">
             <div class="container-title"></div>
             @foreach ($items as $item)
-                <div class="container-product align-content-center">
-                    <div class="prod">
+                <div class="container-product align-content-center" >
+                    <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
                         <div class="card" style="width: 100px; height: auto; background-color: #444444;">
                             <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap">
                         </div>
                         <div class="priceProd">
                             <h5 class="text-white">RP <span id="{{$item['slug']}}">{{$item['price']}}</span></h5>
-                            <input id="hidden" type="hidden" value="{{$item['slug']}}">
                         </div>
                         <div class="desc-prod">
                             <h3 class="text-white">{{$item['name']}}</h3>
                             <h4 class="text-white">{{$item['year']}}</h4>
                         </div>
                         <div class="quantity">
-                            <button class="minus" aria-label="Decrease" onclick="updateQuantity(-1, parseFloat(document.getElementById(document.getElementById('hidden').value).innerHTML))">&minus;</button>
-                            <input type="number" id="amount" class="input-box" value="1" min="1" max="{{$item['stock']}}" min="1" oninput="updateTotal()">
-                            <button class="plus" aria-label="Increase" onclick="updateQuantity(1, parseFloat(document.getElementById(document.getElementById('hidden').value).innerHTML))">&plus;</button>
+                            <button class="minus" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
+                            <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="1" max="{{$item['stock']}}" min="1" value="1">
+                            <button class="plus" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
                         </div>
                     </div>
                 </div>
@@ -186,7 +185,7 @@
         </section>
     </div>
 
-    <script>
+    <script type="text/javascript">
         (function() {
             const quantityContainers = document.querySelectorAll(".quantity");
             quantityContainers.forEach(quantityContainer => {
@@ -288,17 +287,57 @@
                 });
             }
         })();
-        function updateQuantity(amount, price) {
-            const quantity = document.getElementById('quantity');
-            const total = document.getElementById('total');
-            let currentQuantity = parseInt(quantity.innerHTML);
-            let currentPrice = parseInt(total.innerHTML);
-            currentQuantity += amount;
-            currentPrice += amount * price;
-            quantity.innerHTML = currentQuantity;
-            total.innerHTML = currentPrice;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('input', () => {
+                    updateSummary();
+                });
+            });
+
+            document.querySelectorAll('.minus-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    updateQuantity(button.getAttribute('data-movie-id'), -1);
+                });
+            });
+
+            document.querySelectorAll('.plus-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    updateQuantity(button.getAttribute('data-movie-id'), 1);
+                });
+            });
+
+            updateSummary(); // Initialize the summary
+        });
+
+        function updateQuantity(item, change) {
+            const quantityElement = document.getElementById(`quantity-${item}`);
+            let quantity = parseInt(quantityElement.value);
+            quantity = Math.max(0, quantity + change); // Ensure quantity is not negative
+            quantityElement.value = quantity;
+
+            updateSummary();
         }
 
+        function updateSummary() {
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            document.querySelectorAll('div[data-movie-id]').forEach(movieDiv => {
+                const movieId = movieDiv.getAttribute('data-movie-id');
+                const moviePrice = parseFloat(movieDiv.getAttribute('data-movie-price'));
+                const quantityElement = document.getElementById(`quantity-${movieId}`);
+                const quantity = parseInt(quantityElement.value);
+
+                if (!isNaN(quantity) && !isNaN(moviePrice)) {
+                    totalItems += quantity;
+                    totalPrice += quantity * moviePrice;
+                }
+            });
+
+            document.getElementById('total-items').innerText = totalItems;
+            document.getElementById('total-price').innerText = totalPrice;
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
