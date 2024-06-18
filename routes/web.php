@@ -16,6 +16,7 @@ Route::get('/', [RedirectController::class, 'redirectToHome']);
 Route::get('/home', [DBProductController::class, 'index']);
 
 Route::get('/product/{slug}', [DBProductController::class, 'productDesc']);
+Route::post('/product/add', [DBCartController::class, 'store']);
 
 Route::get('/admin', [DBAdminController::class, 'show']);
 Route::post('/admin/add', [DBAdminController::class, 'store']);

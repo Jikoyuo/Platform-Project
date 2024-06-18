@@ -88,7 +88,8 @@ class DBProductController extends Controller
                 'reviews' => $reviews,
                 'rating' => $rating,
                 'logged' => true,
-                'admin' => Auth::user()->role === 'admin'
+                'admin' => Auth::user()->role === 'admin',
+                'id' => Auth::user()->id
             ]);
         } else {
             return view('desc', [

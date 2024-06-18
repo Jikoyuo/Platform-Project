@@ -24,8 +24,8 @@
         @if ($cart != null)
             <div class="trans">
                 <h1 class="text-light">Rincian Belanja</h1>
-                <h2 class="text-light">Item :</h2>
-                <h2 class="text-light" style="margin-top: 7%;">Total :</h2>
+                <h2 class="text-light">Item: <span id="quantity">{{$amount}}</span></h2>
+                <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total">{{$total}}</span></h2>
                 <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
             </div>
         @else
@@ -45,16 +45,17 @@
                             <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap">
                         </div>
                         <div class="priceProd">
-                            <h5 class="text-white">RP {{$item['price']}}</h5>
+                            <h5 class="text-white">RP <span id="{{$item['slug']}}">{{$item['price']}}</span></h5>
+                            <input id="hidden" type="hidden" value="{{$item['slug']}}">
                         </div>
                         <div class="desc-prod">
                             <h3 class="text-white">{{$item['name']}}</h3>
                             <h4 class="text-white">{{$item['year']}}</h4>
                         </div>
                         <div class="quantity">
-                            <button class="minus" aria-label="Decrease">&minus;</button>
-                            <input type="number" class="input-box" value="1" min="1" max="{{$item['stock']}}">
-                            <button class="plus" aria-label="Increase">&plus;</button>
+                            <button class="minus" aria-label="Decrease" onclick="updateQuantity(-1, parseFloat(document.getElementById(document.getElementById('hidden').value).innerHTML))">&minus;</button>
+                            <input type="number" id="amount" class="input-box" value="1" min="1" max="{{$item['stock']}}" min="1" oninput="updateTotal()">
+                            <button class="plus" aria-label="Increase" onclick="updateQuantity(1, parseFloat(document.getElementById(document.getElementById('hidden').value).innerHTML))">&plus;</button>
                         </div>
                     </div>
                 </div>
@@ -287,7 +288,16 @@
                 });
             }
         })();
-
+        function updateQuantity(amount, price) {
+            const quantity = document.getElementById('quantity');
+            const total = document.getElementById('total');
+            let currentQuantity = parseInt(quantity.innerHTML);
+            let currentPrice = parseInt(total.innerHTML);
+            currentQuantity += amount;
+            currentPrice += amount * price;
+            quantity.innerHTML = currentQuantity;
+            total.innerHTML = currentPrice;
+        }
 
     </script>
 
