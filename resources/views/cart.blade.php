@@ -52,9 +52,9 @@
                             <h4 class="text-white">{{$item['year']}}</h4>
                         </div>
                         <div class="quantity">
-                            <button class="minus" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
+                            <button class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
                             <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="1" max="{{$item['stock']}}" min="1" value="1">
-                            <button class="plus" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
+                            <button class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
                         </div>
                     </div>
                 </div>
@@ -186,107 +186,107 @@
     </div>
 
     <script type="text/javascript">
-        (function() {
-            const quantityContainers = document.querySelectorAll(".quantity");
-            quantityContainers.forEach(quantityContainer => {
-                const minusBtn = quantityContainer.querySelector(".minus");
-                const plusBtn = quantityContainer.querySelector(".plus");
-                const inputBox = quantityContainer.querySelector(".input-box");
+        // (function() {
+        //     const quantityContainers = document.querySelectorAll(".quantity");
+        //     quantityContainers.forEach(quantityContainer => {
+        //         const minusBtn = quantityContainer.querySelector(".minus");
+        //         const plusBtn = quantityContainer.querySelector(".plus");
+        //         const inputBox = quantityContainer.querySelector(".input-box");
 
-                updateButtonStates();
+        //         updateButtonStates();
 
-                quantityContainer.addEventListener("click", handleButtonClick);
-                inputBox.addEventListener("input", handleQuantityChange);
+        //         quantityContainer.addEventListener("click", handleButtonClick);
+        //         inputBox.addEventListener("input", handleQuantityChange);
 
-                function updateButtonStates() {
-                    const value = parseInt(inputBox.value);
-                    minusBtn.disabled = value <= 1;
-                    plusBtn.disabled = value >= parseInt(inputBox.max);
-                }
+        //         function updateButtonStates() {
+        //             const value = parseInt(inputBox.value);
+        //             minusBtn.disabled = value <= 1;
+        //             plusBtn.disabled = value >= parseInt(inputBox.max);
+        //         }
 
-                function handleButtonClick(event) {
-                    if (event.target.classList.contains("minus")) {
-                        decreaseValue();
-                    } else if (event.target.classList.contains("plus")) {
-                        increaseValue();
-                    }
-                }
+        //         function handleButtonClick(event) {
+        //             if (event.target.classList.contains("minus")) {
+        //                 decreaseValue();
+        //             } else if (event.target.classList.contains("plus")) {
+        //                 increaseValue();
+        //             }
+        //         }
 
-                function decreaseValue() {
-                    let value = parseInt(inputBox.value);
-                    value = isNaN(value) ? 1 : Math.max(value - 1, 1);
-                    inputBox.value = value;
-                    updateButtonStates();
-                    handleQuantityChange();
-                }
+        //         function decreaseValue() {
+        //             let value = parseInt(inputBox.value);
+        //             value = isNaN(value) ? 1 : Math.max(value - 1, 1);
+        //             inputBox.value = value;
+        //             updateButtonStates();
+        //             handleQuantityChange();
+        //         }
 
-                function increaseValue() {
-                    let value = parseInt(inputBox.value);
-                    value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
-                    inputBox.value = value;
-                    updateButtonStates();
-                    handleQuantityChange();
-                }
+        //         function increaseValue() {
+        //             let value = parseInt(inputBox.value);
+        //             value = isNaN(value) ? 1 : Math.min(value + 1, parseInt(inputBox.max));
+        //             inputBox.value = value;
+        //             updateButtonStates();
+        //             handleQuantityChange();
+        //         }
 
-                function handleQuantityChange() {
-                    let value = parseInt(inputBox.value);
-                    value = isNaN(value) ? 1 : value;
+        //         function handleQuantityChange() {
+        //             let value = parseInt(inputBox.value);
+        //             value = isNaN(value) ? 1 : value;
 
-                    // Execute your code here based on the updated quantity value
-                    console.log("Quantity changed:", value);
-                }
-            });
+        //             // Execute your code here based on the updated quantity value
+        //             console.log("Quantity changed:", value);
+        //         }
+        //     });
 
-            const buttonPay = document.getElementById("buttonPay");
-            buttonPay.addEventListener("click", showAlert);
+        //     const buttonPay = document.getElementById("buttonPay");
+        //     buttonPay.addEventListener("click", showAlert);
 
-            function showAlert() {
-                const alertBox = document.createElement("div");
-                alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
-                alertBox.role = "alert";
-                alertBox.innerHTML = `
-                    <strong>Success!</strong> Your payment has been processed.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                `;
-                document.body.appendChild(alertBox);
+        //     function showAlert() {
+        //         const alertBox = document.createElement("div");
+        //         alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
+        //         alertBox.role = "alert";
+        //         alertBox.innerHTML = `
+        //             <strong>Success!</strong> Your payment has been processed.
+        //             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        //         `;
+        //         document.body.appendChild(alertBox);
 
-                // Automatically remove the alert after a certain time (optional)
-                setTimeout(() => {
-                    alertBox.classList.remove('show');
-                    alertBox.addEventListener('transitionend', () => {
-                        alertBox.remove();
-                    });
-                }, 5000); // 5 seconds
+        //         // Automatically remove the alert after a certain time (optional)
+        //         setTimeout(() => {
+        //             alertBox.classList.remove('show');
+        //             alertBox.addEventListener('transitionend', () => {
+        //                 alertBox.remove();
+        //             });
+        //         }, 5000); // 5 seconds
 
-                // Create the popup div
-                const popupDiv = document.createElement("div");
-                popupDiv.className = "popup";
-                popupDiv.innerHTML = `
-                    <div class="popup-content">
-                        <span class="close">&times;</span>
-                        <h2>Payment Details</h2>
-                        <p>Your payment has been successfully processed.</p>
-                    </div>
-                `;
-                document.body.appendChild(popupDiv);
+        //         // Create the popup div
+        //         const popupDiv = document.createElement("div");
+        //         popupDiv.className = "popup";
+        //         popupDiv.innerHTML = `
+        //             <div class="popup-content">
+        //                 <span class="close">&times;</span>
+        //                 <h2>Payment Details</h2>
+        //                 <p>Your payment has been successfully processed.</p>
+        //             </div>
+        //         `;
+        //         document.body.appendChild(popupDiv);
 
-                // Display the popup
-                popupDiv.style.display = "block";
+        //         // Display the popup
+        //         popupDiv.style.display = "block";
 
-                // Add close event to the close button
-                const closeBtn = popupDiv.querySelector(".close");
-                closeBtn.addEventListener("click", () => {
-                    popupDiv.style.display = "none";
-                });
+        //         // Add close event to the close button
+        //         const closeBtn = popupDiv.querySelector(".close");
+        //         closeBtn.addEventListener("click", () => {
+        //             popupDiv.style.display = "none";
+        //         });
 
-                // Close the popup when clicking outside of the popup content
-                window.addEventListener("click", (event) => {
-                    if (event.target == popupDiv) {
-                        popupDiv.style.display = "none";
-                    }
-                });
-            }
-        })();
+        //         // Close the popup when clicking outside of the popup content
+        //         window.addEventListener("click", (event) => {
+        //             if (event.target == popupDiv) {
+        //                 popupDiv.style.display = "none";
+        //             }
+        //         });
+        //     }
+        // })();
 
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.quantity-input').forEach(input => {
@@ -336,7 +336,7 @@
             });
 
             document.getElementById('total-items').innerText = totalItems;
-            document.getElementById('total-price').innerText = totalPrice;
+            document.getElementById('total-price').innerText = `Rp ${totalPrice}`;
         }
     </script>
 
