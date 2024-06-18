@@ -12,18 +12,13 @@
     <link rel="stylesheet" href="../trans.css">
     <link rel="stylesheet" href="../newParticle.css">
     <script defer src="../newParticle.js"></script>
-    <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     @include('partials.navbar')
     <div id="particles-js" class="particles"></div>
-
 
     <div class="main-content">
         @if ($cart != null)
@@ -40,7 +35,6 @@
                 </div>
             </div>
         @endif
-
 
         <div class="container-trans">
             <div class="container-title"></div>
@@ -251,9 +245,9 @@
                 alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
                 alertBox.role = "alert";
                 alertBox.innerHTML = `
-        <strong>Success!</strong> Your payment has been processed.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
+                    <strong>Success!</strong> Your payment has been processed.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
                 document.body.appendChild(alertBox);
 
                 // Automatically remove the alert after a certain time (optional)
@@ -263,12 +257,39 @@
                         alertBox.remove();
                     });
                 }, 5000); // 5 seconds
-            }
 
+                // Create the popup div
+                const popupDiv = document.createElement("div");
+                popupDiv.className = "popup";
+                popupDiv.innerHTML = `
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <h2>Payment Details</h2>
+                        <p>Your payment has been successfully processed.</p>
+                    </div>
+                `;
+                document.body.appendChild(popupDiv);
+
+                // Display the popup
+                popupDiv.style.display = "block";
+
+                // Add close event to the close button
+                const closeBtn = popupDiv.querySelector(".close");
+                closeBtn.addEventListener("click", () => {
+                    popupDiv.style.display = "none";
+                });
+
+                // Close the popup when clicking outside of the popup content
+                window.addEventListener("click", (event) => {
+                    if (event.target == popupDiv) {
+                        popupDiv.style.display = "none";
+                    }
+                });
+            }
         })();
     </script>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 </body>
 
