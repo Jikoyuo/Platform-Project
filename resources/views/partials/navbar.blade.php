@@ -90,8 +90,9 @@ const buttonPay = document.getElementById("buttonPay");
                 popupDiv.innerHTML = `
                     <div class="popup-content">
                         <span class="close">&times;</span>
-                        <h2>Payment Details</h2>
-                        <p>Your payment has been successfully processed.</p>
+                        <h1 class="text-center">Transaction History</h1>
+                        <p>Date: 21 June 2024</p>
+                        <p>Nama Kaset: Dune</p>
                     </div>
                 `;
                 document.body.appendChild(popupDiv);
