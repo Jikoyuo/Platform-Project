@@ -12,11 +12,15 @@
     <link rel="stylesheet" href="../trans.css">
     <link rel="stylesheet" href="../newParticle.css">
     <script defer src="../newParticle.js"></script>
+<<<<<<< HEAD
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+=======
     <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
 
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
 </head>
 
 <body>
@@ -24,7 +28,10 @@
     @include('partials.navbar')
     <div id="particles-js" class="particles"></div>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
     <div class="main-content">
         @if ($cart != null)
             <div class="trans">
@@ -41,7 +48,10 @@
             </div>
         @endif
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
         <div class="container-trans">
             <div class="container-title"></div>
             @foreach ($items as $item)
@@ -251,9 +261,15 @@
                 alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
                 alertBox.role = "alert";
                 alertBox.innerHTML = `
+<<<<<<< HEAD
+                    <strong>Success!</strong> Your payment has been processed.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+=======
         <strong>Success!</strong> Your payment has been processed.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
                 document.body.appendChild(alertBox);
 
                 // Automatically remove the alert after a certain time (optional)
@@ -263,12 +279,48 @@
                         alertBox.remove();
                     });
                 }, 5000); // 5 seconds
+<<<<<<< HEAD
+
+                // Create the popup div
+                const popupDiv = document.createElement("div");
+                popupDiv.className = "popup";
+                popupDiv.innerHTML = `
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <h2>Payment Details</h2>
+                        <p>Your payment has been successfully processed.</p>
+                    </div>
+                `;
+                document.body.appendChild(popupDiv);
+
+                // Display the popup
+                popupDiv.style.display = "block";
+
+                // Add close event to the close button
+                const closeBtn = popupDiv.querySelector(".close");
+                closeBtn.addEventListener("click", () => {
+                    popupDiv.style.display = "none";
+                });
+
+                // Close the popup when clicking outside of the popup content
+                window.addEventListener("click", (event) => {
+                    if (event.target == popupDiv) {
+                        popupDiv.style.display = "none";
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+=======
             }
 
         })();
     </script>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+>>>>>>> 2254de7f2c65ccf584339d7bcbbdccaeb956ba80
 
 </body>
 
