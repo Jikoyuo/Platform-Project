@@ -186,7 +186,7 @@
             <!-- Add Product Section -->
             <div class="container mt-5" id="add-product-section" style="display: none;">
                 <h1 class="mb-4">Add Product</h1>
-                <input action="/admin/add" method="POST">
+                <form action="/admin/add" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -482,6 +482,10 @@
                                     <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
                                     <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
                                     <input type="text" class="form-control mb-2" placeholder="Masukkan URL trailer" id="trailer-${data.imdbID}">
+                                    @foreach ($genres as $genre)
+                                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                                    @endforeach
                                     <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}">Tambah Barang</button>
                                 </div>
                             </div>
@@ -517,6 +521,11 @@ $("#movie-list").on("click", ".tambah-barang", function () {
     var stock = $(`#stock-${id}`).val();
     var price = $(`#price-${id}`).val();
     var trailer = $(`#trailer-${id}`).val();
+
+    var selectedGenres = [];
+    $(`input[name='genres-${id}']:checked`).each(function () {
+        selectedGenres.push($(this).val());
+    });
     
     console.log("Sending data to server:", {
         _token: $('meta[name="csrf-token"]').attr('content'),
@@ -527,7 +536,8 @@ $("#movie-list").on("click", ".tambah-barang", function () {
         price: price,
         stock: stock,
         img_url: '',
-        trailer: trailer
+        trailer: traile,
+        genres: selectedGenres
     });
 
     if (stock && price && trailer) {
@@ -543,7 +553,8 @@ $("#movie-list").on("click", ".tambah-barang", function () {
                 price: price,
                 stock: stock,
                 img_url: '',
-                trailer: trailer
+                trailer: trailer,
+                genres: selectedGenres
             },
             success: function (response) {
                 if(response.success) {
@@ -561,10 +572,6 @@ $("#movie-list").on("click", ".tambah-barang", function () {
         alert("Mohon masukkan jumlah stock, harga, dan URL trailer.");
     }
 });
-
-
-
-
 
     // Initial display of home section
     showHome();

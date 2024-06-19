@@ -51,7 +51,7 @@ class DBAdminController extends Controller
     public function addProduct(Request $request){
         Log::info('Request data:', $request->all()); // Logging request data
         
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|max:99999',
             'slug' => 'required|string|max:255',
@@ -63,7 +63,15 @@ class DBAdminController extends Controller
         ]);
     
         try {
-            DBProduct::create($request->all());
+            $product = DBProduct::create($validated);
+            foreach ($request->genres as $genre_id) {
+                DB::table('taggables')->insert([
+                    'tag_id' => $product->id,
+                    'taggable_id' => $genre_id,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            }
             Log::info('Product created successfully:', $request->all());
             return response()->json(['success' => true, 'message' => 'Product added successfully']);
         } catch (\Exception $e) {
