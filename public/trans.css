@@ -41,9 +41,13 @@ body {
 }
 
 .container-product {
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(21, 21, 21);
     margin-top: 2%;
     height: 200px;
+}
+
+.container-product:hover {
+    transform: translateY(-5px);
 }
 
 .container-title {
@@ -51,13 +55,14 @@ body {
     justify-content: center; /* Horizontal alignment */
     align-items: center;     /* Vertical alignment */
     height: 100px;
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(21, 21, 21);
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
 
+
 .trans {
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(21, 21, 21);
     height: 400px;
     width: 530px;
     margin-left: 62%;

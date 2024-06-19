@@ -125,6 +125,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    width: 1000px;
   }
 
   .search-input {
@@ -134,6 +135,7 @@ body {
     font-size: 1rem;
     outline: none;
     flex-grow: 1;
+    border-radius: 20px;
   }
 
   .search-button {
@@ -177,6 +179,7 @@ body {
     margin-left: 7%;
     z-index: 999; /* Atur z-index lebih tinggi dari bg-image */
 }
+
 
   .navbar-nav .nav-link {
     margin-right: 40px; /* Atur jarak antara setiap link di navbar */
@@ -551,7 +554,7 @@ body {
   }
 
 
-  @media only screen and (min-width: 350px) {
+  @media only screen and (min-width: 350px) and (max-width: 450px) {
     .container {
         position: relative;
         top: 80%;
