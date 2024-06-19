@@ -22,15 +22,16 @@
 
     <div class="main-content">
         @if (!empty($cart) && count($cart) > 0)
-        <form action="/passing" method="POST">
-            @csrf
-            <div class="trans">
-                <h1 class="text-light">Rincian Belanja</h1>
-                <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
-                <h2 class="text-light" style="margin-top: 7%;">Total: <span name="total" id="total-price">{{$total}}</span></h2>
-                <button type="submit" id="buttonPay" class="btn btn-dark btn-trans">Checkout</button>
-            </div>
-        </form>
+            <form action="/cart/payment" method="POST">
+                @csrf
+                <div class="trans">
+                    <h1 class="text-light">Rincian Belanja</h1>
+                    <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
+                    <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
+                    <input type="hidden" id="total_price" name="total" value="0">
+                    <button type="submit" id="buttonPay" class="btn btn-dark btn-trans">Checkout</button>
+                </div>
+            </form>
         @else
             <div class="jumbotron jumbotron-fluid text-white">
                 <div class="container">
@@ -56,7 +57,7 @@
                         </div>
                         <div class="quantity">
                             <button class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
-                            <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="1" max="{{$item['stock']}}" min="1" value="1">
+                            <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" value="1">
                             <button class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
                         </div>
                     </div>
@@ -189,8 +190,6 @@
     </div>
 
     <script type="text/javascript">
-
-
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.quantity-input').forEach(input => {
                 input.addEventListener('input', () => {
@@ -216,8 +215,14 @@
         function updateQuantity(item, change) {
             const quantityElement = document.getElementById(`quantity-${item}`);
             let quantity = parseInt(quantityElement.value);
-            quantity = Math.max(0, quantity + change); // Ensure quantity is not negative
+            quantity = Math.max(1, quantity + change); // Ensure quantity is not negative
             quantityElement.value = quantity;
+            if (quantity > quantityElement.getAttribute('max')) {
+                quantityElement.value = quantityElement.getAttribute('max');
+            }
+            else if (quantity.value < quantityElement.getAttribute('min')){
+                quantityElement.value = quantityElement.getAttribute('min');
+            }
 
             updateSummary();
         }
@@ -240,6 +245,7 @@
 
             document.getElementById('total-items').innerText = totalItems;
             document.getElementById('total-price').innerText = `Rp ${totalPrice}`;
+            document.getElementById('total_price').value = totalPrice;
         }
 
     </script>

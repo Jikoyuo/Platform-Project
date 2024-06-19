@@ -47,5 +47,5 @@ Route::get('/auth/google/callback', [GoogleAuthController::class, 'callbackGoogl
 Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('facebook-auth');
 Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect']);
 
-Route::get('/payment',[PaymentController::class, 'Payment']);
-Route::post('/passing',[PaymentController::class, 'Payment']);
+// Route::get('/payment',[PaymentController::class, 'payment']);
+Route::post('/cart/payment',[PaymentController::class, 'payment']);

@@ -154,20 +154,8 @@
                         />
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label text-light"
-                            >Email</label
-                        >
-                        <input
-                            type="email"
-                            class="form-control"
-                            value="{{ $user->email }}"
-                            id="email"
-                            required
-                        />
-                    </div>
-                    <div class="mb-3">
                         <label for="phone" class="form-label text-light"
-                            >Nomer Telepon</label
+                            >Nomor Telepon</label
                         >
                         <input
                             type="tel"
@@ -247,7 +235,7 @@
                         <img src="shopeepay.png" alt="ShopeePay" />
                         <img src="qris.png" alt="QRIS" />
                     </div>
-                    <div>{{ $totalHarga }}</div>
+                    <div>Total Harga: Rp {{ $totalHarga }}</div>
                     <button type="submit" class="btn btn-primary mt-3">
                         Submit
                     </button>
