@@ -41,21 +41,23 @@ body {
 }
 
 .container-product {
-    background-color: #444444;
+    background-color: rgb(46, 46, 46);
     margin-top: 2%;
     height: 200px;
 }
 
 .container-title {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
     height: 100px;
-    background-color: #444444;
-    /* border: 2px solid red; */
+    background-color: rgb(46, 46, 46);
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
 
 .trans {
-    background-color: #444444;
+    background-color: rgb(46, 46, 46);
     height: 400px;
     width: 530px;
     margin-left: 62%;
@@ -152,8 +154,8 @@ footer {
 
   .priceProd{
     text-align: center;
-    top: -50%;
-    left: 81%;
+    top: -65%;
+    left: 80%;
     position: relative;
     /* background-color: #155724; */
     width: auto;
@@ -164,7 +166,7 @@ footer {
 
   .desc-prod{
     position: relative;
-    top: -123%;
+    top: -110%;
     left: 17%;
     /* background-color: cyan; */
     height: 70%;
@@ -174,8 +176,8 @@ footer {
 /*input number plus minus*/
   .quantity {
     position: relative;
-    left: 85%;
-    top: -120%;
+    left: 81%;
+    top: -130%;
     width: 100px;
     display: flex;
     /* border: 2px solid red; */

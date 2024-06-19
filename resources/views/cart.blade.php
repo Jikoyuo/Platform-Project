@@ -37,7 +37,9 @@
         @endif
 
         <div class="container-trans">
-            <div class="container-title"></div>
+            <div class="container-title">
+            <h1 class="text-white">Shopping Cart</h1>
+            </div>
             @foreach ($items as $item)
                 <div class="container-product align-content-center" >
                     <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
@@ -239,7 +241,7 @@
             document.getElementById('total-price').innerText = `Rp ${totalPrice}`;
             document.getElementById('buttonPay')
         }
-        
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
