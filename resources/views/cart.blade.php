@@ -41,8 +41,8 @@
             @foreach ($items as $item)
                 <div class="container-product align-content-center" >
                     <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
-                        <div class="card" style="width: 100px; height: auto; background-color: #444444;">
-                            <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap">
+                        <div class="card" style="width: 100px; max-height: auto; background-color: #4444;">
+                            <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap" style="max-height: 170px;">
                         </div>
                         <div class="priceProd">
                             <h5 class="text-white">RP <span id="{{$item['slug']}}">{{$item['price']}}</span></h5>
