@@ -149,7 +149,7 @@
                         <input
                             type="text"
                             class="form-control"
-                            id="name"
+                            id="name" value="{{ $user->username }}"
                             required
                         />
                     </div>
@@ -160,6 +160,7 @@
                         <input
                             type="email"
                             class="form-control"
+                            value="{{ $user->email }}"
                             id="email"
                             required
                         />
@@ -171,6 +172,7 @@
                         <input
                             type="tel"
                             class="form-control"
+                            value="{{ $user->phone_number }}"
                             id="phone"
                             required
                         />
@@ -245,6 +247,7 @@
                         <img src="shopeepay.png" alt="ShopeePay" />
                         <img src="qris.png" alt="QRIS" />
                     </div>
+                    <div>{{ $totalHarga }}</div>
                     <button type="submit" class="btn btn-primary mt-3">
                         Submit
                     </button>

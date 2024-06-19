@@ -48,4 +48,4 @@ Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name(
 Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect']);
 
 Route::get('/payment',[PaymentController::class, 'Payment']);
-
+Route::post('/passing',[PaymentController::class, 'Payment']);
