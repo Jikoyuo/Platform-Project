@@ -91,6 +91,7 @@ body {
 }
 
   .bg-image {
+    /* background-color: red; */
     flex: 1; /* Menggunakan sebanyak mungkin ruang yang tersedia */
     height: 80vh; /* Sesuaikan tinggi gambar dengan tinggi container */
     background-size: cover;
