@@ -39,10 +39,6 @@
                 <box-icon name="cart" type="solid" color="#ffffff"></box-icon>
             </a>
 
-            <div class="cart-icon">
-            <span class="cart-count">0</span>
-            🛒
-        </div>
 
 
             <ul class="navbar-nav ms-auto">
@@ -66,73 +62,6 @@
 </nav>
 <!-- end navbar login -->
 
-<script>
-const buttonPay = document.getElementById("buttonPay");
-            buttonPay.addEventListener("click", showAlert);
-
-
-        function showAlert() {
-                const alertBox = document.createElement("div");
-                alertBox.className = "custom-alert alert alert-success alert-dismissible fade show";
-                alertBox.role = "alert";
-                alertBox.innerHTML = `
-                    <strong>Success!</strong> Your payment has been processed.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                `;
-                document.body.appendChild(alertBox);
-
-                // Automatically remove the alert after a certain time (optional)
-                setTimeout(() => {
-                    alertBox.classList.remove('show');
-                    alertBox.addEventListener('transitionend', () => {
-                        alertBox.remove();
-                    });
-                }, 5000); // 5 seconds
-
-                // Create the popup div
-                const popupDiv = document.createElement("div");
-                popupDiv.className = "popup";
-                popupDiv.innerHTML = `
-                    <div class="popup-content">
-                        <span class="close">&times;</span>
-                        <h1 class="text-center">Transaction History</h1>
-                        <p>Date: 21 June 2024</p>
-                        <p>Nama Kaset: Dune</p>
-                    </div>
-                `;
-                document.body.appendChild(popupDiv);
-
-                // Display the popup
-                popupDiv.style.display = "block";
-
-                // Add close event to the close button
-                const closeBtn = popupDiv.querySelector(".close");
-                closeBtn.addEventListener("click", () => {
-                    popupDiv.style.display = "none";
-                });
-
-                // Close the popup when clicking outside of the popup content
-                window.addEventListener("click", (event) => {
-                    if (event.target == popupDiv) {
-                        popupDiv.style.display = "none";
-                    }
-                });
-            }
-
-            // scripts.js
-document.addEventListener('DOMContentLoaded', () => {
-    const addToCartButton = document.querySelector('.add-to-cart');
-    const cartCount = document.querySelector('.cart-count');
-
-    let itemCount = 0;
-
-    addToCartButton.addEventListener('click', () => {
-        itemCount++;
-        cartCount.textContent = itemCount;
-    });
-});
-
-</script>
 @else
 <nav class="navbar navbar-expand-lg  mt-5">
     <div class="container-fluid">
