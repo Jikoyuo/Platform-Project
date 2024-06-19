@@ -152,30 +152,30 @@ footer {
 
   .priceProd{
     text-align: center;
-    top: -50%;
-    left: 81%;
-    position: relative;
+    top: 50%;
+    left: 85%;
+    position: absolute;
     /* background-color: #155724; */
     width: auto;
-    max-width: 150px;
+    max-width: fit-content;
     height: 40px;
   }
 
 
   .desc-prod{
-    position: relative;
-    top: -123%;
-    left: 17%;
+    position: absolute;
+    top: 50%;
+    left: 20%;
     /* background-color: cyan; */
-    height: 70%;
-    width: 65%;
+    height: auto;
+    width: auto;
   }
 
 /*input number plus minus*/
   .quantity {
-    position: relative;
-    left: 85%;
-    top: -120%;
+    position: absolute;
+    left: 80%;
+    top: 70%;
     width: 100px;
     display: flex;
     /* border: 2px solid red; */

@@ -7,6 +7,12 @@ body {
     margin: 0;
 }
 
+.card{
+    background-color: #155724;
+    width: 80px;
+     height: auto;
+}
+
 .navbar {
     /* background-color: aqua; */
     position: absolute; /* Tambahkan properti position absolute */
@@ -31,7 +37,7 @@ body {
 
 .container-trans {
     position: relative;
-    /* background-color: chartreuse; */
+    background-color: chartreuse;
     height: auto;
     width: 40%;
     margin-top: -20.5%;
@@ -41,7 +47,7 @@ body {
 }
 
 .container-product {
-    background-color: #444444;
+    background-color: red;
     margin-top: 2%;
     height: 200px;
 }
@@ -84,6 +90,12 @@ body {
      width: 85%;
 }
 
+.btn-bb{
+    position: relative;
+    top: -100%;
+    right: -80%;
+}
+
 .hr-blurry {
     border: none; /* Menghilangkan border default */
     height: 2px; /* Menentukan tinggi dari hr */
@@ -97,7 +109,7 @@ body {
 }
 
 .footer-wrapper {
-    margin-top: auto; /* Membuat footer berada di bawah */
+    margin-top: 300px; /* Membuat footer berada di bawah */
 }
 
 footer {
@@ -146,7 +158,7 @@ footer {
   .prod{
     margin-left:2.5%;
     /* background-color: aquamarine; */
-    height: 80%;
+    height: 85%;
     width: 95%;
   }
 
@@ -164,9 +176,9 @@ footer {
 
   .desc-prod{
     position: relative;
-    top: -85%;
+    top: -123%;
     left: 17%;
-    /* background-color: beige; */
+    /* background-color: cyan; */
     height: 70%;
     width: 65%;
   }
