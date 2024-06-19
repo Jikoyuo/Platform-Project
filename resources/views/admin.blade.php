@@ -183,51 +183,53 @@
             </div>
 
 
-            <!-- Add Product Section -->
-            <div class="container mt-5" id="add-product-section" style="display: none;">
-                <h1 class="mb-4">Add Product</h1>
-                <form action="/admin/add" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="slug">Slug</label>
-                        <input type="text" class="form-control" name="slug" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Year</label>
-                        <input type="text" class="form-control" name="year" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" step="100" class="form-control" name="price" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="stock">Stock</label>
-                        <input type="number" class="form-control" name="stock" required>
-                    </div>
-                    <label>Genres:</label><br>
-                    @foreach ($genres as $genre)
-                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
-                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
-                    @endforeach
-                    <div class="form-group">
-                        <label for="img_url">Image URL</label>
-                        <input type="text" class="form-control" name="img_url" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="trailer">Trailer Embedded URL</label>
-                        <input type="text" class="form-control" name="trailer" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+       <!-- Add Product Section -->
+<div class="container mt-5" id="add-product-section" style="display: none;">
+    <h1 class="mb-4">Add Product</h1>
+    <form action="/admin/add" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description" required>
+        </div>
+        <div class="form-group">
+            <label for="slug">Slug</label>
+            <input type="text" class="form-control" id="slug" name="slug" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" class="form-control" id="year" name="year" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" step="100" class="form-control" id="price" name="price" required>
+        </div>
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" required>
+        </div>
+        <label>Genres:</label><br>
+        @foreach ($genres as $genre)
+            <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+            <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+        @endforeach
+        <div class="form-group">
+            <label for="img_url">Image URL</label>
+            <input type="text" class="form-control" id="img_url" name="img_url" required>
+        </div>
+        <div class="form-group">
+            <label for="trailer">Trailer Embedded URL</label>
+            <input type="text" class="form-control" id="trailer" name="trailer" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
 
             <!-- Edit Product Section -->
             <div class="container mt-5" id="edit-product-section" style="display: none;">
@@ -457,122 +459,124 @@
         document.getElementById('trailer').value = trailer;
     }
 
+   $(document).ready(function() {
     function searchMovie() {
-    $("#movie-list").html("");
-    $.ajax({
-        url: "https://omdbapi.com",
-        type: "get",
-        dataType: "json",
-        data: {
-            apikey: "ccd14ef6",
-            s: $("#search-input").val(),
-        },
-        success: function (result) {
-            if (result.Response === "True") {
-                let movies = result.Search;
-                $.each(movies, function (i, data) {
-                    $("#movie-list").append(
-                        `
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="${data.Poster}" class="card-img-top" alt="${data.Title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${data.Title}</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">${data.Year}</h6>
-                                    <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
-                                    <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
-                                    <input type="text" class="form-control mb-2" placeholder="Masukkan URL trailer" id="trailer-${data.imdbID}">
-                                    @foreach ($genres as $genre)
-                                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
-                                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
-                                    @endforeach
-                                    <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}">Tambah Barang</button>
+        $("#movie-list").html("");
+        $.ajax({
+            url: "https://omdbapi.com",
+            type: "get",
+            dataType: "json",
+            data: {
+                apikey: "ccd14ef6",
+                s: $("#search-input").val(),
+            },
+            success: function(result) {
+                if (result.Response === "True") {
+                    let movies = result.Search;
+                    $.each(movies, function(i, data) {
+                        $("#movie-list").append(
+                            `
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <img src="${data.Poster}" class="card-img-top" alt="${data.Title}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${data.Title}</h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">${data.Year}</h6>
+                                        <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
+                                        <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
+                                        <input type="text" class="form-control mb-2" placeholder="Masukkan URL trailer" id="trailer-${data.imdbID}">
+                                        @foreach ($genres as $genre)
+                                            <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres-${data.imdbID}" value="{{ $genre->id }}">
+                                            <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                                        @endforeach
+                                        <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}" data-year="${data.Year}" data-poster="${data.Poster}">Tambah Barang</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        `
-                    );
-                });
-                $("#search-input").val("");
-            } else {
-                $("#movie-list").html(`
-                    <div class="col">
-                        <h1 class="text-center">${result.Error}</h1>
-                    </div>
-                `);
-            }
-        },
-    });
-}
-
-$("#search-button").on("click", function () {
-    searchMovie();
-});
-
-$("#search-input").on("keyup", function (e) {
-    if (e.which === 13) {
-        searchMovie();
-    }
-});
-
-$("#movie-list").on("click", ".tambah-barang", function () {
-    var id = $(this).data("id");
-    var title = $(this).data("title");
-    var stock = $(`#stock-${id}`).val();
-    var price = $(`#price-${id}`).val();
-    var trailer = $(`#trailer-${id}`).val();
-
-    var selectedGenres = [];
-    $(`input[name='genres-${id}']:checked`).each(function () {
-        selectedGenres.push($(this).val());
-    });
-    
-    console.log("Sending data to server:", {
-        _token: $('meta[name="csrf-token"]').attr('content'),
-        name: title,
-        description: 'Film ' + title,
-        slug: title.toLowerCase().replace(/ /g, '-'),
-        year: new Date().getFullYear(),
-        price: price,
-        stock: stock,
-        img_url: '',
-        trailer: traile,
-        genres: selectedGenres
-    });
-
-    if (stock && price && trailer) {
-        $.ajax({
-            url: '/admin/add-product',
-            type: 'POST',
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                name: title,
-                description: 'Film ' + title,
-                slug: title.toLowerCase().replace(/ /g, '-'),
-                year: new Date().getFullYear(),
-                price: price,
-                stock: stock,
-                img_url: '',
-                trailer: trailer,
-                genres: selectedGenres
-            },
-            success: function (response) {
-                if(response.success) {
-                    alert(`Barang ${title} dengan stock ${stock}, harga ${price}, dan trailer telah ditambahkan.`);
+                            `
+                        );
+                    });
+                    $("#search-input").val("");
                 } else {
-                    alert("Terjadi kesalahan saat menambahkan barang.");
+                    $("#movie-list").html(`
+                        <div class="col">
+                            <h1 class="text-center">${result.Error}</h1>
+                        </div>
+                    `);
                 }
             },
-            error: function (error) {
-                console.error("There was an error adding the product:", error);
-                alert("Terjadi kesalahan saat menambahkan barang.");
-            }
         });
-    } else {
-        alert("Mohon masukkan jumlah stock, harga, dan URL trailer.");
     }
-});
 
+    function getMovieDetails(imdbID, callback) {
+        $.ajax({
+            url: "https://omdbapi.com",
+            type: "get",
+            dataType: "json",
+            data: {
+                apikey: "ccd14ef6",
+                i: imdbID,
+            },
+            success: function(details) {
+                if (details.Response === "True") {
+                    callback(details);
+                } else {
+                    console.error("Error fetching movie details: " + details.Error);
+                }
+            },
+        });
+    }
+
+    $("#search-button").on("click", function() {
+        searchMovie();
+    });
+
+    $("#search-input").on("keyup", function(e) {
+        if (e.which === 13) {
+            searchMovie();
+        }
+    });
+
+    $("#movie-list").on("click", ".tambah-barang", function() {
+        var id = $(this).data("id");
+        var title = $(this).data("title");
+        var year = $(this).data("year");
+        var stock = $(`#stock-${id}`).val();
+        var price = $(`#price-${id}`).val();
+        var trailer = $(`#trailer-${id}`).val();
+        var poster = $(this).data("poster");
+
+        getMovieDetails(id, function(details) {
+            var description = details.Plot;
+            var genres = details.Genre.split(", ").map(function(genre) {
+                return genre.trim();
+            });
+
+            // Navigasi ke halaman Tambah Barang dan isi form
+            showAddProduct();
+            $('#title').val(title);
+            $('#description').val(description);
+            $('#slug').val(title.replace(/\s+/g, '-').toLowerCase());
+            $('#year').val(year);
+            $('#price').val(price);
+            $('#stock').val(stock);
+            $('#img_url').val(poster);
+            $('#trailer').val(trailer);
+            
+            // Centang genre yang sesuai
+            genres.forEach(function(genre) {
+                $(`input.form-check-input:checkbox`).each(function() {
+                    if ($(this).next('label').text() === genre) {
+                        $(this).prop('checked', true);
+                    }
+                });
+            });
+        });
+    });
+
+    // Initial display of home section
+    showHome();
+});
     // Initial display of home section
     showHome();
 </script>
