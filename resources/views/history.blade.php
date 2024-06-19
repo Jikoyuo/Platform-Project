@@ -21,12 +21,6 @@
     <div id="particles-js" class="particles"></div>
 
     <div class="main-content">
-        <div class="trans">
-            <h1 class="text-light">Rincian Belanja</h1>
-            <h2 class="text-light">Item: <span id="total-items">10</span></h2>
-            <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">1000</span></h2>
-            <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Dark</button>
-        </div>
         <!-- <div class="jumbotron jumbotron-fluid text-white">
                 <div class="container">
                     <h1 class="display-8">Keranjang Anda Kosong !<br> Ayo Isi Keranjang Anda Dengan Film Favorite Kamu !</h1>
@@ -34,11 +28,14 @@
             </div> -->
 
         <div class="container-trans">
-            <div class="container-title"></div>
+            <div class="container-title">
+                <h1 class="text-white">History Transaction</h1>
+            </div>
             <div class="container-product align-content-center">
                 <div class="prod" data-movie-id="1" data-movie-price="1000">
-                    <div class="card" style="width: 80px; height: auto; background-color: #444444;">
-                        <img class="card-img-top" src="https://i.pinimg.com/564x/ec/26/30/ec26305be8193a6ec10b20e69f9861e0.jpg" alt="Card image cap" style="max-height: 120px;">
+                    <div class="card">
+                        <img src="https://i.pinimg.com/564x/ec/26/30/ec26305be8193a6ec10b20e69f9861e0.jpg" alt="Card image cap">
+                        <h5 class="text-center text-white">Action</h5>
                     </div>
                     <div class="priceProd">
                         <h5 class="text-white">RP <span id="ewe">1000</span></h5>
@@ -47,7 +44,7 @@
                         <h3 class="text-white">ewe</h3>
                         <h4 class="text-white">1999</h4>
                     </div>
-                    <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Dark</button>
+                    <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                 </div>
             </div>
 
@@ -55,6 +52,7 @@
                 <div class="prod" data-movie-id="1" data-movie-price="1000">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/ec/26/30/ec26305be8193a6ec10b20e69f9861e0.jpg" alt="Card image cap">
+                        <h5 class="text-center text-white">Action</h5>
                     </div>
                     <div class="priceProd">
                         <h5 class="text-white">RP <span id="ewe">1000</span></h5>
@@ -63,7 +61,7 @@
                         <h3 class="text-white">ewe</h3>
                         <h4 class="text-white">1999</h4>
                     </div>
-                    <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Dark</button>
+                    <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                 </div>
             </div>
 

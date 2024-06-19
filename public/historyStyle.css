@@ -8,11 +8,17 @@ body {
 }
 
 .card{
-    background-color: #155724;
+    background-color: #444444;
+    border: transparent;
     width: 80px;
      height: auto;
 }
 
+.card img{
+    position: relative;
+
+    max-height: 120px;
+}
 .navbar {
     /* background-color: aqua; */
     position: absolute; /* Tambahkan properti position absolute */
@@ -37,62 +43,37 @@ body {
 
 .container-trans {
     position: relative;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     height: auto;
     width: 40%;
-    margin-top: -20.5%;
-    margin-left: 17%;
+    margin-top: 15%;
+    margin-left: 30%;
     margin-bottom: 5%;
     border-radius: 3%;
 }
 
 .container-product {
-    background-color: red;
+    background-color: #444444;
     margin-top: 2%;
     height: 200px;
 }
 
 .container-title {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center;     /* Vertical alignment */
     height: 100px;
     background-color: #444444;
-    /* border: 2px solid red; */
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
 
-.trans {
-    background-color: #444444;
-    height: 400px;
-    width: 530px;
-    margin-left: 62%;
-    margin-top: 12%;
-    border-radius: 5%;
-}
 
-.trans h1{
-    position: relative;
-    left:25%;
-    top: 5%;
-}
-
-.trans h2{
-    position: absolute;
-    margin-top: 2%;
-    margin-left: 2%;
-}
-
-.btn-trans{
-    position: relative;
-    left: 6%;
-    top: 60%;
-    font-size: 20px;
-     padding: 15px 30px;
-     width: 85%;
-}
 
 .btn-bb{
     position: relative;
-    top: -100%;
+    width: 150px;
+    top: -110%;
     right: -80%;
 }
 
@@ -176,8 +157,8 @@ footer {
 
   .desc-prod{
     position: relative;
-    top: -123%;
-    left: 17%;
+    top: -112%;
+    left: 14%;
     /* background-color: cyan; */
     height: 70%;
     width: 65%;
