@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../style.css">
 
 @include('partials.background')
-        <div class="jumbotron jumbotron-fluid text-white ">
+        <!-- <div class="jumbotron jumbotron-fluid text-white ">
             <div class="container">
                 <h1 class="display-8">Search: {{$search}} </h1>
             </div>
@@ -25,14 +25,14 @@
 
         </div>
 
-       
+        -->
 
         <div class="container-film shadow-lg p-3 mb-5 bg-body rounded">
-            <h1 class="text-center">Search: {{$search}} </h1>
+            <h1 class="text-center">Search result: {{$search}} </h1>
 
             @include('partials.catalog')
         </div>
-@include('partials.footer')
+    @include('partials.footer')
 @endsection
 
     
