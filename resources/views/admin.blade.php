@@ -186,7 +186,7 @@
             <!-- Add Product Section -->
             <div class="container mt-5" id="add-product-section" style="display: none;">
                 <h1 class="mb-4">Add Product</h1>
-                <form action="/admin/add" method="POST">
+                <input action="/admin/add" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -212,6 +212,11 @@
                         <label for="stock">Stock</label>
                         <input type="number" class="form-control" name="stock" required>
                     </div>
+                    <label>Genres:</label><br>
+                    @foreach ($genres as $genre)
+                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                    @endforeach
                     <div class="form-group">
                         <label for="img_url">Image URL</label>
                         <input type="text" class="form-control" name="img_url" required>
@@ -254,6 +259,11 @@
                         <label for="stock">Stock</label>
                         <input type="number" class="form-control" id="stock" name="stock" required>
                     </div>
+                    <label>Genres:</label><br>
+                    @foreach ($genres as $genre)
+                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                    @endforeach
                     <div class="form-group">
                         <label for="img_url">Image URL</label>
                         <input type="text" class="form-control" id="img_url" name="img_url" required>
