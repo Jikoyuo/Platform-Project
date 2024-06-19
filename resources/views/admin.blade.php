@@ -575,7 +575,7 @@
     });
 
     // Initial display of home section
-    showHome();
+    showProductList();
 });
     // Initial display of home section
     showHome();
