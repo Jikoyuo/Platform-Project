@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\DBUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -90,9 +89,12 @@ class DBUsersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DBUsers $dBUsers)
+    public function show(User $User)
     {
-        //
+        $User->where('id', Auth::id())->get()->first();
+        return view('editProfile', [
+            'title' => 'Profile'
+        ]);
     }
 
     public function logout(){
@@ -103,7 +105,7 @@ class DBUsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DBUsers $dBUsers)
+    public function edit(User $User)
     {
         //
     }
@@ -111,7 +113,7 @@ class DBUsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDBUsersRequest $request, DBUsers $dBUsers)
+    public function update(UpdateDBUsersRequest $request, User $User)
     {
         //
     }
@@ -119,7 +121,7 @@ class DBUsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DBUsers $dBUsers)
+    public function destroy(User $User)
     {
         //
     }
