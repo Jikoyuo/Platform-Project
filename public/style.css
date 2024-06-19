@@ -201,8 +201,6 @@ body {
     border-radius: 30px;
     overflow: hidden; /* Penting untuk menjaga elemen pseudo di dalam kontainer */
     margin: 0 auto; /* Menambahkan margin auto untuk horizontal centering */
-    position: relative;
-    z-index: 1;
 }
 
 .container-film::before {
