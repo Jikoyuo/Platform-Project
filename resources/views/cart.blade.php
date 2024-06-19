@@ -21,7 +21,7 @@
     <div id="particles-js" class="particles"></div>
 
     <div class="main-content">
-        @if ($cart != null)
+        @if (!empty($cart) && count($cart) > 0)
             <div class="trans">
                 <h1 class="text-light">Rincian Belanja</h1>
                 <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
