@@ -8,6 +8,7 @@ use App\Http\Controllers\DBUsersController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\DBProductController;
 use App\Http\Controllers\DBCategoryController;
+use App\Http\Controllers\DBTransactionsController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleAuthController;
 
@@ -36,6 +37,8 @@ Route::get('/genres/{slug}', [DBProductController::class, 'show']);
 Route::get('/search', [DBProductController::class, 'index']);
 
 Route::get('/cart', [DBCartController::class, 'index']);
+
+Route::get('/history', [DBTransactionsController::class, 'index']);
 
 Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callbackGoogle']);
