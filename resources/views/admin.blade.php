@@ -6,6 +6,7 @@
     <title>Kasetflix || {{$title}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="admin.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         /* Custom CSS for improved navbar */
         .navbar-custom {
@@ -211,6 +212,11 @@
                         <label for="stock">Stock</label>
                         <input type="number" class="form-control" name="stock" required>
                     </div>
+                    <label>Genres:</label><br>
+                    @foreach ($genres as $genre)
+                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                    @endforeach
                     <div class="form-group">
                         <label for="img_url">Image URL</label>
                         <input type="text" class="form-control" name="img_url" required>
@@ -253,6 +259,11 @@
                         <label for="stock">Stock</label>
                         <input type="number" class="form-control" id="stock" name="stock" required>
                     </div>
+                    <label>Genres:</label><br>
+                    @foreach ($genres as $genre)
+                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                    @endforeach
                     <div class="form-group">
                         <label for="img_url">Image URL</label>
                         <input type="text" class="form-control" id="img_url" name="img_url" required>
@@ -470,6 +481,11 @@
                                     <h6 class="card-subtitle mb-2 text-body-secondary">${data.Year}</h6>
                                     <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
                                     <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
+                                    <input type="text" class="form-control mb-2" placeholder="Masukkan URL trailer" id="trailer-${data.imdbID}">
+                                    @foreach ($genres as $genre)
+                                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                                    @endforeach
                                     <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}">Tambah Barang</button>
                                 </div>
                             </div>
@@ -504,19 +520,63 @@ $("#movie-list").on("click", ".tambah-barang", function () {
     var title = $(this).data("title");
     var stock = $(`#stock-${id}`).val();
     var price = $(`#price-${id}`).val();
+    var trailer = $(`#trailer-${id}`).val();
+
+    var selectedGenres = [];
+    $(`input[name='genres-${id}']:checked`).each(function () {
+        selectedGenres.push($(this).val());
+    });
     
-    if (stock && price) {
-        // Add your code to handle adding the item with the specified stock and price
-        console.log("Tambah Barang:", { id, title, stock, price });
-        alert(`Barang ${title} dengan stock ${stock} dan harga ${price} telah ditambahkan.`);
+    console.log("Sending data to server:", {
+        _token: $('meta[name="csrf-token"]').attr('content'),
+        name: title,
+        description: 'Film ' + title,
+        slug: title.toLowerCase().replace(/ /g, '-'),
+        year: new Date().getFullYear(),
+        price: price,
+        stock: stock,
+        img_url: '',
+        trailer: traile,
+        genres: selectedGenres
+    });
+
+    if (stock && price && trailer) {
+        $.ajax({
+            url: '/admin/add-product',
+            type: 'POST',
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                name: title,
+                description: 'Film ' + title,
+                slug: title.toLowerCase().replace(/ /g, '-'),
+                year: new Date().getFullYear(),
+                price: price,
+                stock: stock,
+                img_url: '',
+                trailer: trailer,
+                genres: selectedGenres
+            },
+            success: function (response) {
+                if(response.success) {
+                    alert(`Barang ${title} dengan stock ${stock}, harga ${price}, dan trailer telah ditambahkan.`);
+                } else {
+                    alert("Terjadi kesalahan saat menambahkan barang.");
+                }
+            },
+            error: function (error) {
+                console.error("There was an error adding the product:", error);
+                alert("Terjadi kesalahan saat menambahkan barang.");
+            }
+        });
     } else {
-        alert("Mohon masukkan jumlah stock dan harga.");
+        alert("Mohon masukkan jumlah stock, harga, dan URL trailer.");
     }
 });
 
     // Initial display of home section
     showHome();
 </script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>
 </html>

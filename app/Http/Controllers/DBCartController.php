@@ -22,13 +22,20 @@ class DBCartController extends Controller
             $user_id = Auth::id();
             $items = DBCart::where('user_id', $user_id)->leftJoin('d_b_products', 'd_b_carts.product_id', '=', 'd_b_products.id')->get();
             $genres = DBCategory::all();
+            $amount = count($items);
+            $total = 0;
+            for($i = 0; $i < $amount; $i++){
+                $total += $items[$i]['price'];
+            }
             return view('cart', [
                 'title' => 'Cart',
                 'genres' => $genres,
                 'cart' => $items,
                 'items' => $items,
                 'logged' => true,
-                'admin' => Auth::user()->role === 'admin'
+                'admin' => Auth::user()->role === 'admin',
+                'amount' => $amount,
+                'total' => $total
             ]);
         } else {
             return redirect('/home');
@@ -48,7 +55,15 @@ class DBCartController extends Controller
      */
     public function store(StoreDBCartRequest $request)
     {
-        //
+        $request->validate([
+            'price' => 'required',
+            'product_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        DBCart::create($request->all());
+
+        return redirect('/cart');
     }
 
     /**

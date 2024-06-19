@@ -39,12 +39,27 @@
                             <p class="card-text">{{$product->description}}</p>
                             {!! $product->trailer !!}
                             <p class="card-price mt-3">Price: Rp. {{$product->price}}</p>
-                            <button class="btn btn-danger mt-2">Add to Cart</button>
+                            @if ($logged)
+                                <form action="/product/add" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="price" value="{{$product->price}}">
+                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                    <input type="hidden" name="user_id" value="{{$id}}">
+                                    <button type="submit" class="btn btn-danger mt-2">Add to Cart</button>
+                                </form>
+                            @else
+                                <div class="text-light">You must logged in before purchase!</div>
+                                <button type="submit" class="disabled btn btn-danger mt-2">Add to Cart</button>
+                            @endif
                             <p class="card-text"><small class="text-white">Updated at: {{$product->updated_at}}</small></p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="product">
+        <h2>Product Name</h2>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
         </div>
 
     </section>
@@ -149,6 +164,18 @@
 
         // Set rating for all elements with class rating
         document.querySelectorAll('.rating').forEach(setRating);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const cartCount = document.querySelector('.cart-count');
+
+    let itemCount = 0;
+
+    addToCartButton.addEventListener('click', () => {
+        itemCount++;
+        cartCount.textContent = itemCount;
+    });
+});
     </script>
 </body>
 
