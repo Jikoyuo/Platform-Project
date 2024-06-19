@@ -26,7 +26,7 @@
                 <h1 class="text-light">Rincian Belanja</h1>
                 <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
                 <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
-                <button id="buttonPay" href="/payment" type="button" class="btn btn-dark btn-trans">Checkout</button>
+                <a id="buttonPay" href="/payment" class="btn btn-dark btn-trans">Checkout</a>
             </div>
         @else
             <div class="jumbotron jumbotron-fluid text-white">
@@ -37,9 +37,7 @@
         @endif
 
         <div class="container-trans">
-            <div class="container-title">
-            <h1 class="text-white">Shopping Cart</h1>
-            </div>
+            <div class="container-title"></div>
             @foreach ($items as $item)
                 <div class="container-product align-content-center" >
                     <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
@@ -239,9 +237,8 @@
 
             document.getElementById('total-items').innerText = totalItems;
             document.getElementById('total-price').innerText = `Rp ${totalPrice}`;
-            document.getElementById('buttonPay')
         }
-
+        
     </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
