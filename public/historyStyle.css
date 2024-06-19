@@ -8,7 +8,7 @@ body {
 }
 
 .card{
-    background-color: #444444;
+    background-color: rgb(46, 46, 46);
     border: transparent;
     width: 80px;
      height: auto;
@@ -53,7 +53,7 @@ body {
 }
 
 .container-product {
-    background-color: #444444;
+    background-color: rgb(46, 46, 46);
     margin-top: 2%;
     height: 200px;
 }
@@ -63,11 +63,10 @@ body {
     justify-content: center; /* Horizontal alignment */
     align-items: center;     /* Vertical alignment */
     height: 100px;
-    background-color: #444444;
+    background-color: rgb(46, 46, 46);
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
-
 
 
 .btn-bb{
