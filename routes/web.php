@@ -51,3 +51,4 @@ Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredir
 Route::post('/cart/payment',[PaymentController::class, 'payment']);
 
 Route::get('/profile', [DBUsersController::class, 'show']);
+Route::post('/profile/edit',[DBUsersController::class, 'update']);

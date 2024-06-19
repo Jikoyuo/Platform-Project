@@ -19,7 +19,7 @@
     <div id="particles-js" class="particles"></div>
 
     <div class="container bootstrap snippets bootdey mt-5">
-        <h1 class="text-primary text-center">Edit Profile</h1>
+        <h1 class="text-danger text-center">Edit Profile</h1>
         <hr>
         <div class="row">
             <!-- left column -->
@@ -34,35 +34,38 @@
             <!-- edit form column -->
             <div class="col-md-9 personal-info">
                 <h3>Personal info</h3>
-                <form class="form-horizontal" role="form" >
+                <form class="form-horizontal" role="form" action="/profile/edit" method="POST">
+                    @csrf
                     <div class="row mb-3">
-                        <label class="col-lg-3 col-form-label text-lg-end" >Full Name:</label>
+                        <label class="col-lg-3 col-form-label text-lg-end" >Username:</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="text" value="Chornael Damar Kesuma">
+                            <input class="form-control" type="text" name="username" value="{{$user->username}}">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-lg-3 col-form-label text-lg-end">Phone Number:</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="text" value="089664470092">
+                            <input class="form-control" type="text" name="phone_number" value="{{$user->phone_number}}">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-lg-3 col-form-label text-lg-end">Address:</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="text" value="Paingan">
+                            <input class="form-control" type="text" name="address" value="{{$user->address}}">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-lg-3 col-form-label text-lg-end">Email:</label>
                         <div class="col-lg-9">
-                            <input class="form-control" type="text" value="chornaeld@gmail.com">
+                            <input class="form-control text-dark" type="text" value="{{$user->email}}" disabled>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-9 offset-lg-3">
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="submit" class="btn btn-danger">Save Changes</button>
+                            <a href="/home">
+                                <button type="reset" class="btn btn-secondary">Cancel</button>
+                            </a>
                         </div>
                     </div>
                 </form>

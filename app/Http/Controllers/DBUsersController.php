@@ -91,9 +91,10 @@ class DBUsersController extends Controller
      */
     public function show(User $User)
     {
-        $User->where('id', Auth::id())->get()->first();
+        $user = $User->where('id', Auth::id())->get()->first();
         return view('editProfile', [
-            'title' => 'Profile'
+            'title' => 'Profile',
+            'user'=> $user
         ]);
     }
 
@@ -115,7 +116,23 @@ class DBUsersController extends Controller
      */
     public function update(UpdateDBUsersRequest $request, User $User)
     {
-        //
+        if (Auth::check()){
+            $request->validate([
+                'username' => 'required',
+                'address' => 'required',
+                'phone_number' => 'required',
+            ]);
+    
+            $user = $User::find(Auth::id());
+
+            $user->username = $request->username;
+            $user->address = $request->address;
+            $user->phone_number = $request->phone_number;
+            $user->updated_at = now();
+
+            $user->save();
+        }
+        return redirect('/home');
     }
 
     /**

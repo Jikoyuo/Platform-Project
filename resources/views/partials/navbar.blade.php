@@ -50,7 +50,7 @@
                         @if ($admin)
                             <li><a class="dropdown-item" href="/admin">Dashboard</a></li>
                         @endif
-                        <li><a class="dropdown-item" href="#">Edit
+                        <li><a class="dropdown-item" href="/profile">Edit
                                 Profile</a></li>
                         <li><a class="dropdown-item" href="/logout">Log
                                 Out</a></li>
