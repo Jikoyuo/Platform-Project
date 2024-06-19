@@ -549,3 +549,18 @@ body {
   #section2{
     height: 80vh;
   }
+
+
+  @media only screen and (min-width: 350px) {
+    .container {
+        position: relative;
+        top: 80%;
+        /* background-color: #2A3542; */
+        width: 400px;
+    }
+
+    .container h1 {
+        font-size: 12px;
+    }
+}
+

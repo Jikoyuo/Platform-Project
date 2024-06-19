@@ -44,6 +44,7 @@
                         <h3 class="text-white">ewe</h3>
                         <h4 class="text-white">1999</h4>
                     </div>
+                    <button id="btnUlasan" href="#" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
                     <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                 </div>
             </div>
@@ -61,6 +62,7 @@
                         <h3 class="text-white">ewe</h3>
                         <h4 class="text-white">1999</h4>
                     </div>
+                    <button id="btnUlasan" href="#" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
                     <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                 </div>
             </div>

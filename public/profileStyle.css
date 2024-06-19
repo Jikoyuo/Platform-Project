@@ -13,7 +13,7 @@ body {
     z-index: 1;
     position: absolute;
     color: #fff;
-    height: 50vh;
+    min-height: 50vh; /* Mengganti height menjadi min-height agar konten tidak terpotong */
 }
 
 .avatar {
@@ -53,4 +53,11 @@ body {
 
 .btn-secondary:hover {
     background-color: #888;
+}
+
+.container label{
+    position: relative;
+    height: fit-content;
+    top: 25px;
+    /* background-color: #0066cc; */
 }
