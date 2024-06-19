@@ -22,12 +22,15 @@
 
     <div class="main-content">
         @if (!empty($cart) && count($cart) > 0)
+        <form action="/passing" method="POST">
+            @csrf
             <div class="trans">
                 <h1 class="text-light">Rincian Belanja</h1>
                 <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
-                <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
-                <a id="buttonPay" href="/payment" class="btn btn-dark btn-trans">Checkout</a>
+                <h2 class="text-light" style="margin-top: 7%;">Total: <span name="total" id="total-price">{{$total}}</span></h2>
+                <button type="submit" id="buttonPay" class="btn btn-dark btn-trans">Checkout</button>
             </div>
+        </form>
         @else
             <div class="jumbotron jumbotron-fluid text-white">
                 <div class="container">
