@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\DBTransactions;
 use App\Http\Requests\StoreDBTransactionsRequest;
 use App\Http\Requests\UpdateDBTransactionsRequest;
+use App\Models\DBCategory;
+use Illuminate\Support\Facades\Auth;
 
 class DBTransactionsController extends Controller
 {
@@ -13,7 +15,17 @@ class DBTransactionsController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::check()){
+            $admin=Auth::user()->role === 'admin';
+        }
+        $genres=DBCategory::all();
+        return view('history',[
+            'title'=>'history',
+            'logged'=>Auth::check(),
+            'genres'=>$genres,
+            'admin'=>$admin
+
+        ]);
     }
 
     /**

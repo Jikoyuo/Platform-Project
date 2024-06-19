@@ -146,7 +146,7 @@ footer {
   .prod{
     margin-left:2.5%;
     /* background-color: aquamarine; */
-    height: 85%;
+    height: 80%;
     width: 95%;
   }
 
@@ -164,9 +164,9 @@ footer {
 
   .desc-prod{
     position: relative;
-    top: -123%;
+    top: -85%;
     left: 17%;
-    /* background-color: cyan; */
+    /* background-color: beige; */
     height: 70%;
     width: 65%;
   }

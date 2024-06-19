@@ -31,7 +31,7 @@
                 </li>
             </ul>
 
-            <a href="#" style="margin-left: 55%;" id="buttonPay">
+            <a href="/history" style="margin-left: 55%;" id="buttonPay">
                 <box-icon name='receipt' type='solid' color='#ffffff'></box-icon>
             </a>
 
