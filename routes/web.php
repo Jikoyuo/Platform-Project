@@ -11,6 +11,7 @@ use App\Http\Controllers\DBCategoryController;
 use App\Http\Controllers\DBTransactionsController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', [RedirectController::class, 'redirectToHome']);
 
@@ -45,3 +46,5 @@ Route::get('/auth/google/callback', [GoogleAuthController::class, 'callbackGoogl
 
 Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('facebook-auth');
 Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect']);
+
+Route::post('/process-payment', [DBCartController::class, 'processPayment']);

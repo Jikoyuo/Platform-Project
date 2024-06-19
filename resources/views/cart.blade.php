@@ -26,7 +26,7 @@
                 <h1 class="text-light">Rincian Belanja</h1>
                 <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
                 <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
-                <button id="buttonPay" href="/home" type="button" class="btn btn-dark btn-trans">Checkout</button>
+                <button id="buttonPay" href="/payment" type="button" class="btn btn-dark btn-trans">Checkout</button>
             </div>
         @else
             <div class="jumbotron jumbotron-fluid text-white">
@@ -41,8 +41,8 @@
             @foreach ($items as $item)
                 <div class="container-product align-content-center" >
                     <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
-                        <div class="card" style="width: 100px; max-height: auto; background-color: #4444;">
-                            <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap" style="max-height: 170px;">
+                        <div class="card" style="width: 100px; height: auto; background-color: #444444;">
+                            <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap">
                         </div>
                         <div class="priceProd">
                             <h5 class="text-white">RP <span id="{{$item['slug']}}">{{$item['price']}}</span></h5>
