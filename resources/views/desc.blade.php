@@ -56,10 +56,6 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
-        <h2>Product Name</h2>
-        <button class="add-to-cart">Add to Cart</button>
-    </div>
         </div>
 
     </section>
