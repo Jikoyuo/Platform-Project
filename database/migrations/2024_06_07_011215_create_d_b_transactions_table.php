@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('d_b_transactions', function (Blueprint $table) {
             $table->id();
-            $table->dateTimeTz('order_date');
-            $table->float('total_price');
+            $table->timestamp('order_date');
+            $table->string('name');
             $table->float('price');
             $table->integer('quantity');
             $table->foreignId('product_id');

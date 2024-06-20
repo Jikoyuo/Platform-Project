@@ -309,7 +309,7 @@
             });
 
             ulangBtn.addEventListener('click', () => {
-                paymentForm.reset();
+            paymentForm.reset();
             popup.style.display = 'none';
         });
 
