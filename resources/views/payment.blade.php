@@ -32,10 +32,15 @@
             font-family: "Roboto", sans-serif;
             margin: 0;
             padding: 0;
+            height: 10vh;
         }
 
         .container {
-            margin-top: 20px;
+            /* background-color: #0056b3; */
+            position: relative;
+            top: -60%;
+            left: 12%;
+            z-index: 2;
         }
 
         .checkout-header,
@@ -219,6 +224,7 @@
             height: 50px;
         }
     </style>
+    <link rel="stylesheet" href="../newParticle.css">
     <script defer src="../newParticle.js"></script>
 </head>
 
@@ -275,7 +281,7 @@
                 <button><img src="../shopeepay.png" alt="ShopeePay"></button>
             </div>
         </div>
-        
+
         <!-- Tombol Bayar -->
         <button class="btn btn-primary mt-3" id="pay-button" style="display: none;">Bayar</button>
     </div>
@@ -298,6 +304,7 @@
             document.getElementById('pay-button').style.display = 'block';
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
 </html>
