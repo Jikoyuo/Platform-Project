@@ -182,7 +182,7 @@ footer {
 /*input number plus minus*/
   .quantity {
     position: relative;
-    left: 81%;
+    left: 83%;
     top: -130%;
     width: 100px;
     display: flex;
@@ -206,6 +206,17 @@ footer {
 
   .quantity button:hover {
     background-color: #2980b9;
+  }
+
+  #deleteCart{
+    position: relative;
+    top: -105%;
+    left: 75%;
+  }
+
+  .custom-icon{
+    width: 28px;  /* Atur ukuran sesuai kebutuhan Anda */
+    height: 28px;
   }
 
   .input-box {

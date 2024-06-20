@@ -55,11 +55,15 @@
                             <h3 class="text-white">{{$item['name']}}</h3>
                             <h4 class="text-white">{{$item['year']}}</h4>
                         </div>
-                        <div class="quantity">
-                            <button class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
-                            <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" value="1">
-                            <button class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
-                        </div>
+                        <a href="#">
+                        <box-icon id="deleteCart" class="custom-icon" name='trash' type='solid' color='#ffffff' style="margin-left: 10px; margin-right: 10px;"></box-icon> <!-- Icon trash -->
+                        </a>
+                        <div class="quantity" style="background-color: aquamarine;">
+    <button class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
+    <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" value="1">
+    <button class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
+</div>
+
                     </div>
                 </div>
             @endforeach
@@ -249,7 +253,7 @@
         }
 
     </script>
-
+ <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 
