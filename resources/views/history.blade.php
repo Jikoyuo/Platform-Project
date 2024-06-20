@@ -37,7 +37,7 @@
                             <h5 class="text-white">RP <span id="{{$transaction->product_id}}">{{$transaction->quantity}}x{{$transaction->price}}</span></h5>
                         </div>
                         <div class="desc-prod">
-                            <h3 class="text-white">{{$transaction->name}}</h3>
+                            <h4 class="text-white">{{$transaction->name}}</h4>
                             <h3 class="text-white">{{$transaction->year}}</h3>
                         </div>
                         <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
