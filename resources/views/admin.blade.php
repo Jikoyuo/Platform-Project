@@ -11,7 +11,7 @@
         /* Custom CSS for improved navbar */
         .navbar-custom {
             background-color: #343a40;
-            border-bottom: 3px solid #dc3545;
+            border-bottom: 3px solid ;
         }
         .navbar-brand-custom {
             color: #dc3545;
@@ -51,14 +51,14 @@
             <div class="input-group input-group-custom">
                 <input type="text" id="search-input" class="form-control" placeholder="Cari judul film" aria-label="judul film" aria-describedby="basic-addon2">
                 <button class="btn btn-outline-light" id="search-button" type="button">Cari</button>
-            </div>            
+            </div>
         </div>
     </div>
 </nav>
 
 <div class="container-fluid">
     <div class="row flex-nowrap" style="height: 100vh;">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color:#343a40 ;">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span class="fs-5 d-none d-sm-inline">Home</span>
@@ -562,7 +562,7 @@
             $('#stock').val(stock);
             $('#img_url').val(poster);
             $('#trailer').val(trailer);
-            
+
             // Centang genre yang sesuai
             genres.forEach(function(genre) {
                 $(`input.form-check-input:checkbox`).each(function() {

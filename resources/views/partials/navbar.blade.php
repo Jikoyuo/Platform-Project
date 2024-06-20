@@ -31,11 +31,11 @@
                 </li>
             </ul>
 
-            <a href="/history" style="margin-left: 55%;" id="buttonPay">
+            <a href="/history" style="margin-left: 56%;" id="buttonPay">
                 <box-icon class="custom-icon" name='receipt' type='solid' color='#ffffff'></box-icon>
             </a>
 
-            <a href="/cart" style="margin-left:40px;">
+            <a href="/cart" style="margin-left:50px;">
                 <box-icon class="custom-icon" name="cart" type="solid" color="#ffffff"></box-icon>
             </a>
 
