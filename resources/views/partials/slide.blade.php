@@ -21,11 +21,13 @@
 
         <div class="swiper-wrapper">
             @foreach ( $sliders as $slider)
-            <div class="swiper-slide">
-                <img
-                    src="{{$slider->img_url}}" />
-                <p>{{$slider->name}}</p>
-            </div>
+            <a href="/product/{{$slider->slug}}">
+                <div class="swiper-slide">
+                    <img
+                        src="{{$slider->img_url}}" />
+                    <p>{{$slider->name}}</p>
+                </div>
+            </a>
             @endforeach
         </div>
         <div class="swiper-pagination"></div>

@@ -11,6 +11,13 @@
             crossorigin="anonymous">
         <link rel="stylesheet" href="styleLog.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        
+        @if($message = session('success'))
+            <script>
+                Swal.fire('Good job!', '{{ $message }}', 'success')
+            </script>
+        @endif
+
 
     </head>
     <body>
@@ -56,7 +63,6 @@
                     <span>or login with your account</span>
                     <input type="username" placeholder="Username" name="username">
                     <input type="password" placeholder="Password" name="password">
-                    <a href="#">Forget Your Password?</a>
                     <button>Sign In</button>
                 </form>
             </div>

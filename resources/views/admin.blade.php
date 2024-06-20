@@ -485,10 +485,6 @@
                                         <input type="number" class="form-control mb-2" placeholder="Masukkan jumlah stock" id="stock-${data.imdbID}">
                                         <input type="number" class="form-control mb-2" placeholder="Masukkan harga" id="price-${data.imdbID}">
                                         <input type="text" class="form-control mb-2" placeholder="Masukkan URL trailer" id="trailer-${data.imdbID}">
-                                        @foreach ($genres as $genre)
-                                            <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres-${data.imdbID}" value="{{ $genre->id }}">
-                                            <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
-                                        @endforeach
                                         <button class="btn btn-primary tambah-barang" data-id="${data.imdbID}" data-title="${data.Title}" data-year="${data.Year}" data-poster="${data.Poster}">Tambah Barang</button>
                                     </div>
                                 </div>

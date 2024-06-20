@@ -66,9 +66,7 @@ class DBUsersController extends Controller
 
         $user = $this->create($request->all())->save();
 
-        session()->flash('success', 'Akun berhasil dibuat. Silakan login.');
-
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Anda berhasil register!');
     }
 
     public function login(StoreDBUsersRequest $request){
