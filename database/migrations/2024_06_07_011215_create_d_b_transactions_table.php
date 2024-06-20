@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('d_b_transactions', function (Blueprint $table) {
             $table->id();
             $table->timestamp('order_date');
-            $table->string('name');
             $table->float('price');
             $table->integer('quantity')->default(1);
+            $table->foreign('product_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });
