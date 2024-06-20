@@ -58,7 +58,8 @@ class DBCartController extends Controller
         $request->validate([
             'price' => 'required',
             'product_id' => 'required',
-            'user_id' => 'required'
+            'user_id' => 'required',
+
         ]);
 
         DBCart::create($request->all());
