@@ -20,6 +20,8 @@ class DBProductController extends Controller
         // dd(request('search'));
         $products = DBProduct::latest();
         $genres = DBCategory::all();
+        $random = DBProduct::inRandomOrder()->take(5)->get();
+
         if (request('q')){
             $products->where('name', 'like', '%'.request('q').'%');
             if (Auth::check()) {
@@ -47,7 +49,7 @@ class DBProductController extends Controller
                 return view('index', [
                     'title' => 'Home Page',
                     'genres' => $genres,
-                    'sliders' => $products->get(),
+                    'sliders' => $random,
                     'products' => $products->get(),
                     'logged' => true,
                     'admin' => Auth::user()->role === 'admin'
@@ -56,7 +58,7 @@ class DBProductController extends Controller
                 return view('index', [
                     'title' => 'Home Page',
                     'genres' => $genres,
-                    'sliders' => $products->get(),
+                    'sliders' => $random,
                     'products' => $products->get(),
                     'logged' => false,
                     'admin' => false
@@ -80,6 +82,9 @@ class DBProductController extends Controller
             $rating /= count($reviews);
         }
         $genres = DBCategory::where('id', $pivot);
+
+        $recommend = DBProduct::inRandomOrder()->take(3)->get();
+
         if (Auth::check()) {
             return view('desc', [
                 'title' => 'Product',
@@ -88,6 +93,7 @@ class DBProductController extends Controller
                 'reviews' => $reviews,
                 'rating' => $rating,
                 'logged' => true,
+                'recommends' => $recommend,
                 'admin' => Auth::user()->role === 'admin',
                 'id' => Auth::user()->id
             ]);
@@ -99,6 +105,7 @@ class DBProductController extends Controller
                 'reviews' => $reviews,
                 'rating' =>  $rating,
                 'logged' => false,
+                'recommends' => $recommend,
                 'admin' => false
             ]);
         }

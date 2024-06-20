@@ -17,7 +17,7 @@
 <div class="container">
     <div class="swiper">
         <h1 class="text-center text-white mb-lg-5"
-            style="font-size: 3rem; font-weight: bold;">Unknown Series</h1>
+            style="font-size: 3rem; font-weight: bold;">Movies/series yang mungkin anda suka</h1>
 
         <div class="swiper-wrapper">
             @foreach ( $sliders as $slider)
