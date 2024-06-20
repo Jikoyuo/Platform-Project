@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    margin-top: 10%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 999;
+    left: -80%;
+}
+
+.detail-prod {
+    display: flex; /* Mengubah .detail-prod menjadi flex container */
+    justify-content: space-between; /* Menyusun anak elemen berdasarkan ruang di antara mereka */
+    align-items: top; /* Mengatur posisi vertikal anak elemen */
+    margin-left: 2%;
+    background-color: #0056b3;
+    width: 0%;
+    height: 700px;
+}
+
+.detail-prod img {
+    margin-top: 5%;
+    max-height: 280px;
+    max-width: 170px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+textarea {
+    resize: vertical;
+    margin-bottom: 12px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+ /* Tambahkan CSS untuk layout */
+ .card-and-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px; /* Tambahkan padding untuk memberi ruang di sekitar elemen */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card {
+    flex: 0 0 calc(50% - 10px); /* 50% lebar, dikurangi margin antar elemen */
+    margin-bottom: 20px;
+}
+
+.review-form {
+    flex: 0 0 calc(50% - 10px); /* 50% lebar, dikurangi margin antar elemen */
+    margin-left: 20px;
+}
