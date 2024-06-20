@@ -151,7 +151,7 @@ body {
 }
 
 /* Close button */
-.close {
+/* .close {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -184,7 +184,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .product {
     margin: 20px;

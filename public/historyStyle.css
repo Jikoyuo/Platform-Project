@@ -57,6 +57,11 @@ body {
     columns: 3;
 }
 
+.custom-icon {
+    width: 28px; /* Atur ukuran sesuai kebutuhan Anda */
+    height: 28px;
+}
+
 .container-product {
     background-color: rgb(46, 46, 46);
     margin-top: 2%;
@@ -87,8 +92,9 @@ body {
 .btn-bb{
     position: relative;
     width: 150px;
-    top: -110%;
-    right: -60%;
+    top: -90%;
+    right: -61%;
+    margin: 5px;
 }
 
 .hr-blurry {
