@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DBReview;
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests\StoreDBReviewRequest;
 use App\Http\Requests\UpdateDBReviewRequest;
 
@@ -11,9 +12,9 @@ class DBReviewController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -29,7 +30,7 @@ class DBReviewController extends Controller
      */
     public function store(StoreDBReviewRequest $request)
     {
-        //
+        
     }
 
     /**

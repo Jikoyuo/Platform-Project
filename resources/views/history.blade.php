@@ -38,9 +38,12 @@
                         </div>
                         <div class="desc-prod">
                             <h4 class="text-white">{{$transaction->name}}</h4>
-                            <h3 class="text-white">{{$transaction->year}}</h3>
+                            <h7 class="text-white">{{$transaction->order_date}}</h7>
                         </div>
-                        <button id="btnUlasan" type="button" class="btn btn-dark btn-bb" attribute-id="{{$transaction->id}}">Beri Ulasan</button>
+                        <a href="/review">
+                            <input type="hidden" value="{{$transaction->product_id}}" name="movie_id">
+                            <button type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
+                        </a>
                         <a href="/product/{{$transaction->slug}}">
                             <button id="btnBuyBack" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                         </a>

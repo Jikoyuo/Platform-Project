@@ -20,13 +20,15 @@
         <!-- Formulir Review -->
         <div class="review-form">
             <h2>User Reviews</h2>
-            <form id="reviewForm">
+            <form id="reviewForm" action="/review/add" method="POST">
+                @csrf
                 <label for="rating">Rating (1-5):</label>
-                <input type="number" id="rating" name="rating" min="1" max="5" required>
+                <input type="number" id="star" name="rating" min="1.0" max="5.0" required>
 
                 <label for="review">Review:</label>
                 <textarea id="review" name="review" rows="4" required></textarea>
 
+                <input type="hidden" value="{{$product_id}}" name="movie_id">
                 <button type="submit" id="submitBtn">Submit</button>
             </form>
         </div>

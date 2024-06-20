@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DBCartController;
 use App\Http\Controllers\DBAdminController;
 use App\Http\Controllers\DBUsersController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DBReviewController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\DBProductController;
 use App\Http\Controllers\DBCategoryController;
-use App\Http\Controllers\DBTransactionsController;
-use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DBTransactionsController;
 
 Route::get('/', [RedirectController::class, 'redirectToHome']);
 
@@ -54,3 +55,6 @@ Route::get('/profile', [DBUsersController::class, 'show']);
 Route::post('/profile/edit',[DBUsersController::class, 'update']);
 
 Route::post('/transaction/completed',[DBTransactionsController::class, 'store']);
+
+Route::get('/review',[DBReviewController::class, 'index']);
+Route::post('/review/add',[DBReviewController::class, 'store']);

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamp('order_date');
             $table->float('price');
             $table->integer('quantity');
+            $table->boolean('review')->default(false);
             $table->foreignId('product_id');
             $table->foreignId('user_id');
             $table->timestamps();
