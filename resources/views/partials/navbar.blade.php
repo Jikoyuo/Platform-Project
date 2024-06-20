@@ -13,15 +13,15 @@
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link text-white" href="/genres/horror">Horror</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/genres">Genres</a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More Genres
+                         Genres
                     </a>
                     <ul class="dropdown-menu multi-column">
                         @foreach ($genres as $genre)
@@ -31,11 +31,11 @@
                 </li>
             </ul>
 
-            <a href="/history" style="margin-left: 55%;" id="buttonPay">
+            <a href="/history" style="margin-left: 70%;" id="buttonPay">
                 <box-icon class="custom-icon" name='receipt' type='solid' color='#ffffff'></box-icon>
             </a>
 
-            <a href="/cart" style="margin-left:40px;">
+            <a href="/cart" style="margin-left:60px;">
                 <box-icon class="custom-icon" name="cart" type="solid" color="#ffffff"></box-icon>
             </a>
 
@@ -74,15 +74,15 @@
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link text-white" href="/genres/horror">Horror</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/genres">Genres</a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More Genres
+                         Genres
                     </a>
                     <ul class="dropdown-menu multi-column">
                         @foreach ($genres as $genre)
@@ -94,7 +94,7 @@
         </div>
         <div class="d-flex justify-end text-light me-xxl-5">
             <a href="/login">
-                <button class="btn" style="height: 40px; background-color: rgba(182,6,25,255);">Login</button>
+                <button class="btn" style="height: 40px; background-color: rgba(182,6,25,255)   ;">Login</button>
             </a>
         </div>
 
