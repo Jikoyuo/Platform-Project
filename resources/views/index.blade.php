@@ -1,9 +1,8 @@
 @extends('layouts.main')
 
-
 @section('content')
-<title>Kasetflix || {{$title}} </title>
-
+<title>Kasetflix || {{$title}}</title>
+    <link rel="icon" href="{{ asset('logo.png') }}" type="image/png">
 <!-- Section 1 -->
 <section id="section1" class="full-height">
     @include('partials.navbar')
@@ -19,7 +18,7 @@
 
     <div class="jumbotron jumbotron-fluid text-white">
         <div class="container">
-            <h1 class="display-8">Film, acara TV tak terbatas, dan banyak lagi. Tonton di mana pun. Batalkan kapan pun. Siap belanja? Daftar dan mulai berbelanja film favoritmu!</h1>
+            <h1 class="display-8">Film dan acara TV tak terbatas dalam format kaset. Nikmati hiburan klasik dan modern kapan saja, di mana saja. Siap untuk mulai? Daftar sekarang dan temukan koleksi kaset film favoritmu!</h1>
         </div>
         <form action="/search">
             <div class="input-group mb-3 mt-5 search-container">
