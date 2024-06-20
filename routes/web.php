@@ -52,3 +52,5 @@ Route::post('/cart/payment',[PaymentController::class, 'payment']);
 
 Route::get('/profile', [DBUsersController::class, 'show']);
 Route::post('/profile/edit',[DBUsersController::class, 'update']);
+
+Route::post('/transaction/completed',[DBTransactionsController::class, 'store']);

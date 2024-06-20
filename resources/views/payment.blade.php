@@ -236,7 +236,7 @@
             <h3 class="text-light">Checkout</h3>
             <div class="mb-3">
                 <label for="address" class="form-label text-light">Alamat Pengiriman</label>
-                <textarea class="form-control" id="address" rows="3" placeholder="Masukkan alamat pengiriman"></textarea>
+                <textarea class="form-control" id="address" rows="3" placeholder="Masukkan alamat pengiriman">{{$address}}</textarea>
             </div>
         </div>
 
@@ -249,17 +249,17 @@
                         <h5>{{$item->name}}</h5>
                     </div>
                 </div>
-                <div class="item-price">Rp. {{$item->price}}</div>
+                <div class="item-price">Rp. {{$item->price}}x{{$item->quantity}}</div>
             </div>
             @endforeach
         </div>
 
         <div class="summary">
             <h5>Ringkasan Belanja</h5>
-            <p>Total Harga (2 Produk) <span>Rp127.930</span></p>
+            <p>Total Harga ({{$amount}} Produk) <span>{{$totalHarga}}</span></p>
             <div class="summary-total">
                 <p>Total Tagihan</p>
-                <p>Rp127.930</p>
+                <p>{{$totalHarga}}</p>
             </div>
             <button class="btn btn-primary" id="payment-button">Pilih Pembayaran</button>
         </div>
@@ -281,9 +281,17 @@
                 <button><img src="../shopeepay.png" alt="ShopeePay"></button>
             </div>
         </div>
-
-        <!-- Tombol Bayar -->
-        <button class="btn btn-primary mt-3" id="pay-button" style="display: none;">Bayar</button>
+        
+        <form action="/transaction/completed" method="POST">
+            @csrf
+            @foreach ($carts as $item)
+                <input type="hidden" name="items[{{$item->product_id}}][id]" value="{{$item->product_id}}">
+                <input type="hidden" name="items[{{$item->product_id}}][quantity]" value="{{$item->quantity}}">
+                <input type="hidden" name="items[{{$item->product_id}}][price]" value="{{$item->price}}">
+            @endforeach
+            <!-- Tombol Bayar -->
+            <button type="submit" class="btn btn-primary mt-3" id="pay-button" style="display: none;">Bayar</button>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

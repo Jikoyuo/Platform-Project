@@ -44,7 +44,19 @@ class DBTransactionsController extends Controller
      */
     public function store(StoreDBTransactionsRequest $request)
     {
-        //
+        $products = $request->input('items');
+        foreach ($products as $product){
+            $transaction = new DBTransactions();
+            $transaction->order_date = now();
+            $transaction->user_id = Auth::id();
+            $transaction->product_id = $product['id'];
+            $transaction->price = $product['price'];
+            $transaction->quantity = $product['quantity'];
+            $transaction->save();
+        }
+        
+        return redirect('/history');
+
     }
 
     /**

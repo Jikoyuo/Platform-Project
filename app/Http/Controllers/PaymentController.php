@@ -8,19 +8,31 @@ use App\Models\DBCart;
 class PaymentController extends Controller
 {
     Public function payment(Request $request){
-        $request->validate([
-            'total' => 'required'
-        ]);
-        $user=User::where('id', Auth::id())->get()->first();
+        $products = $request->input('items');
+        foreach ($products as $product){
+            $cartItem = DBCart::where('user_id', Auth::id())
+                                ->where('product_id', $product['id'])
+                                ->first();
+
+            if ($cartItem) {
+                $cartItem->quantity = $product['quantity'];
+                $cartItem->save();
+            }
+        }
+
+        $user = User::where('id', Auth::id())->get()->first();
         $items = DBCart::where('user_id', Auth::id())->leftJoin('d_b_products', 'd_b_carts.product_id', '=', 'd_b_products.id')->get();
-  
+
+        $address = User::where('id', Auth::id())->get()->first()->address;
+
         return view('payment', [
             'title'=>'payment',
             'logged'=>Auth::check(),
             'user'=>$user,
             'totalHarga'=>$request->total,
-            'carts'=>$items
-            
+            'carts'=>$items,
+            'amount'=>$request->amount,
+            'address'=>$address
         ]);
     }
         

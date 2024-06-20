@@ -20,55 +20,58 @@
     @include('partials.navbar')
     <div id="particles-js" class="particles"></div>
 
-    <div class="main-content">
-        @if (!empty($cart) && count($cart) > 0)
-            <form action="/cart/payment" method="POST">
-                @csrf
+    <form action="/cart/payment" method="POST">
+        @csrf
+        <div class="main-content">
+            @if (!empty($cart) && count($cart) > 0)
                 <div class="trans">
                     <h1 class="text-light">Rincian Belanja</h1>
                     <h2 class="text-light">Item: <span id="total-items">{{$amount}}</span></h2>
                     <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
                     <input type="hidden" id="total_price" name="total" value="0">
+                    <input type="hidden" id="total_quantity" name="amount" value="0">
                     <button type="submit" id="buttonPay" class="btn btn-dark btn-trans">Checkout</button>
                 </div>
-            </form>
-        @else
-            <div class="jumbotron jumbotron-fluid text-white">
-                <div class="container">
-                    <h1 class="display-8">Keranjang Anda Kosong !<br> Ayo Isi Keranjang Anda Dengan Film Favorite Kamu !</h1>
+                
+            @else
+                <div class="jumbotron jumbotron-fluid text-white">
+                    <div class="container">
+                        <h1 class="display-8">Keranjang Anda Kosong !<br> Ayo Isi Keranjang Anda Dengan Film Favorite Kamu !</h1>
+                    </div>
                 </div>
+            @endif
+
+            <div class="container-trans">
+                <div class="container-title"></div>
+                @foreach ($items as $item)
+                    <div class="container-product align-content-center" >
+                        <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
+                            <div class="card" style="width: 100px; height: auto; background-color: #444444;">
+                                <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap" style="max-height:170px;">
+                            </div>
+                            <div class="priceProd">
+                                <h5 class="text-white">RP <span id="{{$item['slug']}}">{{$item['price']}}</span></h5>
+                            </div>
+                            <div class="desc-prod">
+                                <h3 class="text-white">{{$item['name']}}</h3>
+                                <h4 class="text-white">{{$item['year']}}</h4>
+                            </div>
+                            <a href="/cart/delete/{{$item['id']}}">
+                                <box-icon id="deleteCart" class="custom-icon" name='trash' type='solid' color='#ffffff' style="margin-left: 10px; margin-right: 10px;"></box-icon> <!-- Icon trash -->
+                            </a>
+                            <div class="quantity" style="background-color: aquamarine;">
+                            <button type="button" class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
+                            <input type="hidden" name="items[{{$item['product_id']}}][id]" value="{{$item['product_id']}}">
+                            <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" name="items[{{$item['product_id']}}][quantity]">
+                            <button type="button" class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
+                        </div>
+
+                        </div>
+                    </div>
+                @endforeach
             </div>
-        @endif
-
-        <div class="container-trans">
-            <div class="container-title"></div>
-            @foreach ($items as $item)
-                <div class="container-product align-content-center" >
-                    <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
-                        <div class="card" style="width: 100px; height: auto; background-color: #444444;">
-                            <img class="card-img-top" src="{{$item['img_url']}}" alt="Card image cap" style="max-height:170px;">
-                        </div>
-                        <div class="priceProd">
-                            <h5 class="text-white">RP <span id="{{$item['slug']}}">{{$item['price']}}</span></h5>
-                        </div>
-                        <div class="desc-prod">
-                            <h3 class="text-white">{{$item['name']}}</h3>
-                            <h4 class="text-white">{{$item['year']}}</h4>
-                        </div>
-                        <a href="/cart/delete/{{$item['id']}}">
-                            <box-icon id="deleteCart" class="custom-icon" name='trash' type='solid' color='#ffffff' style="margin-left: 10px; margin-right: 10px;"></box-icon> <!-- Icon trash -->
-                        </a>
-                        <div class="quantity" style="background-color: aquamarine;">
-                        <button class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
-                        <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" value="1">
-                        <button class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
-                    </div>
-
-                    </div>
-                </div>
-            @endforeach
         </div>
-    </div>
+    </form>
 
     <div class="footer-wrapper">
         <section class="sectionfoot">
@@ -135,6 +138,7 @@
             document.getElementById('total-items').innerText = totalItems;
             document.getElementById('total-price').innerText = `Rp ${totalPrice}`;
             document.getElementById('total_price').value = totalPrice;
+            document.getElementById('total_quantity').value = totalItems;
         }
 
     </script>
