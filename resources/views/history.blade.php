@@ -246,6 +246,27 @@
                     reviewForm.reset();
                 });
             });
+
+
+
+        //     <div id="reviewPopup" class="popup">
+        //     <div class="popup-content">
+        //         <span class="close">&times;</span>
+        //         <h2>Beri Ulasan</h2>
+        //         <form id="reviewForm">
+        //             <div class="mb-3">
+        //                 <label for="rating" class="form-label">Rating (1-5):</label>
+        //                 <input type="number" id="rating" class="form-control" name="rating" min="1" max="5" required>
+        //             </div>
+        //             <div class="mb-3">
+        //                 <label for="review" class="form-label">Ulasan:</label>
+        //                 <textarea id="review" class="form-control" name="review" rows="4" required></textarea>
+        //             </div>
+        //             <button type="submit" class="btn btn-primary">Submit</button>
+        //         </form>
+        //     </div>
+        // </div>
+
         });
     </script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
