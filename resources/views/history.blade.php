@@ -41,7 +41,7 @@
                             <h3 class="text-white">{{$transaction->order_date}}</h3>
                         </div>
                         <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
-                        <button id="btnBuyBack" href="/product/{{}}" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
+                        <button id="btnBuyBack" href="/product/{{$slug}}" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                     </div>
                 </div>
             @endforeach
@@ -56,6 +56,7 @@
                     <div class="mb-3">
                         <label for="rating" class="form-label">Rating (1-5):</label>
                         <input type="number" id="rating" class="form-control" name="rating" min="1" max="5" required>
+                        <input type="hidden" id="id" value="">
                     </div>
                     <div class="mb-3">
                         <label for="review" class="form-label">Ulasan:</label>
