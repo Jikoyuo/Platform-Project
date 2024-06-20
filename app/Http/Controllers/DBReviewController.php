@@ -6,15 +6,19 @@ use App\Models\DBReview;
 use Illuminate\Support\Facades\Request;
 use App\Http\Requests\StoreDBReviewRequest;
 use App\Http\Requests\UpdateDBReviewRequest;
+use App\Models\DBProduct;
 
 class DBReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index($product_id)
     {
-        
+        return view('review', [
+            'title' => 'Review',
+            'product_id' => $product_id
+        ]);
     }
 
     /**
@@ -30,7 +34,17 @@ class DBReviewController extends Controller
      */
     public function store(StoreDBReviewRequest $request)
     {
-        
+        $review = new DBReview();
+        $review->movie_id = $request->movie_id;
+        $review->star = $request->star;
+        $review->review = $request->review;
+        $review->created_at = now();
+        $review->updated_at = now();
+        $review->save();
+
+        $product = DBProduct::where('id', $request->movie_id)->get();
+
+        return redirect(`/product/$product->slug`);
     }
 
     /**

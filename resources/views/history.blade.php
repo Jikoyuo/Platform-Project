@@ -40,8 +40,7 @@
                             <h4 class="text-white">{{$transaction->name}}</h4>
                             <h7 class="text-white">{{$transaction->order_date}}</h7>
                         </div>
-                        <a href="/review">
-                            <input type="hidden" value="{{$transaction->product_id}}" name="movie_id">
+                        <a href="/review/{{$transaction->product_id}}">
                             <button type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
                         </a>
                         <a href="/product/{{$transaction->slug}}">

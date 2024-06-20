@@ -56,5 +56,5 @@ Route::post('/profile/edit',[DBUsersController::class, 'update']);
 
 Route::post('/transaction/completed',[DBTransactionsController::class, 'store']);
 
-Route::get('/review',[DBReviewController::class, 'index']);
+Route::get('/review/{id}',[DBReviewController::class, 'index']);
 Route::post('/review/add',[DBReviewController::class, 'store']);
