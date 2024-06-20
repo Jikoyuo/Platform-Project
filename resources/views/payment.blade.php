@@ -40,11 +40,11 @@
 
             /* Form Container Styles */
             .trans {
+                position: relative;
+                left:-28% ;
                 background: rgba(0, 0, 0, 0.8);
-                padding: 20px;
                 border-radius: 8px;
-                max-width: 500px;
-                margin: 50px auto;
+                width: 700px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             }
 
@@ -132,7 +132,10 @@
                 font-size: 1.2em;
                 margin-right: 10px;
             }
+
         </style>
+         <link rel="stylesheet" href="../newParticle.css">
+         <script defer src="../newParticle.js"></script>
     </head>
 
     <body>
@@ -282,5 +285,6 @@
                     }
                 });
         </script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </body>
 </html>
