@@ -31,17 +31,19 @@
                 <div class="container-product align-content-center">
                     <div class="prod" data-movie-id="{{$transaction->product_id}}" data-movie-price="{{$transaction->price}}">
                         <div class="card">
-                            <img src="https://i.pinimg.com/564x/ec/26/30/ec26305be8193a6ec10b20e69f9861e0.jpg" alt="Card image cap">
+                            <img src="{{$transaction->img_url}}" alt="Card image cap">
                         </div>
                         <div class="priceProd">
                             <h5 class="text-white">RP <span id="{{$transaction->product_id}}">{{$transaction->quantity}}x{{$transaction->price}}</span></h5>
                         </div>
                         <div class="desc-prod">
                             <h3 class="text-white">{{$transaction->name}}</h3>
-                            <h3 class="text-white">{{$transaction->order_date}}</h3>
+                            <h3 class="text-white">{{$transaction->year}}</h3>
                         </div>
                         <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
-                        <button id="btnBuyBack" href="/product/{{$slug}}" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
+                        <a href="/product/{{$transaction->slug}}">
+                            <button id="btnBuyBack" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
+                        </a>
                     </div>
                 </div>
             @endforeach
