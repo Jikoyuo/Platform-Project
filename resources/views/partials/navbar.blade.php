@@ -31,11 +31,11 @@
                 </li>
             </ul>
 
-            <a href="/history" style="margin-left: 56%;" id="buttonPay">
+            <a href="/history" style="margin-left: 55%;" id="buttonPay">
                 <box-icon class="custom-icon" name='receipt' type='solid' color='#ffffff'></box-icon>
             </a>
 
-            <a href="/cart" style="margin-left:50px;">
+            <a href="/cart" style="margin-left:40px;">
                 <box-icon class="custom-icon" name="cart" type="solid" color="#ffffff"></box-icon>
             </a>
 
@@ -94,7 +94,7 @@
         </div>
         <div class="d-flex justify-end text-light me-xxl-5">
             <a href="/login">
-                <button class="btn" style="height: 40px; background-color: #a21420;">Login</button>
+                <button class="btn" style="height: 40px; background-color: rgba(182,6,25,255);">Login</button>
             </a>
         </div>
 
