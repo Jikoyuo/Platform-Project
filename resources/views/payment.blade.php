@@ -37,15 +37,16 @@ body {
 }
 
 .container {
-    position: relative;
-    top: 0;
-    left: 2%;
+    /* background-color: #0056b3; */
+    position: absolute;
+    left: 15%;
     z-index: 2;
     padding-top: 10px;
-    background-color: var(--card-bg-color); /* Warna abu-abu */
+    background-color: var(--card-bg-color);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    top:15% ;
 }
 
 .checkout-header,
@@ -250,17 +251,17 @@ button.payment-button.selected {
 
 
     </style>
-    
-    
+
+
 </head>
 
 <body>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    
+
     <div id="particles-js" class="particles"></div>
     <a href="/cart" id="backButton" class="btn btn-danger">Back to Cart</a>
     <div class="container">
-        
+
         <div class="checkout-header">
             <h3 class="text-light">Checkout</h3>
             <div class="mb-3">
@@ -333,7 +334,7 @@ button.payment-button.selected {
         </form>
     </div>
 
-   
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
