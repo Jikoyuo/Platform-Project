@@ -225,6 +225,7 @@
                     icon: 'success',
                     confirmButtonText: 'OK'
                 }).then(() => {
+                    popup.style.display = 'none';
                     reviewForm.reset();
                 });
             });
