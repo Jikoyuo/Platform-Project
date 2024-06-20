@@ -220,17 +220,17 @@
                     </div>
                     <!-- Container untuk gambar ikon bank -->
                     <div id="bank-icons" class="bank-icons text-center">
-                        <img src="BCA.png" alt="BCA" />
-                        <img src="BRI.png" alt="BRI" />
-                        <img src="BNI.png" alt="BNI" />
-                        <img src="mandiri.png" alt="Mandiri" />
+                        <img src="../BCA.png" alt="BCA" />
+                        <img src="../BRI.png" alt="BRI" />
+                        <img src="../BNI.png" alt="BNI" />
+                        <img src="../mandiri.png" alt="Mandiri" />
                     </div>
                     <!-- Container untuk ikon E-Wallet -->
                     <div id="ewallet-icons" class="ewallet-icons text-center">
-                        <img src="gopay.png" alt="GoPay" />
-                        <img src="ovo.png" alt="OVO" />
-                        <img src="shopeepay.png" alt="ShopeePay" />
-                        <img src="qris.png" alt="QRIS" />
+                        <img src="../gopay.png" alt="GoPay" />
+                        <img src="../ovo.png" alt="OVO" />
+                        <img src="../shopeepay.png" alt="ShopeePay" />
+                        <img src="../qris.png" alt="QRIS" />
                     </div>
                     <div>Total Harga: Rp {{ $totalHarga }}</div>
                     <button type="submit" class="btn btn-primary mt-3">
