@@ -21,8 +21,9 @@
 
         <div class="swiper-wrapper">
             @foreach ( $sliders as $slider)
-                <a href="/product/{{$slider->slug}}">
+
                     <div class="swiper-slide">
+                    <a href="/product/{{$slider->slug}}">
                         <img
                             src="{{$slider->img_url}}" />
                         <p>{{$slider->name}}</p>

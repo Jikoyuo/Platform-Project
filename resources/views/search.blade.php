@@ -27,12 +27,16 @@
 
         -->
 
-        <div class="container-film shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="container-film shadow-lg p-3 mb-5 bg-body rounded" style="position:absolute; top:30%; left:17%;">
             <h1 class="text-center">Search result: {{$search}} </h1>
 
+            @if (!empty($search) && count($search) > 0)
             @include('partials.catalog')
+            @else
+            <h1>Kosong</h1>
+            @endif
         </div>
     @include('partials.footer')
 @endsection
 
-    
+

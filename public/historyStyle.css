@@ -57,6 +57,9 @@ body {
     background-color: rgb(46, 46, 46);
     margin-top: 2%;
     height: 200px;
+    width: 1000px;
+    position: relative;
+    left: -15%;
 }
 
 .container-product:hover {
@@ -71,6 +74,9 @@ body {
     background-color: rgb(46, 46, 46);
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    width: 1000px;
+    position: relative;
+    left: -15%;
 }
 
 
@@ -161,7 +167,7 @@ footer {
 
   .desc-prod{
     position: relative;
-    top: -112%;
+    top: -95%;
     left: 14%;
     /* background-color: cyan; */
     height: 70%;

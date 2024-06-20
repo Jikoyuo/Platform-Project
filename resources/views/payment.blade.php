@@ -133,6 +133,18 @@
             background-color: var(--button-hover-bg-color);
         }
 
+        .btn-success {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4caf50;
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: #388e3c;
+        }
+
         .promo-button {
             background-color: #4caf50;
             color: white;
@@ -164,6 +176,10 @@
         .payment-methods {
             display: none;
             margin-top: 20px;
+            background-color: var(--card-bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .payment-methods button {
@@ -219,31 +235,17 @@
         </div>
 
         <div class="checkout-body">
-            {{-- <div class="item-row">
-                <div class="item-details">
-                    <img src="https://via.placeholder.com/80" alt="Product Image" class="item-image">
-                    <div class="item-info">
-                        <h5>Unicharm Official Store</h5>
-                        <p>ManyPoko Wipes Tisu Basah Reguler S2 Perfume</p>
-                        <button class="promo-button">Gunakan Promo Tokopedia</button>
-                    </div>
-                </div>
-                <div class="item-price">Rp8.930</div>
-            </div> --}}
             @foreach ($carts as $item)
             <div class="item-row">
                 <div class="item-details">
                     <img src="{{$item->img_url}}" alt="Product Image" class="item-image">
                     <div class="item-info">
                         <h5>{{$item->name}}</h5>
-                        <p></p>
-                        
                     </div>
                 </div>
                 <div class="item-price">Rp. {{$item->price}}</div>
             </div>
             @endforeach
-
         </div>
 
         <div class="summary">
@@ -273,6 +275,9 @@
                 <button><img src="../shopeepay.png" alt="ShopeePay"></button>
             </div>
         </div>
+        
+        <!-- Tombol Bayar -->
+        <button class="btn btn-primary mt-3" id="pay-button" style="display: none;">Bayar</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -284,11 +289,13 @@
         document.getElementById('bank-transfer-button').addEventListener('click', function () {
             document.getElementById('bank-methods').style.display = 'block';
             document.getElementById('ewallet-methods').style.display = 'none';
+            document.getElementById('pay-button').style.display = 'block';
         });
 
         document.getElementById('ewallet-button').addEventListener('click', function () {
             document.getElementById('bank-methods').style.display = 'none';
             document.getElementById('ewallet-methods').style.display = 'block';
+            document.getElementById('pay-button').style.display = 'block';
         });
     </script>
 </body>
