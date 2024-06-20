@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../newParticle.css">
     <script defer src="../newParticle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -21,12 +23,6 @@
     <div id="particles-js" class="particles"></div>
 
     <div class="main-content">
-        <!-- <div class="jumbotron jumbotron-fluid text-white">
-                <div class="container">
-                    <h1 class="display-8">Keranjang Anda Kosong !<br> Ayo Isi Keranjang Anda Dengan Film Favorite Kamu !</h1>
-                </div>
-            </div> -->
-
         <div class="container-trans">
             <div class="container-title">
                 <h1 class="text-white">History Transaction</h1>
@@ -44,7 +40,7 @@
                         <h3 class="text-white">ewe</h3>
                         <h4 class="text-white">1999</h4>
                     </div>
-                    <button id="btnUlasan" href="#" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
+                    <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
                     <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                 </div>
             </div>
@@ -62,11 +58,29 @@
                         <h3 class="text-white">ewe</h3>
                         <h4 class="text-white">1999</h4>
                     </div>
-                    <button id="btnUlasan" href="#" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
+                    <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
                     <button id="btnBuyBack" href="/home" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                 </div>
             </div>
+        </div>
 
+        <!-- Popup -->
+        <div id="reviewPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Beri Ulasan</h2>
+                <form id="reviewForm">
+                    <div class="mb-3">
+                        <label for="rating" class="form-label">Rating (1-5):</label>
+                        <input type="number" id="rating" class="form-control" name="rating" min="1" max="5" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="review" class="form-label">Ulasan:</label>
+                        <textarea id="review" class="form-control" name="review" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
 
         <div class="footer-wrapper">
@@ -161,19 +175,22 @@
                                         <a href="#!" class="text-reset">####</a>
                                     </p>
                                     <p>
-                                        <a href="#!" class="text-reset">Help</a>
+                                        <a href="#!" class="text-reset">####</a>
                                     </p>
                                 </div>
                                 <!-- Grid column -->
 
                                 <!-- Grid column -->
-                                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white">
+                                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                                     <!-- Links -->
-                                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                                    <p><i class="fas fa-home me-3"></i> Sleman, DIY, Indonesia</p>
-                                    <p><i class="fas fa-envelope me-3"></i> sadhar@sadhar.com</p>
-                                    <p><i class="fas fa-phone me-3"></i> 911</p>
-                                    <p><i class="fas fa-print me-3"></i> 911</p>
+                                    <h6 class="text-uppercase fw-bold mb-4 text-white">Contact</h6>
+                                    <p class="text-white"><i class="fas fa-home me-3"></i> ####</p>
+                                    <p class="text-white">
+                                        <i class="fas fa-envelope me-3"></i>
+                                        ####
+                                    </p>
+                                    <p class="text-white"><i class="fas fa-phone me-3"></i> ####</p>
+                                    <p class="text-white"><i class="fas fa-print me-3"></i> ####</p>
                                 </div>
                                 <!-- Grid column -->
                             </div>
@@ -184,15 +201,53 @@
 
                     <!-- Copyright -->
                     <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
-                        © 2024 Copyright:
+                        © 2021 Copyright:
                         <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
                     </div>
                     <!-- Copyright -->
                 </footer>
+                <!-- Footer -->
             </section>
         </div>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const btnUlasan = document.querySelectorAll('#btnUlasan');
+            const popup = document.getElementById('reviewPopup');
+            const closeBtn = document.querySelector('.popup .close');
+            const reviewForm = document.getElementById('reviewForm');
 
+            btnUlasan.forEach(button => {
+                button.addEventListener('click', () => {
+                    popup.style.display = 'block';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == popup) {
+                    popup.style.display = 'none';
+                }
+            });
+
+            reviewForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Ulasan berhasil diunggah!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    popup.style.display = 'none';
+                    reviewForm.reset();
+                });
+            });
+        });
+    </script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 
