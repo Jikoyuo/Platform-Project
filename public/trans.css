@@ -24,8 +24,9 @@ body {
 
 .jumbotron{
     text-align: center;
-    position: relative;
-    top: 40vh;
+    position: absolute;
+    left: 25%;
+    top: 50vh;
 /* background-color: #155724; */
 }
 

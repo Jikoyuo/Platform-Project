@@ -25,7 +25,7 @@
             <!-- left column -->
             <div class="col-md-3">
                 <div class="text-center">
-                    <img id="profile-pic" src="https://i.pinimg.com/564x/02/fb/98/02fb98171ce3b3457c4d92c6e8a43f7d.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <img id="profile-pic" src="https://i.pinimg.com/564x/50/49/7d/50497d5ed7000643becf3bea3efda0ca.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
                     <h6>Upload Profile Pict ...</h6>
                     <input type="file" id="upload-profile" class="form-control">
                     <button id="delete-profile" class="btn btn-danger mt-2">Delete Profile Picture</button>
@@ -81,7 +81,7 @@
 
             // Menghapus gambar profil
             deleteBtn.addEventListener('click', function() {
-                profilePic.src = 'https://i.pinimg.com/564x/02/fb/98/02fb98171ce3b3457c4d92c6e8a43f7d.jpg'; // Mengatur ulang ke gambar default
+                profilePic.src = 'https://i.pinimg.com/564x/50/49/7d/50497d5ed7000643becf3bea3efda0ca.jpg'; // Mengatur ulang ke gambar default
                 uploadInput.value = ''; // Menghapus nilai input file
                 // Anda mungkin ingin menyimpan status penghapusan gambar ini di database atau lokal.
             });

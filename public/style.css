@@ -135,7 +135,7 @@ body {
     font-size: 1rem;
     outline: none;
     flex-grow: 1;
-    border-radius: 20px;
+    border-radius: 12px;
   }
 
   .search-button {
@@ -167,6 +167,11 @@ body {
       width: 100%;
       margin-bottom: 0.5rem;
     }
+  }
+
+  .custom-icon{
+    width: 28px;  /* Atur ukuran sesuai kebutuhan Anda */
+    height: 28px;
   }
 
 .navbar {
