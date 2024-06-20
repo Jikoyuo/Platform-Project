@@ -40,7 +40,7 @@
                             <h3 class="text-white">{{$transaction->name}}</h3>
                             <h3 class="text-white">{{$transaction->year}}</h3>
                         </div>
-                        <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
+                        <button id="btnUlasan" type="button" class="btn btn-dark btn-bb" attribute-id="{{$transaction->id}}">Beri Ulasan</button>
                         <a href="/product/{{$transaction->slug}}">
                             <button id="btnBuyBack" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                         </a>
