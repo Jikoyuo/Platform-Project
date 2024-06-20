@@ -19,7 +19,7 @@
 
     <div class="jumbotron jumbotron-fluid text-white">
         <div class="container">
-            <h1 class="display-8">Film, acara TV tak terbatas, dan banyak lagi. Tonton di mana pun. Batalkan kapan pun. Siap belanja? Daftar dan mulai berbelanja film favoritmu!</h1>
+            <h1 class="display-8">Hiburan tanpa batas dengan kaset film berkualitas. Tonton film klasik dan terbaru kapan saja, di mana saja. Siap untuk mulai berbelanja? Daftar sekarang dan lengkapi koleksi film favoritmu!</h1>
         </div>
         <form action="/search">
             <div class="input-group mb-3 mt-5 search-container">

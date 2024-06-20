@@ -14,9 +14,9 @@
 <body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    @include('partials.navbar')
     <section id="section1">
-    <div id="particles-js" class="particles"></div>
-        @include('partials.navbar')
+
         @include('partials.background')
 
         <div class="describe d-flex align-items-center full-height">
@@ -62,7 +62,6 @@
 
     <!-- Section 2: Ulasan Pembeli -->
     <section id="section2" class="my-5">
-    <div id="particles-js" class="particles"></div>
         <div class="container">
             <h2 class="text-center text-white mb-4" style="margin-top: 15%;">Ulasan Pembeli</h2>
             @foreach ($reviews as $review)
@@ -87,7 +86,7 @@
 
     <!-- Section 3: Rekomendasi Film Lain -->
     <section id="section3" class="my-5">
-        <div class="container">
+        <div class="container" >
             <h2 class="text-center text-white mb-4">Rekomendasi Film Lain</h2>
             <div class="row">
                 @foreach ($recommends as $recommend)

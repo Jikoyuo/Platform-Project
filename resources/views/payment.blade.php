@@ -32,14 +32,14 @@
             font-family: "Roboto", sans-serif;
             margin: 0;
             padding: 0;
-            height: 10vh;
+            height: 100vh;
         }
 
         .container {
             /* background-color: #0056b3; */
             position: relative;
-            top: -60%;
-            left: 12%;
+            top: 10%;
+            left: 2%;
             z-index: 2;
         }
 
@@ -223,13 +223,16 @@
             width: 50px;
             height: 50px;
         }
+
+        .form-control::placeholder {
+            color: #aaa; /* Ganti dengan warna yang diinginkan */
+            opacity: 1; /* Untuk memastikan warna terlihat */
+        }
+
     </style>
-    <link rel="stylesheet" href="../newParticle.css">
-    <script defer src="../newParticle.js"></script>
 </head>
 
 <body>
-    <div id="particles-js" class="particles"></div>
 
     <div class="container">
         <div class="checkout-header">
@@ -304,7 +307,6 @@
             document.getElementById('pay-button').style.display = 'block';
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
 </html>
