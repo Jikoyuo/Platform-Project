@@ -41,7 +41,8 @@
     <hr class="hr hr-blurry">
     <!-- katalog penjualan -->
     <div class="row container-film shadow-lg rounded">
-        <h1 class="text-center text-white">Movie List</h1>
+        <h1 class="text-center text-white"
+        style="font-size: 2.5rem; font-weight: semi-bold;">Movie List</h1>
         @include('partials.catalog')
     </div>
     <!-- end katalog penjualan -->
