@@ -34,7 +34,7 @@
                             <img src="{{$transaction->img_url}}" alt="Card image cap">
                         </div>
                         <div class="priceProd">
-                            <h5 class="text-white">RP <span id="{{$transaction->product_id}}">{{$transaction->price}}</span></h5>
+                            <h5 class="text-white">RP <span id="{{$transaction->product_id}}">{{$transaction->price}}x{{$transaction->quantity}}</span></h5>
                         </div>
                         <div class="desc-prod">
                             <h4 class="text-white">{{$transaction->name}}</h4>
