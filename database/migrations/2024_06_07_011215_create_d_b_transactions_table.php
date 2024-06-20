@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamp('order_date');
             $table->float('price');
+            $table->integer('quantity');
             $table->foreignId('product_id');
             $table->foreignId('user_id');
             $table->timestamps();

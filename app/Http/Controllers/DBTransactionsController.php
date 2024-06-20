@@ -51,8 +51,11 @@ class DBTransactionsController extends Controller
             $transaction->user_id = Auth::id();
             $transaction->product_id = $product['id'];
             $transaction->price = $product['price'];
+            $transaction->quantity = $product['quantity'];
             $transaction->save();
         }
+
+        DBCart::where('user_id', Auth::id())->delete();
         
         return redirect('/history');
 
