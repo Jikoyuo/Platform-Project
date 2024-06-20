@@ -160,6 +160,48 @@
             -moz-appearance: none;
             appearance: none;
         }
+
+        .payment-methods {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .payment-methods button {
+            display: inline-block;
+            width: auto;
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: var(--input-bg-color);
+            border: none;
+            border-radius: 8px;
+        }
+
+        .payment-methods button img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .bank-methods,
+        .ewallet-methods {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .bank-methods button,
+        .ewallet-methods button {
+            display: inline-block;
+            margin: 5px;
+            background-color: var(--input-bg-color);
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .bank-methods button img,
+        .ewallet-methods button img {
+            width: 50px;
+            height: 50px;
+        }
     </style>
     <script defer src="../newParticle.js"></script>
 </head>
@@ -177,7 +219,7 @@
         </div>
 
         <div class="checkout-body">
-            <div class="item-row">
+            {{-- <div class="item-row">
                 <div class="item-details">
                     <img src="https://via.placeholder.com/80" alt="Product Image" class="item-image">
                     <div class="item-info">
@@ -187,18 +229,21 @@
                     </div>
                 </div>
                 <div class="item-price">Rp8.930</div>
-            </div>
+            </div> --}}
+            @foreach ($carts as $item)
             <div class="item-row">
                 <div class="item-details">
-                    <img src="https://via.placeholder.com/80" alt="Product Image" class="item-image">
+                    <img src="{{$item->img_url}}" alt="Product Image" class="item-image">
                     <div class="item-info">
-                        <h5>Maxim Official Store</h5>
-                        <p>Maxim Valentino in Color Red 26cm - Wajan Teflon</p>
-                        <button class="promo-button">Gunakan Promo Tokopedia</button>
+                        <h5>{{$item->name}}</h5>
+                        <p></p>
+                        
                     </div>
                 </div>
-                <div class="item-price">Rp119.000</div>
+                <div class="item-price">Rp. {{$item->price}}</div>
             </div>
+            @endforeach
+
         </div>
 
         <div class="summary">
@@ -208,26 +253,42 @@
                 <p>Total Tagihan</p>
                 <p>Rp127.930</p>
             </div>
-            <button class="btn btn-primary">Pilih Pembayaran</button>
+            <button class="btn btn-primary" id="payment-button">Pilih Pembayaran</button>
+        </div>
+
+        <div class="payment-methods" id="payment-methods">
+            <h5 class="text-light">Metode Pembayaran</h5>
+            <button class="btn btn-outline-light" id="bank-transfer-button">Transfer Bank</button>
+            <button class="btn btn-outline-light" id="ewallet-button">E-Wallet</button>
+            <div class="bank-methods" id="bank-methods">
+                <button><img src="../BNI.png" alt="BNI"></button>
+                <button><img src="../BCA.png" alt="BCA"></button>
+                <button><img src="../BRI.png" alt="BRI"></button>
+                <button><img src="../mandiri.png" alt="Mandiri"></button>
+            </div>
+            <div class="ewallet-methods" id="ewallet-methods">
+                <button><img src="../qris.png" alt="Qris"></button>
+                <button><img src="../gopay.png" alt="Gopay"></button>
+                <button><img src="../ovo.png" alt="Ovo"></button>
+                <button><img src="../shopeepay.png" alt="ShopeePay"></button>
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const reviewForm = document.querySelector('form');
+        document.getElementById('payment-button').addEventListener('click', function () {
+            document.getElementById('payment-methods').style.display = 'block';
+        });
 
-            reviewForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Ulasan berhasil diunggah!',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                }).then(() => {
-                    reviewForm.reset();
-                });
-            });
+        document.getElementById('bank-transfer-button').addEventListener('click', function () {
+            document.getElementById('bank-methods').style.display = 'block';
+            document.getElementById('ewallet-methods').style.display = 'none';
+        });
+
+        document.getElementById('ewallet-button').addEventListener('click', function () {
+            document.getElementById('bank-methods').style.display = 'none';
+            document.getElementById('ewallet-methods').style.display = 'block';
         });
     </script>
 </body>
