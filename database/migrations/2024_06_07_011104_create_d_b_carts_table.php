@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('d_b_carts', function (Blueprint $table) {
             $table->id();
             $table->float('price');
+            $table->float('quantity');
             $table->foreignId('product_id');
             $table->foreignId('user_id');
             $table->timestamps();

@@ -15,16 +15,18 @@ class DBTransactionsController extends Controller
      */
     public function index()
     {
+        $admin = false;
         if(Auth::check()){
             $admin=Auth::user()->role === 'admin';
         }
+        $transactions = DBTransactions::where('user_id', Auth::user()->id)->get()->all();
         $genres=DBCategory::all();
         return view('history',[
             'title'=>'history',
             'logged'=>Auth::check(),
             'genres'=>$genres,
-            'admin'=>$admin
-
+            'admin'=>$admin,
+            'transactions'=>$transactions
         ]);
     }
 
