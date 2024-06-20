@@ -522,11 +522,14 @@
     }
 
     $("#search-button").on("click", function() {
+        showSearchSection();
         searchMovie();
+        
     });
 
     $("#search-input").on("keyup", function(e) {
         if (e.which === 13) {
+            showSearchSection();
             searchMovie();
         }
     });
