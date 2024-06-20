@@ -192,3 +192,18 @@ $("#movie-list").on("click", ".see-detail", function () {
     },
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reviewForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Dummy AJAX request (can be replaced with actual backend submission)
+        // Simulating a delay with setTimeout
+        setTimeout(function() {
+            alert('Submit Sukses');
+            form.reset(); // Reset the form after successful submission
+        }, 500); // Simulated delay of 0.5 seconds (500 milliseconds)
+    });
+});
