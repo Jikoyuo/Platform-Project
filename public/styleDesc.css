@@ -1,6 +1,8 @@
 body {
     background-color: black;
-    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+
 }
 
 .describe {
@@ -9,18 +11,22 @@ body {
     /* max-height: 80%; Menggunakan max-height agar dapat mengatur batas konten */
     /* overflow: auto; Menambahkan overflow untuk membuat konten scrollable */
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
 }
 
+.dropdown-menu.multi-column {
+    columns: 3;
+}
 
 .card-custom {
     max-width: 90%;
     background-color: transparent;
     border-color: transparent;
 }
+
 
 .card-price {
     font-size: 1.2rem;
@@ -38,7 +44,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1;
+    z-index: -5;
 }
 
 .bg-image {
@@ -49,17 +55,25 @@ body {
     filter: brightness(50%) blur(4px);
 }
 
+.custom-icon {
+    width: 28px; /* Atur ukuran sesuai kebutuhan Anda */
+    height: 28px;
+}
+
 .navbar {
-    position: absolute;
-    top: 0;
+    /* background-color: #e55d50; */
+    position: absolute; /* Tambahkan properti position absolute */
+    top: 0; /* Atur posisi navbar di bagian atas */
+    margin-top: 2%;
     left: 0;
     width: 90%;
     margin-left: 7%;
-    z-index: 999;
+    z-index: 999; /* Atur z-index lebih tinggi dari bg-image */
+    font-weight: bold;
 }
 
 .navbar-nav .nav-link {
-    margin-right: 40px;
+    margin-right: 40px; /* Atur jarak antara setiap link di navbar */
 }
 
 .rating {
@@ -91,8 +105,9 @@ body {
 }
 
 #section2 {
-    height: 100vh;
+    height: auto;
     /* background-color: #ffdd00; */
+    padding: 10px;
 }
 
 #section3 {

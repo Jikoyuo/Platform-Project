@@ -53,6 +53,10 @@ body {
     border-radius: 3%;
 }
 
+.dropdown-menu.multi-column {
+    columns: 3;
+}
+
 .container-product {
     background-color: rgb(46, 46, 46);
     margin-top: 2%;

@@ -11,17 +11,28 @@
             crossorigin="anonymous">
         <link rel="stylesheet" href="styleLog.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        
+        <script defer src="../newParticle.js"></script>
+
         @if($message = session('success'))
             <script>
                 Swal.fire('Good job!', '{{ $message }}', 'success')
             </script>
         @endif
 
+<style>
 
+.particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%; /* Ensure the particles container takes full height */
+    z-index: 1;
+}
+
+</style>
     </head>
     <body>
-
+    <div id="particles-js" class="particles"></div>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -97,4 +108,5 @@
 
     </body>
     <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </html>

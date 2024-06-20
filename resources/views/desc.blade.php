@@ -9,14 +9,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styleDesc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="../newParticle.js"></script>
+
+    <style>
+
+.particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%; /* Ensure the particles container takes full height */
+    z-index: -1;
+}
+
+    </style>
+
 </head>
 
 <body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <section id="section1">
+    @include('partials.navbar')
     <div id="particles-js" class="particles"></div>
-        @include('partials.navbar')
+    <section id="section1">
+
         @include('partials.background')
 
         <div class="describe d-flex align-items-center full-height">
@@ -62,7 +77,6 @@
 
     <!-- Section 2: Ulasan Pembeli -->
     <section id="section2" class="my-5">
-    <div id="particles-js" class="particles"></div>
         <div class="container">
             <h2 class="text-center text-white mb-4" style="margin-top: 15%;">Ulasan Pembeli</h2>
             @foreach ($reviews as $review)
@@ -87,7 +101,7 @@
 
     <!-- Section 3: Rekomendasi Film Lain -->
     <section id="section3" class="my-5">
-        <div class="container">
+        <div class="container" >
             <h2 class="text-center text-white mb-4">Rekomendasi Film Lain</h2>
             <div class="row">
                 @foreach ($recommends as $recommend)
@@ -151,6 +165,7 @@
     });
 });
     </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
 </html>
