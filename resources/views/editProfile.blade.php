@@ -64,7 +64,7 @@
                         <div class="col-lg-9 offset-lg-3">
                             <button type="submit" class="btn btn-danger">Save Changes</button>
                             <a href="/home">
-                                <button type="reset" class="btn btn-secondary">Cancel</button>
+                                <button type="reset" class="btn btn-secondary" style="position: relative;top: -25%;">Cancel</button>
                             </a>
                         </div>
                     </div>

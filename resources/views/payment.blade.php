@@ -32,10 +32,15 @@
             font-family: "Roboto", sans-serif;
             margin: 0;
             padding: 0;
+            height: 100vh;
         }
 
         .container {
-            margin-top: 20px;
+            /* background-color: #0056b3; */
+            position: relative;
+            top: 10%;
+            left: 2%;
+            z-index: 2;
         }
 
         .checkout-header,
@@ -218,12 +223,16 @@
             width: 50px;
             height: 50px;
         }
+
+        .form-control::placeholder {
+            color: #aaa; /* Ganti dengan warna yang diinginkan */
+            opacity: 1; /* Untuk memastikan warna terlihat */
+        }
+
     </style>
-    <script defer src="../newParticle.js"></script>
 </head>
 
 <body>
-    <div id="particles-js" class="particles"></div>
 
     <div class="container">
         <div class="checkout-header">
@@ -275,7 +284,7 @@
                 <button><img src="../shopeepay.png" alt="ShopeePay"></button>
             </div>
         </div>
-        
+
         <!-- Tombol Bayar -->
         <button class="btn btn-primary mt-3" id="pay-button" style="display: none;">Bayar</button>
     </div>

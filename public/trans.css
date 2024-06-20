@@ -51,6 +51,10 @@ body {
     transform: translateY(-5px);
 }
 
+.dropdown-menu.multi-column {
+    columns: 3;
+}
+
 .container-title {
     display: flex;
     justify-content: center; /* Horizontal alignment */

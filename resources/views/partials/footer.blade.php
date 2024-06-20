@@ -120,7 +120,7 @@
                 style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2024 Copyright:
                 <a class="text-reset fw-bold"
-                    href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                    href="https://github.com/Jikoyuo/Platform-Project" target="_blank">Project Platform "Kasetflix"</a>
             </div>
             <!-- Copyright -->
         </footer>
