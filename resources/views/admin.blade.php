@@ -183,53 +183,51 @@
             </div>
 
 
-       <!-- Add Product Section -->
-<div class="container mt-5" id="add-product-section" style="display: none;">
-    <h1 class="mb-4">Add Product</h1>
-    <form action="/admin/add" method="POST">
-        @csrf
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <input type="text" class="form-control" id="description" name="description" required>
-        </div>
-        <div class="form-group">
-            <label for="slug">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" required>
-        </div>
-        <div class="form-group">
-            <label for="year">Year</label>
-            <input type="text" class="form-control" id="year" name="year" required>
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" step="100" class="form-control" id="price" name="price" required>
-        </div>
-        <div class="form-group">
-            <label for="stock">Stock</label>
-            <input type="number" class="form-control" id="stock" name="stock" required>
-        </div>
-        <label>Genres:</label><br>
-        @foreach ($genres as $genre)
-            <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
-            <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
-        @endforeach
-        <div class="form-group">
-            <label for="img_url">Image URL</label>
-            <input type="text" class="form-control" id="img_url" name="img_url" required>
-        </div>
-        <div class="form-group">
-            <label for="trailer">Trailer Embedded URL</label>
-            <input type="text" class="form-control" id="trailer" name="trailer" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-
-
+            <!-- Add Product Section -->
+            <div class="container mt-5" id="add-product-section" style="display: none;">
+                <h1 class="mb-4">Add Product</h1>
+                <form action="/admin/add" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="add-title" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="add-desc" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input type="text" class="form-control" id="add-slug" name="slug" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="text" class="form-control" id="add-year" name="year" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" step="100" class="form-control" id="add-price" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" class="form-control" id="add-stock" name="stock" required>
+                    </div>
+                    <label>Genres:</label><br>
+                    @foreach ($genres as $genre)
+                        <input type="checkbox" class="form-check-input" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}">
+                        <label class="form-check-label" for="genre-{{ $genre->id }}">{{ $genre->genre }}</label><br>
+                    @endforeach
+                    <div class="form-group">
+                        <label for="img_url">Image URL</label>
+                        <input type="text" class="form-control" id="add-img_url" name="img_url" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="trailer">Trailer Embedded URL</label>
+                        <input type="text" class="form-control" id="add-trailer" name="trailer" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
 
             <!-- Edit Product Section -->
             <div class="container mt-5" id="edit-product-section" style="display: none;">
@@ -550,14 +548,14 @@
 
             // Navigasi ke halaman Tambah Barang dan isi form
             showAddProduct();
-            $('#title').val(title);
-            $('#description').val(description);
-            $('#slug').val(title.replace(/\s+/g, '-').toLowerCase());
-            $('#year').val(year);
-            $('#price').val(price);
-            $('#stock').val(stock);
-            $('#img_url').val(poster);
-            $('#trailer').val(trailer);
+            $('#add-title').val(title);
+            $('#add-desc').val(description);
+            $('#add-slug').val(title.replace(/\s+/g, '-').toLowerCase());
+            $('#add-year').val(year);
+            $('#add-price').val(price);
+            $('#add-stock').val(stock);
+            $('#add-img_url').val(poster);
+            $('#add-trailer').val(trailer);
 
             // Centang genre yang sesuai
             genres.forEach(function(genre) {

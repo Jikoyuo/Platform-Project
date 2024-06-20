@@ -58,10 +58,6 @@
                         <a href="/cart/delete/{{$item['id']}}">
                             <box-icon id="deleteCart" class="custom-icon" name='trash' type='solid' color='#ffffff' style="margin-left: 10px; margin-right: 10px;"></box-icon> <!-- Icon trash -->
                         </a>
-                        <!-- <a action="/cart/delete" method="POST">
-                            @csrf
-                            <input type="hidden" name="{{$item['id']}}">
-                        </a> -->
                         <div class="quantity" style="background-color: aquamarine;">
                         <button class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
                         <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" value="1">
