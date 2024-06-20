@@ -39,8 +39,8 @@
         -->
         <div id="particles-js" class="particles"></div>
 
-        <div class="container-film shadow-lg p-3 mb-5 bg-body rounded" style="position:absolute; top:30%; left:17%;">
-            <h1 class="text-center">Search result: {{$search}} </h1>
+        <div class="container-film shadow-lg p-3 mb-5  rounded" style="position:absolute; top:30%; left:17%;">
+            <h1 class="text-center text-white" style="font-size: 32px;">Search result: {{$search}} </h1>
 
             @include('partials.catalog')
             <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
