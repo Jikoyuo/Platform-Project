@@ -17,12 +17,16 @@ body {
     z-index: 999;
 }
 
+.dropdown-menu.multi-column {
+    columns: 3;
+}
 
 .card-custom {
     max-width: 90%;
     background-color: transparent;
     border-color: transparent;
 }
+
 
 .card-price {
     font-size: 1.2rem;

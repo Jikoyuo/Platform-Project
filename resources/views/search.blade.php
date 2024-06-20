@@ -5,6 +5,17 @@
 @section('content')
 <title>Kasetflix </title>
 <link rel="stylesheet" href="../style.css">
+<script defer src="../newParticle.js"></script>
+
+<style>
+    .particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%; /* Ensure the particles container takes full height */
+    z-index: -1;
+}
+</style>
 
 @include('partials.background')
         <!-- <div class="jumbotron jumbotron-fluid text-white ">
@@ -26,17 +37,13 @@
         </div>
 
         -->
+        <div id="particles-js" class="particles"></div>
 
         <div class="container-film shadow-lg p-3 mb-5 bg-body rounded" style="position:absolute; top:30%; left:17%;">
             <h1 class="text-center">Search result: {{$search}} </h1>
 
-            @if (!empty($search) && count($search) > 0)
             @include('partials.catalog')
-            @else
-            <h1>Kosong</h1>
-            @endif
-        </div>
-    @include('partials.footer')
+            <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 @endsection
 
 
