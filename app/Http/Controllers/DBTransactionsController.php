@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DBCart;
+use App\Models\DBCategory;
 use App\Models\DBTransactions;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreDBTransactionsRequest;
 use App\Http\Requests\UpdateDBTransactionsRequest;
-use App\Models\DBCategory;
-use Illuminate\Support\Facades\Auth;
 
 class DBTransactionsController extends Controller
 {
@@ -19,7 +20,7 @@ class DBTransactionsController extends Controller
         if(Auth::check()){
             $admin=Auth::user()->role === 'admin';
         }
-        $transactions = DBTransactions::where('user_id', Auth::id())->latest()->get();
+        $transactions = DBTransactions::where('user_id', Auth::id())->leftJoin('d_b_products', 'd_b_transactions.product_id', '=', 'd_b_products.id')->get();
         $genres=DBCategory::all();
         return view('history',[
             'title'=>'history',
