@@ -18,7 +18,6 @@
         /* General Body Styles */
         body {
             background-color: #121212;
-            color: #f8f9fa;
             font-family: "Roboto", sans-serif;
             margin: 0;
             padding: 0;
@@ -127,6 +126,62 @@
             font-size: 1.2em;
             margin-right: 10px;
         }
+
+        /* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
     </style>
     <link rel="stylesheet" href="../newParticle.css">
     <script defer src="../newParticle.js"></script>
@@ -138,7 +193,7 @@
     <div class="main-content">
         <div class="trans" id="trans">
             <h1 class="text-light">Isi Data Diri</h1>
-            <form>
+            <form id="paymentForm">
                 <div class="mb-3">
                     <label for="name" class="form-label text-light">Nama</label>
                     <input type="text" class="form-control" id="name" value="{{ $user->username }}" required />
@@ -185,12 +240,24 @@
                     <img src="qris.png" alt="QRIS" />
                 </div>
                 <div>Total Harga: Rp {{ $totalHarga }}</div>
-                <button type="submit" class="btn btn-primary mt-3">
-                    Submit
-                </button>
+                <button id="btnUlasan" type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
             </form>
         </div>
     </div>
+
+            <!-- Popup -->
+        <div id="reviewPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Konfirmasi Pembayaran</h2>
+                <form id="reviewForm">
+                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
+
+                    <button id="ulangBtn" type="button" class="btn btn-secondary mt-5">Ulang</button>
+
+                </form>
+            </div>
+        </div>
 
     <div class="footer-wrapper">
         <section class="sectionfoot">
@@ -229,7 +296,32 @@
         });
 
         document.addEventListener('DOMContentLoaded', (event) => {
-            const reviewForm = document.getElementById('trans');
+            const btnUlasan = document.querySelectorAll('#btnUlasan');
+            const popup = document.getElementById('reviewPopup');
+            const closeBtn = document.querySelector('.popup .close');
+            const reviewForm = document.getElementById('reviewForm');
+            const ulangBtn = document.getElementById('ulangBtn');
+
+            btnUlasan.forEach(button => {
+                button.addEventListener('click', () => {
+                    popup.style.display = 'block';
+                });
+            });
+
+            ulangBtn.addEventListener('click', () => {
+                paymentForm.reset();
+            popup.style.display = 'none';
+        });
+
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == popup) {
+                    popup.style.display = 'none';
+                }
+            });
 
             reviewForm.addEventListener('submit', (event) => {
                 event.preventDefault();
@@ -239,6 +331,7 @@
                     icon: 'success',
                     confirmButtonText: 'OK'
                 }).then(() => {
+                    popup.style.display = 'none';
                     reviewForm.reset();
                 });
             });
