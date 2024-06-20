@@ -19,7 +19,7 @@ class DBTransactionsController extends Controller
         if(Auth::check()){
             $admin=Auth::user()->role === 'admin';
         }
-        $transactions = DBTransactions::where('user_id', Auth::user()->id)->get()->all();
+        $transactions = DBTransactions::where('user_id', Auth::id())->latest()->get();
         $genres=DBCategory::all();
         return view('history',[
             'title'=>'history',
