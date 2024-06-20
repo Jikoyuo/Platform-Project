@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\DBCart;
+use App\Models\DBProduct;
 use App\Models\DBCategory;
 use Illuminate\Support\Facades\Auth;
+use function PHPUnit\Framework\isEmpty;
+use Illuminate\Support\Facades\Request;
+
 use App\Http\Requests\StoreDBCartRequest;
 use App\Http\Requests\UpdateDBCartRequest;
-use App\Models\DBProduct;
-
-use function PHPUnit\Framework\isEmpty;
 
 class DBCartController extends Controller
 {
@@ -96,5 +97,11 @@ class DBCartController extends Controller
     public function destroy(DBCart $dBCart)
     {
         //
+    }
+
+    public function delete($id){
+        $cart = DBCart::where('product_id', $id)->first();
+        $cart->delete();
+        return redirect('/cart');
     }
 }

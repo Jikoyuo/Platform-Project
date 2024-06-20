@@ -38,6 +38,7 @@ Route::get('/genres/{slug}', [DBProductController::class, 'show']);
 Route::get('/search', [DBProductController::class, 'index']);
 
 Route::get('/cart', [DBCartController::class, 'index']);
+Route::get('/cart/delete/{id}', [DBCartController::class, 'delete']);
 
 Route::get('/history', [DBTransactionsController::class, 'index']);
 
