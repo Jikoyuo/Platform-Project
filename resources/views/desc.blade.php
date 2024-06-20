@@ -90,40 +90,18 @@
         <div class="container">
             <h2 class="text-center text-white mb-4">Rekomendasi Film Lain</h2>
             <div class="row">
-                <!-- Card Film 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="../Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
-                        <div class="card-body">
-                            <h5 class="card-title">Film 1</h5>
-                            <p class="card-text">Deskripsi singkat tentang film 1.</p>
-                            <a href="#" class="btn btn-primary">Lihat Detail</a>
+                @foreach ($recommends as $recommend)
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="{{$recommend->img_url}}" class="img-fluid rounded-start" alt="{{$recommend->slug}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$recommend->name}}</h5>
+                                <p class="card-text">{{$recommend->description}}</p>
+                                <a href="/product/{{$recommend->slug}}" class="btn btn-primary">Lihat Detail</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Card Film 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="../Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
-                        <div class="card-body">
-                            <h5 class="card-title">Film 2</h5>
-                            <p class="card-text">Deskripsi singkat tentang film 2.</p>
-                            <a href="#" class="btn btn-primary">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Film 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="../Dune.jpeg" class="img-fluid rounded-start" alt="Dune">
-                        <div class="card-body">
-                            <h5 class="card-title">Film 3</h5>
-                            <p class="card-text">Deskripsi singkat tentang film 3.</p>
-                            <a href="#" class="btn btn-primary">Lihat Detail</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tambahkan kartu film lainnya di sini -->
+                @endforeach
             </div>
         </div>
     </section>

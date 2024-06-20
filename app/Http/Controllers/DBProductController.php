@@ -82,6 +82,9 @@ class DBProductController extends Controller
             $rating /= count($reviews);
         }
         $genres = DBCategory::where('id', $pivot);
+
+        $recommend = DBProduct::inRandomOrder()->take(3)->get();
+
         if (Auth::check()) {
             return view('desc', [
                 'title' => 'Product',
@@ -90,6 +93,7 @@ class DBProductController extends Controller
                 'reviews' => $reviews,
                 'rating' => $rating,
                 'logged' => true,
+                'recommends' => $recommend,
                 'admin' => Auth::user()->role === 'admin',
                 'id' => Auth::user()->id
             ]);
@@ -101,6 +105,7 @@ class DBProductController extends Controller
                 'reviews' => $reviews,
                 'rating' =>  $rating,
                 'logged' => false,
+                'recommends' => $recommend,
                 'admin' => false
             ]);
         }
