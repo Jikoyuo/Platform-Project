@@ -32,9 +32,6 @@
                     <button type="submit" id="buttonPay" class="btn btn-dark btn-trans">Checkout</button>
                 </div>
             </form>
-
-            <!-- diubah -->
-            <div class="container-title"></div>
         @else
             <div class="jumbotron jumbotron-fluid text-white">
                 <div class="container">
@@ -44,7 +41,7 @@
         @endif
 
         <div class="container-trans">
-
+            <div class="container-title"></div>
             @foreach ($items as $item)
                 <div class="container-product align-content-center" >
                     <div class="prod" data-movie-id="{{ $item['id'] }}" data-movie-price="{{ $item['price'] }}">
