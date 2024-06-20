@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->float('price');
             $table->integer('quantity');
-            $table->foreignId('product_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });
