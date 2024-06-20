@@ -58,16 +58,16 @@
                                 Follow Us
                             </h6>
                             <p>
-                                <a href="#!" class="text-reset">@KasetflixFB</a>
+                                <a href="#!" class="text-reset">@SadharFB</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">@KasetflixX</a>
+                                <a href="#!" class="text-reset">@SadharX</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Kasetflix1@gmail.com</a>
+                                <a href="#!" class="text-reset">Sadhar@gmail.com</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">@KasetflixInsta</a>
+                                <a href="#!" class="text-reset">@SadharInsta</a>
                             </p>
                         </div>
                         <!-- Grid column -->
