@@ -30,7 +30,7 @@
                     <h2 class="text-light" style="margin-top: 7%;">Total: <span id="total-price">{{$total}}</span></h2>
                     <input type="hidden" id="total_price" name="total" value="0">
                     <input type="hidden" id="total_quantity" name="amount" value="0">
-                    <button type="submit" id="buttonPay" class="btn btn-dark btn-trans">Checkout</button>
+                    <button type="submit" id="buttonPay" class="btn btn-danger btn-trans">Checkout</button>
                 </div>
                 
             @else
@@ -60,10 +60,10 @@
                                 <box-icon id="deleteCart" class="custom-icon" name='trash' type='solid' color='#ffffff' style="margin-left: 10px; margin-right: 10px;"></box-icon> <!-- Icon trash -->
                             </a>
                             <div class="quantity" style="background-color: aquamarine;">
-                            <button type="button" class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
+                            <button type="button" style="background-color: rgb(240, 7, 7)" class="minus minus-button" aria-label="Decrease" data-movie-id="{{$item['id']}}">-</button>
                             <input type="hidden" name="items[{{$item['product_id']}}][id]" value="{{$item['product_id']}}">
                             <input type="number" id="quantity-{{$item['id']}}" class="input-box quantity-input" value="1" min="0" max="{{$item['stock']}}" name="items[{{$item['product_id']}}][quantity]">
-                            <button type="button" class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
+                            <button type="button" style="background-color: rgb(240, 7, 7)" id="plusButton" class="plus plus-button" aria-label="Increase" data-movie-id="{{$item['id']}}">+</button>
                         </div>
 
                         </div>

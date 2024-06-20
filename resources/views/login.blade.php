@@ -48,8 +48,8 @@
                     <div class="social-icons">
                         <a href="{{ route('google-auth') }}" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                         <a href="" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <!-- <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a> -->
                     </div>
                     <span>or use your email for registeration</span>
                     <input type="text" placeholder="Username" name="username">
@@ -68,8 +68,8 @@
                     <div class="social-icons">
                         <a href="{{ route('google-auth') }}" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                         <a href="{{ route('facebook-auth') }}" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <!-- <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a> -->
                     </div>
                     <span>or login with your account</span>
                     <input type="username" placeholder="Username" name="username">

@@ -1,3 +1,9 @@
+<style>
+    .text-red {
+    color: #dc3545 !important;
+}
+</style>
+
 <!-- navbar setelah login -->
 @if ($logged)
 <!-- navbar setelah login -->
@@ -19,10 +25,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/genres">Genres</a>
                 </li> -->
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/home#section3">MovieList</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                          Genres
                     </a>
+
                     <ul class="dropdown-menu multi-column">
                         @foreach ($genres as $genre)
                         <li><a class="dropdown-item" href="/genres/{{$genre->slug}}">{{$genre->genre}}</a></li>
@@ -31,11 +41,11 @@
                 </li>
             </ul>
 
-            <a href="/history" style="margin-left: 70%;" id="buttonPay">
+            <a href="/history" style="margin-left: 63%;" id="buttonPay">
                 <box-icon class="custom-icon" name='receipt' type='solid' color='#ffffff'></box-icon>
             </a>
 
-            <a href="/cart" style="margin-left:60px;">
+            <a href="/cart" style="margin-left:55px;">
                 <box-icon class="custom-icon" name="cart" type="solid" color="#ffffff"></box-icon>
             </a>
 
@@ -63,9 +73,9 @@
 <!-- end navbar login -->
 
 @else
-<nav class="navbar navbar-expand-lg  mt-5">
+<nav class="navbar navbar-expand-lg mt-5">
     <div class="container-fluid">
-        <a class="navbar-brand text-light" href="/home">Kasetflix</a>
+        <a class="navbar-brand text-light navbar-brand-custom text-red" href="/home">Kasetflix</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,15 +84,9 @@
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="/genres/horror">Horror</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="/genres">Genres</a>
-                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                         Genres
+                        Genres
                     </a>
                     <ul class="dropdown-menu multi-column">
                         @foreach ($genres as $genre)
@@ -92,13 +96,13 @@
                 </li>
             </ul>
         </div>
-        <div class="d-flex justify-end text-light me-xxl-5">
+        <div class="d-flex justify-end text-white me-xxl-5">
             <a href="/login">
-                <button class="btn" style="height: 40px; background-color: rgba(182,6,25,255)   ;">Login</button>
+                <button class="btn" style="height: 40px; background-color: rgba(182,6,25,255);">Login</button>
             </a>
         </div>
-
     </div>
 </nav>
+
 <!-- end navbar login -->
 @endif
