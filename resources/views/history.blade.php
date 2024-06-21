@@ -40,9 +40,13 @@
                             <h4 class="text-white">{{$transaction->name}}</h4>
                             <h7 class="text-white">{{$transaction->order_date}}</h7>
                         </div>
-                        <a href="/review/{{$transaction->product_id}}">
-                            <button type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
-                        </a>
+                        @if($transaction->review == true)
+                            <button class="btn btn-dark btn-bb" disabled>Beri Ulasan</button>
+                        @else
+                            <a href="/review/{{$transaction->product_id}}">
+                                <button type="button" class="btn btn-dark btn-bb">Beri Ulasan</button>
+                            </a>
+                        @endif
                         <a href="/product/{{$transaction->slug}}">
                             <button id="btnBuyBack" type="button" class="btn btn-dark btn-bb">Beli Lagi</button>
                         </a>

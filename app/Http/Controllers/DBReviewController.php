@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Request;
 use App\Http\Requests\StoreDBReviewRequest;
 use App\Http\Requests\UpdateDBReviewRequest;
 use App\Models\DBProduct;
+use App\Models\DBTransactions;
 
 class DBReviewController extends Controller
 {
@@ -42,9 +43,12 @@ class DBReviewController extends Controller
         $review->updated_at = now();
         $review->save();
 
-        $product = DBProduct::where('id', $request->movie_id)->get();
+        $transaction = DBTransactions::where('product_id', $request->movie_id)->get()->first();
 
-        return redirect(`/product/$product->slug`);
+        $transaction->review = true;
+        $transaction->save();
+
+        return redirect('/history');
     }
 
     /**

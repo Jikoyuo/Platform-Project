@@ -20,6 +20,7 @@ class DBTransactionsController extends Controller
         if(Auth::check()){
             $admin=Auth::user()->role === 'admin';
         }
+        $review = DBTransactions::all()->pluck('review');
         $transactions = DBTransactions::where('user_id', Auth::id())->leftJoin('d_b_products', 'd_b_transactions.product_id', '=', 'd_b_products.id')->get();
         $genres=DBCategory::all();
         return view('history',[
@@ -27,7 +28,8 @@ class DBTransactionsController extends Controller
             'logged'=>Auth::check(),
             'genres'=>$genres,
             'admin'=>$admin,
-            'transactions'=>$transactions
+            'transactions'=>$transactions,
+            'reviews'=>$review
         ]);
     }
 
